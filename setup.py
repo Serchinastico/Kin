@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name='kin',
     packages=['kin'],
-    version='1.0.0',
+    version='1.0.0-SNAPSHOT',
     description='A simple project.pbxproj verifier',
     author='Karumi',
     author_email='tech@karumi.com',
