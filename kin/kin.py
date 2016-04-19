@@ -25,9 +25,11 @@ def find_target_file():
 
 
 def print_help():
-    print("Usage: kin yourproject.pbxproj\n\
+    print("Usage: kin [project.pbxproj]\n\
 \n\
-Verifies the correctness of your project.pbxproj file")
+Verifies the correctness of your project.pbxproj file.\n\
+When called with no arguments, Kin will try to find a project.pbxproj \
+file in the current project")
 
 
 def main():
@@ -40,7 +42,8 @@ def main():
         verify_file(target)
     else:
         print("ERROR: Unable to find project.pbxproj \
-file in the current directory")
+file in the current directory\n")
+        print_help()
 
 
 if __name__ == '__main__':
