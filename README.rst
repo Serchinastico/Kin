@@ -1,5 +1,3 @@
-.. image:: art/logo.png
-
 KIN
 ===
 
@@ -10,12 +8,6 @@ Usage
 
 ::
 
-  usage: kin [-h] [-v] [-t | -f FILE]
+  Usage: kin yourproject.pbxproj
 
   Verifies the correctness of your project.pbxproj file
-
-  optional arguments:
-    -h, --help            show this help message and exit
-    -v, --verbose         prints information on screen
-    -t, --test            run all tests
-    -f FILE, --file FILE  path to your project.pbxproj file

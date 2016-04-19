@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import sys
 import os
 
 
 class Tester:
-    def __init__(self, logger, verifier):
-        self.logger = logger
+    def __init__(self, verifier):
         self.verifier = verifier
 
     def run(self):
@@ -12,14 +13,14 @@ class Tester:
         self.test_ko()
 
     def test_ok(self):
-        self.logger.debug("Running all OK tests...")
+        print("Running all OK tests...")
         base_path = "./tests/ok/"
         for file in self.input_files_in(base_path):
             errors = self.verifier.check_errors(file)
             self.report_test_case(file, not errors)
 
     def test_ko(self):
-        self.logger.debug("Running all KO tests...")
+        print("Running all KO tests...")
         base_path = "./tests/ko/"
         for file in self.input_files_in(base_path):
             out_path = os.path.splitext(file)[0] + '.out'
@@ -43,4 +44,16 @@ class Tester:
         else:
             passed_mark = "✗"
 
-        self.logger.debug("Testing " + path + "... " + passed_mark)
+        print("Testing " + path + "... " + passed_mark)
+
+
+def main():
+    sys.path.insert(0, os.path.abspath('..'))
+    from kin.verifier import Verifier
+    verifier = Verifier()
+    tester = Tester(verifier)
+    tester.run()
+
+
+if __name__ == '__main__':
+    main()

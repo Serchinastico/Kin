@@ -1,32 +1,33 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 
-import logging
-from kin.args_parser import ArgsParser
-from tests.tester import Tester
-from kin.verifier import Verifier
+import sys
+from verifier import Verifier
 from grammar.PBXProjLexer import PBXProjLexer
 from grammar.PBXProjParser import PBXProjParser
 
 
-def main():
-    logger = logging.getLogger("KIN")
-    logging.basicConfig(level=logging.ERROR)
-
-    args_parser = ArgsParser()
-    args = args_parser.parse_args()
-
-    if args.verbose:
-        logger.setLevel(logging.DEBUG)
-
+def verify_file(file):
     verifier = Verifier()
-    if args.test:
-        tester = Tester(logger, verifier)
-        tester.run()
-    elif not args.file:
-        args_parser.print_help()
+    errors = verifier.check_errors(file)
+    if errors:
+        for error in errors:
+            print("ERROR: " + error)
     else:
-        errors = verifier.check_errors(args.file)
-        print(errors)
+        print("CORRECT")
+
+
+def print_help():
+    print("Usage: kin yourproject.pbxproj\n\
+\n\
+Verifies the correctness of your project.pbxproj file")
+
+
+def main():
+    if len(sys.argv) == 2:
+        verify_file(sys.argv[1])
+    else:
+        print_help()
+
 
 if __name__ == '__main__':
     main()
