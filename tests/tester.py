@@ -7,6 +7,7 @@ import os
 class Tester:
     def __init__(self, verifier):
         self.verifier = verifier
+        self.has_errors = False
 
     def run(self):
         self.test_ok()
@@ -43,6 +44,7 @@ class Tester:
             passed_mark = "✓"
         else:
             passed_mark = "✗"
+            self.has_errors = True
 
         print("Testing " + path + "... " + passed_mark)
 
@@ -53,6 +55,9 @@ def main():
     verifier = Verifier()
     tester = Tester(verifier)
     tester.run()
+
+    if tester.has_errors:
+        sys.exit(-1)
 
 
 if __name__ == '__main__':
