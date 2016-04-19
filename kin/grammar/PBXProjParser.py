@@ -620,68 +620,68 @@ class PBXProjParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"'{'", u"'}'", u"'='", u"';'", u"'PBXAggregateTarget'", 
-                     u"'PBXBuildFile'", u"'PBXContainerItemProxy'", u"'PBXCopyFilesBuildPhase'", 
-                     u"'PBXFileReference'", u"'PBXFrameworksBuildPhase'", 
-                     u"'PBXGroup'", u"'PBXHeadersBuildPhase'", u"'PBXNativeTarget'", 
-                     u"'PBXProject'", u"'PBXReferenceProxy'", u"'PBXResourcesBuildPhase'", 
-                     u"'PBXShellScriptBuildPhase'", u"'PBXSourcesBuildPhase'", 
-                     u"'PBXTargetDependency'", u"'PBXVariantGroup'", u"'XCBuildConfiguration'", 
-                     u"'XCConfigurationList'", u"'XCVersionGroup'", u"'fileRef'", 
-                     u"'containerPortal'", u"'proxyType'", u"'remoteGlobalIDString'", 
-                     u"'remoteInfo'", u"'fileEncoding'", u"'explicitFileType'", 
-                     u"'lastKnownFileType'", u"'includeInIndex'", u"'indentWidth'", 
-                     u"'tabWidth'", u"'usesTabs'", u"'children'", u"'productInstallPath'", 
-                     u"'name'", u"'path'", u"'sourceTree'", u"'buildActionMask'", 
-                     u"'files'", u"'runOnlyForDeploymentPostprocessing'", 
-                     u"'('", u"','", u"')'", u"'buildConfigurationList'", 
-                     u"'buildPhases'", u"'buildRules'", u"'dependencies'", 
-                     u"'productName'", u"'productReference'", u"'productType'", 
-                     u"'lineEnding'", u"'xcLanguageSpecificationIdentifier'", 
-                     u"'attributes'", u"'LastSwiftMigration'", u"'LastSwiftUpdateCheck'", 
-                     u"'LastUpgradeCheck'", u"'ORGANIZATIONNAME'", u"'TargetAttributes'", 
-                     u"'CreatedOnToolsVersion'", u"'TestTargetID'", u"'DevelopmentTeam'", 
-                     u"'compatibilityVersion'", u"'developmentRegion'", 
-                     u"'hasScannedForEncodings'", u"'knownRegions'", u"'mainGroup'", 
-                     u"'productRefGroup'", u"'projectDirPath'", u"'projectReferences'", 
-                     u"'projectRoot'", u"'targets'", u"'inputPaths'", u"'outputPaths'", 
-                     u"'shellPath'", u"'shellScript'", u"'showEnvVarsInLog'", 
-                     u"'target'", u"'targetProxy'", u"'fileType'", u"'remoteRef'", 
-                     u"'baseConfigurationReference'", u"'buildSettings'", 
-                     u"'dstPath'", u"'dstSubfolderSpec'", u"'ProductGroup'", 
-                     u"'ProjectRef'", u"'buildConfigurations'", u"'defaultConfigurationIsVisible'", 
-                     u"'defaultConfigurationName'", u"'settings'", u"'SystemCapabilities'", 
-                     u"'currentVersion'", u"'versionGroupType'", u"'CLASSPREFIX'", 
-                     u"'archiveVersion'", u"'classes'", u"'isa'", u"'objectVersion'", 
+    literalNames = [ u"<INVALID>", u"'{'", u"'}'", u"'='", u"';'", u"'PBXAggregateTarget'",
+                     u"'PBXBuildFile'", u"'PBXContainerItemProxy'", u"'PBXCopyFilesBuildPhase'",
+                     u"'PBXFileReference'", u"'PBXFrameworksBuildPhase'",
+                     u"'PBXGroup'", u"'PBXHeadersBuildPhase'", u"'PBXNativeTarget'",
+                     u"'PBXProject'", u"'PBXReferenceProxy'", u"'PBXResourcesBuildPhase'",
+                     u"'PBXShellScriptBuildPhase'", u"'PBXSourcesBuildPhase'",
+                     u"'PBXTargetDependency'", u"'PBXVariantGroup'", u"'XCBuildConfiguration'",
+                     u"'XCConfigurationList'", u"'XCVersionGroup'", u"'fileRef'",
+                     u"'containerPortal'", u"'proxyType'", u"'remoteGlobalIDString'",
+                     u"'remoteInfo'", u"'fileEncoding'", u"'explicitFileType'",
+                     u"'lastKnownFileType'", u"'includeInIndex'", u"'indentWidth'",
+                     u"'tabWidth'", u"'usesTabs'", u"'children'", u"'productInstallPath'",
+                     u"'name'", u"'path'", u"'sourceTree'", u"'buildActionMask'",
+                     u"'files'", u"'runOnlyForDeploymentPostprocessing'",
+                     u"'('", u"','", u"')'", u"'buildConfigurationList'",
+                     u"'buildPhases'", u"'buildRules'", u"'dependencies'",
+                     u"'productName'", u"'productReference'", u"'productType'",
+                     u"'lineEnding'", u"'xcLanguageSpecificationIdentifier'",
+                     u"'attributes'", u"'LastSwiftMigration'", u"'LastSwiftUpdateCheck'",
+                     u"'LastUpgradeCheck'", u"'ORGANIZATIONNAME'", u"'TargetAttributes'",
+                     u"'CreatedOnToolsVersion'", u"'TestTargetID'", u"'DevelopmentTeam'",
+                     u"'compatibilityVersion'", u"'developmentRegion'",
+                     u"'hasScannedForEncodings'", u"'knownRegions'", u"'mainGroup'",
+                     u"'productRefGroup'", u"'projectDirPath'", u"'projectReferences'",
+                     u"'projectRoot'", u"'targets'", u"'inputPaths'", u"'outputPaths'",
+                     u"'shellPath'", u"'shellScript'", u"'showEnvVarsInLog'",
+                     u"'target'", u"'targetProxy'", u"'fileType'", u"'remoteRef'",
+                     u"'baseConfigurationReference'", u"'buildSettings'",
+                     u"'dstPath'", u"'dstSubfolderSpec'", u"'ProductGroup'",
+                     u"'ProjectRef'", u"'buildConfigurations'", u"'defaultConfigurationIsVisible'",
+                     u"'defaultConfigurationName'", u"'settings'", u"'SystemCapabilities'",
+                     u"'currentVersion'", u"'versionGroupType'", u"'CLASSPREFIX'",
+                     u"'archiveVersion'", u"'classes'", u"'isa'", u"'objectVersion'",
                      u"'objects'", u"'rootObject'" ]
 
-    symbolicNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
-                      u"<INVALID>", u"<INVALID>", u"ARCHIVE_VERSION", u"CLASSES", 
-                      u"ISA", u"OBJECT_VERSION", u"OBJECTS", u"ROOT_OBJECT", 
-                      u"REFERENCE", u"QUOTED_STRING", u"NON_QUOTED_STRING", 
+    symbolicNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>",
+                      u"<INVALID>", u"<INVALID>", u"ARCHIVE_VERSION", u"CLASSES",
+                      u"ISA", u"OBJECT_VERSION", u"OBJECTS", u"ROOT_OBJECT",
+                      u"REFERENCE", u"QUOTED_STRING", u"NON_QUOTED_STRING",
                       u"WS", u"COMMENT", u"LINE_COMMENT" ]
 
     RULE_start = 0
@@ -826,56 +826,56 @@ class PBXProjParser ( Parser ):
     RULE_class_prefix = 139
     RULE_any_string = 140
 
-    ruleNames =  [ u"start", u"root_element", u"archive_version", u"classes", 
-                   u"object_version", u"objects", u"root_object", u"pbx_aggregate_target_section", 
-                   u"pbx_build_file_section", u"pbx_container_item_proxy_section", 
-                   u"pbx_copy_files_build_phase_section", u"pbx_file_reference_section", 
-                   u"pbx_frameworks_build_phase_section", u"pbx_group_section", 
-                   u"pbx_headers_build_phase_section", u"pbx_native_target_section", 
-                   u"pbx_project_section", u"pbx_reference_proxy_section", 
-                   u"pbx_resources_build_phase_section", u"pbx_shell_script_build_phase_section", 
-                   u"pbx_sources_build_phase_section", u"pbx_target_dependency_section", 
-                   u"pbx_variant_group_section", u"xc_build_configuration_section", 
-                   u"xc_configuration_list_section", u"xc_version_group_section", 
-                   u"pbx_aggregate_target", u"pbx_build_file", u"pbx_container_item_proxy", 
-                   u"pbx_copy_files_build_phase", u"pbx_file_reference", 
-                   u"pbx_frameworks_build_phase", u"pbx_group", u"pbx_headers_build_phase", 
-                   u"pbx_native_target", u"pbx_project", u"pbx_reference_proxy", 
-                   u"pbx_resources_build_phase", u"pbx_shell_script_build_phase", 
-                   u"pbx_sources_build_phase", u"pbx_target_dependency", 
-                   u"pbx_variant_group", u"xc_build_configuration", u"xc_configuration_list", 
-                   u"xc_version_group", u"isa_pbx_aggregate_target", u"isa_pbx_build_file", 
-                   u"isa_pbx_container_item_proxy", u"isa_pbx_copy_files_build_phase", 
-                   u"isa_pbx_file_reference", u"isa_pbx_frameworks_build_phase", 
-                   u"isa_pbx_group", u"isa_pbx_header_build_phase", u"isa_pbx_native_target", 
-                   u"isa_pbx_project", u"isa_pbx_reference_proxy", u"isa_pbx_resources_build_phase", 
-                   u"isa_pbx_shell_script_build_phase", u"isa_pbx_sources_build_phase", 
-                   u"isa_pbx_target_dependency", u"isa_pbx_variant_group", 
-                   u"isa_xc_build_configuration", u"isa_xc_configuration_list", 
-                   u"isa_xc_version_group", u"file_ref", u"container_portal", 
-                   u"proxy_type", u"remote_global_id_string", u"remote_info", 
-                   u"file_encoding", u"explicit_file_type", u"last_known_file_type", 
-                   u"include_in_index", u"indent_width", u"tab_width", u"uses_tabs", 
-                   u"children", u"product_install_path", u"name", u"path", 
-                   u"source_tree", u"build_action_mask", u"files", u"run_only_for_deployment_postprocessing", 
-                   u"reference_list", u"any_string_list", u"non_quoted_strings_list", 
-                   u"build_configuration_list", u"build_phases", u"build_rules", 
-                   u"dependencies", u"product_name", u"product_reference", 
-                   u"product_type", u"line_ending", u"xc_language_specification_identifier", 
-                   u"attributes", u"last_swift_migration", u"last_swift_update_check", 
-                   u"last_upgrade_check", u"organization_name", u"target_attributes", 
-                   u"target_attribute", u"created_on_tools_version", u"test_target_id", 
-                   u"development_team", u"compatibility_version", u"development_region", 
-                   u"has_scanned_for_encodings", u"known_regions", u"main_group", 
-                   u"product_ref_group", u"project_dir_path", u"project_references", 
-                   u"project_root", u"targets", u"input_paths", u"output_paths", 
-                   u"shell_path", u"shell_script", u"show_env_vars_in_log", 
-                   u"target", u"target_proxy", u"file_type", u"remote_ref", 
-                   u"base_configuration_reference", u"build_settings", u"dst_path", 
-                   u"dst_subfolder_spec", u"project_references_list", u"project_references_list_element", 
-                   u"key_value", u"build_configurations", u"default_configuration_is_visible", 
-                   u"default_configuration_name", u"settings", u"system_capabilities", 
-                   u"current_version", u"version_group_type", u"class_prefix", 
+    ruleNames =  [ u"start", u"root_element", u"archive_version", u"classes",
+                   u"object_version", u"objects", u"root_object", u"pbx_aggregate_target_section",
+                   u"pbx_build_file_section", u"pbx_container_item_proxy_section",
+                   u"pbx_copy_files_build_phase_section", u"pbx_file_reference_section",
+                   u"pbx_frameworks_build_phase_section", u"pbx_group_section",
+                   u"pbx_headers_build_phase_section", u"pbx_native_target_section",
+                   u"pbx_project_section", u"pbx_reference_proxy_section",
+                   u"pbx_resources_build_phase_section", u"pbx_shell_script_build_phase_section",
+                   u"pbx_sources_build_phase_section", u"pbx_target_dependency_section",
+                   u"pbx_variant_group_section", u"xc_build_configuration_section",
+                   u"xc_configuration_list_section", u"xc_version_group_section",
+                   u"pbx_aggregate_target", u"pbx_build_file", u"pbx_container_item_proxy",
+                   u"pbx_copy_files_build_phase", u"pbx_file_reference",
+                   u"pbx_frameworks_build_phase", u"pbx_group", u"pbx_headers_build_phase",
+                   u"pbx_native_target", u"pbx_project", u"pbx_reference_proxy",
+                   u"pbx_resources_build_phase", u"pbx_shell_script_build_phase",
+                   u"pbx_sources_build_phase", u"pbx_target_dependency",
+                   u"pbx_variant_group", u"xc_build_configuration", u"xc_configuration_list",
+                   u"xc_version_group", u"isa_pbx_aggregate_target", u"isa_pbx_build_file",
+                   u"isa_pbx_container_item_proxy", u"isa_pbx_copy_files_build_phase",
+                   u"isa_pbx_file_reference", u"isa_pbx_frameworks_build_phase",
+                   u"isa_pbx_group", u"isa_pbx_header_build_phase", u"isa_pbx_native_target",
+                   u"isa_pbx_project", u"isa_pbx_reference_proxy", u"isa_pbx_resources_build_phase",
+                   u"isa_pbx_shell_script_build_phase", u"isa_pbx_sources_build_phase",
+                   u"isa_pbx_target_dependency", u"isa_pbx_variant_group",
+                   u"isa_xc_build_configuration", u"isa_xc_configuration_list",
+                   u"isa_xc_version_group", u"file_ref", u"container_portal",
+                   u"proxy_type", u"remote_global_id_string", u"remote_info",
+                   u"file_encoding", u"explicit_file_type", u"last_known_file_type",
+                   u"include_in_index", u"indent_width", u"tab_width", u"uses_tabs",
+                   u"children", u"product_install_path", u"name", u"path",
+                   u"source_tree", u"build_action_mask", u"files", u"run_only_for_deployment_postprocessing",
+                   u"reference_list", u"any_string_list", u"non_quoted_strings_list",
+                   u"build_configuration_list", u"build_phases", u"build_rules",
+                   u"dependencies", u"product_name", u"product_reference",
+                   u"product_type", u"line_ending", u"xc_language_specification_identifier",
+                   u"attributes", u"last_swift_migration", u"last_swift_update_check",
+                   u"last_upgrade_check", u"organization_name", u"target_attributes",
+                   u"target_attribute", u"created_on_tools_version", u"test_target_id",
+                   u"development_team", u"compatibility_version", u"development_region",
+                   u"has_scanned_for_encodings", u"known_regions", u"main_group",
+                   u"product_ref_group", u"project_dir_path", u"project_references",
+                   u"project_root", u"targets", u"input_paths", u"output_paths",
+                   u"shell_path", u"shell_script", u"show_env_vars_in_log",
+                   u"target", u"target_proxy", u"file_type", u"remote_ref",
+                   u"base_configuration_reference", u"build_settings", u"dst_path",
+                   u"dst_subfolder_spec", u"project_references_list", u"project_references_list_element",
+                   u"key_value", u"build_configurations", u"default_configuration_is_visible",
+                   u"default_configuration_name", u"settings", u"system_capabilities",
+                   u"current_version", u"version_group_type", u"class_prefix",
                    u"any_string" ]
 
     EOF = Token.EOF
@@ -1556,7 +1556,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_pbx_aggregate_target_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 361 
+            self.state = 361
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1566,7 +1566,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 363 
+                self.state = 363
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
 
@@ -1611,7 +1611,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_pbx_build_file_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 366 
+            self.state = 366
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1621,7 +1621,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 368 
+                self.state = 368
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
 
@@ -1666,7 +1666,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_pbx_container_item_proxy_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 371 
+            self.state = 371
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1676,7 +1676,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 373 
+                self.state = 373
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
 
@@ -1721,7 +1721,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_pbx_copy_files_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 376 
+            self.state = 376
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1731,7 +1731,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 378 
+                self.state = 378
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
@@ -1776,7 +1776,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_pbx_file_reference_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 381 
+            self.state = 381
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1786,7 +1786,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 383 
+                self.state = 383
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
 
@@ -1831,7 +1831,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_pbx_frameworks_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 386 
+            self.state = 386
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1841,7 +1841,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 388 
+                self.state = 388
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,16,self._ctx)
 
@@ -1886,7 +1886,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_pbx_group_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 391 
+            self.state = 391
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1896,7 +1896,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 393 
+                self.state = 393
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,17,self._ctx)
 
@@ -1941,7 +1941,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_pbx_headers_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 396 
+            self.state = 396
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1951,7 +1951,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 398 
+                self.state = 398
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
 
@@ -1996,7 +1996,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 30, self.RULE_pbx_native_target_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 401 
+            self.state = 401
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2006,7 +2006,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 403 
+                self.state = 403
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
 
@@ -2051,7 +2051,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_pbx_project_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 406 
+            self.state = 406
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2061,7 +2061,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 408 
+                self.state = 408
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
 
@@ -2106,7 +2106,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 34, self.RULE_pbx_reference_proxy_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 411 
+            self.state = 411
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2116,7 +2116,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 413 
+                self.state = 413
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
 
@@ -2161,7 +2161,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 36, self.RULE_pbx_resources_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 416 
+            self.state = 416
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2171,7 +2171,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 418 
+                self.state = 418
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
 
@@ -2216,7 +2216,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 38, self.RULE_pbx_shell_script_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 421 
+            self.state = 421
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2226,7 +2226,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 423 
+                self.state = 423
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,23,self._ctx)
 
@@ -2271,7 +2271,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_pbx_sources_build_phase_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 426 
+            self.state = 426
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2281,7 +2281,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 428 
+                self.state = 428
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,24,self._ctx)
 
@@ -2326,7 +2326,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_pbx_target_dependency_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 431 
+            self.state = 431
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2336,7 +2336,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 433 
+                self.state = 433
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,25,self._ctx)
 
@@ -2381,7 +2381,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 44, self.RULE_pbx_variant_group_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 436 
+            self.state = 436
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2391,7 +2391,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 438 
+                self.state = 438
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,26,self._ctx)
 
@@ -2436,7 +2436,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_xc_build_configuration_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 441 
+            self.state = 441
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2446,7 +2446,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 443 
+                self.state = 443
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
 
@@ -2491,7 +2491,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_xc_configuration_list_section)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 446 
+            self.state = 446
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2501,7 +2501,7 @@ class PBXProjParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 448 
+                self.state = 448
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,28,self._ctx)
 
@@ -2547,13 +2547,13 @@ class PBXProjParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 451 
+            self.state = 451
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
                 self.state = 450
                 self.xc_version_group()
-                self.state = 453 
+                self.state = 453
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==PBXProjParser.REFERENCE):
@@ -8968,8 +8968,3 @@ class PBXProjParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
-
-
-
-
