@@ -315,6 +315,7 @@ pbx_variant_group
         isa_pbx_variant_group
         children
         name
+        path?
         source_tree
       '}' ';'
     ;
