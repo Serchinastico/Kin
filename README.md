@@ -6,10 +6,16 @@ KIN is a tool to check whether your project.pbxproj file is correct
 
 ##Usage
 
-Install Kin through pip/easy_install:
+Install Kin through pip or easy_install:
 
 ```
 pip install kin
+```
+
+or 
+
+```
+easy_install kin
 ```
 
 Use it either from the root of your project or specifying the project.pbxproj file you want to verify.
