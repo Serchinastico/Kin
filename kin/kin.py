@@ -27,10 +27,12 @@ def find_target_files():
 
 
 def print_help():
-    print("Usage: kin [project.pbxproj]\n" +
-          "Verifies the correctness of your project.pbxproj file.\n" +
-          "When called with no arguments, Kin will try to find a " +
-          "project.pbxproj file in the current project")
+    print("USAGE: kin [file]\n" +
+          "DESCRIPTION: Verifies the correctness of your project.pbxproj " +
+          "file. If no arguments are supplied, Kin will try to find a " +
+          "project.pbxproj file in the current project.\nARGUMENTS:\n" +
+          "\t- file\tOptionally provides the location of your " +
+          "project.pbxproj file")
 
 
 def assert_valid_target_files(target_files):
