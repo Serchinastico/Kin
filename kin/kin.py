@@ -13,29 +13,37 @@ def check_errors(file):
     return errors
 
 
-def find_target_file():
-    target = None
+def find_target_files():
+    target_files = []
 
     if len(sys.argv) == 2:
         target = sys.argv[1]
     else:
         for f in os.listdir(os.getcwd()):
             if f.endswith(".xcodeproj"):
-                target = os.path.join(f, "project.pbxproj")
+                target_files.append(os.path.join(f, "project.pbxproj"))
 
-    return target
+    return target_files
 
 
-def assert_valid_target_file(target):
-    if not target:
-        print("ERROR: Unable to find project.pbxproj \
-file in the current directory\n")
-        print("Usage: kin [project.pbxproj]\n\
-\n\
-Verifies the correctness of your project.pbxproj file.\n\
-When called with no arguments, Kin will try to find a project.pbxproj \
-file in the current project")
+def print_help():
+    print("Usage: kin [project.pbxproj]\n" +
+          "Verifies the correctness of your project.pbxproj file.\n" +
+          "When called with no arguments, Kin will try to find a " +
+          "project.pbxproj file in the current project")
+
+
+def assert_valid_target_files(target_files):
+    if len(target_files) == 0:
+        print("ERROR: Unable to find project.pbxproj " +
+              "file in the current directory\n")
+        print_help()
         sys.exit(-2)
+    elif len(target_files) > 1:
+        print("ERROR: Too many project.pbxproj files: " +
+              str(target_files) + "\n")
+        print_help()
+        sys.exit(-3)
 
 
 def assert_no_errors(errors):
@@ -52,9 +60,11 @@ def print_verification_result(errors):
 
 
 def main():
-    target = find_target_file()
-    assert_valid_target_file(target)
-    errors = check_errors(target)
+    target_files = find_target_files()
+    assert_valid_target_files(target_files)
+
+    target_file = target_files[0]
+    errors = check_errors(target_file)
     print_verification_result(errors)
     assert_no_errors(errors)
 
