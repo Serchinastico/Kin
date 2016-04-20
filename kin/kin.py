@@ -43,7 +43,9 @@ def assert_valid_target_files(target_files):
         sys.exit(-2)
     elif len(target_files) > 1:
         print("ERROR: Too many project.pbxproj files: " +
-              str(target_files) + "\n")
+              str(target_files) + ". Remember you can call Kin with a " +
+              "parameter to specify the file you want to verify, i.e. \"kin " +
+              str(target_files[0]) + "\"\n")
         print_help()
         sys.exit(-3)
 
