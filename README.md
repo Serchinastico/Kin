@@ -1,6 +1,6 @@
 ![logo][logo]
 
-Kin
+Kin [![Build Status](https://travis-ci.org/Karumi/Kin.svg?branch=master)](https://travis-ci.org/Karumi/Kin)
 ===
 
 Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
