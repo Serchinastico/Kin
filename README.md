@@ -3,7 +3,7 @@
 Kin
 ===
 
-Kin is a tool to check whether your project.pbxproj file is correct
+Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
 
 What does it do?
 -----------------
@@ -18,7 +18,7 @@ Kin is just a syntax checker built with ANTLR 4 with a very thin layer to be usa
 Usage
 -----------------
 
-Install Kin with your favorite python package manager
+Install Kin with your favorite python package manager.
 
 Using `pip`
 ```
@@ -44,7 +44,7 @@ $> kin
 ERROR: line 400:3 mismatched input ')' expecting 'inputPaths'
 ```
 
-Optionally, you can provide the location of your project.pbxproj to Kin
+Optionally, you can provide the location of your project.pbxproj to Kin:
 
 ```
 $> kin myProject/myProject.xcodeproj/project.pbxproj
