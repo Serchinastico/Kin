@@ -454,7 +454,7 @@ file_encoding
     ;
 
 explicit_file_type
-    : 'explicitFileType' '=' NON_QUOTED_STRING ';'
+    : 'explicitFileType' '=' any_string ';'
     ;
 
 last_known_file_type
@@ -563,6 +563,7 @@ attributes
         last_swift_migration?
         last_swift_update_check?
         last_upgrade_check
+        last_testing_upgrade_check?
         organization_name?
         target_attributes?
       '}' ';'
@@ -578,6 +579,10 @@ last_swift_update_check
 
 last_upgrade_check
     : 'LastUpgradeCheck' '=' NON_QUOTED_STRING ';'
+    ;
+
+last_testing_upgrade_check
+    : 'LastTestingUpgradeCheck' '=' NON_QUOTED_STRING ';'
     ;
 
 organization_name
@@ -756,6 +761,7 @@ class_prefix
 any_string
     : NON_QUOTED_STRING
     | QUOTED_STRING
+    | VARIABLE
     ;
 
 // LEXER
@@ -785,6 +791,10 @@ QUOTED_STRING
 
 NON_QUOTED_STRING
     : ([0-9a-zA-Z\_\-/\.])+
+    ;
+
+VARIABLE
+    : '$' NON_QUOTED_STRING
     ;
 
 fragment HEX

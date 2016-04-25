@@ -904,6 +904,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#last_testing_upgrade_check.
+    def enterLast_testing_upgrade_check(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#last_testing_upgrade_check.
+    def exitLast_testing_upgrade_check(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#organization_name.
     def enterOrganization_name(self, ctx):
         pass
