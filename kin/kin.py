@@ -17,7 +17,7 @@ def find_target_files():
     target_files = []
 
     if len(sys.argv) == 2:
-        target = sys.argv[1]
+        target_files.append(sys.argv[1])
     else:
         for f in os.listdir(os.getcwd()):
             if f.endswith(".xcodeproj"):
