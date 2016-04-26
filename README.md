@@ -8,7 +8,7 @@ Kin is a minimalistic tool to check whether your project.pbxproj file is correct
 What does it do?
 -----------------
 
-Have you ever found yourself undoing a merge due to a broken XCode build? Then Kin is your tool. It will parse your project configuration file and detect errors.
+Have you ever found yourself undoing a merge due to a broken Xcode build? Then Kin is your tool. It will parse your project configuration file and detect errors.
 
 How does it work?
 -----------------
@@ -30,7 +30,7 @@ Using `easy_install`
 easy_install kin
 ```
 
-Once installed, use Kin from your XCode project directory. Kin will automatically detect where your project configuration is located and check whether it is correct.
+Once installed, use Kin from your Xcode project directory. Kin will automatically detect where your project configuration is located and check whether it is correct.
 
 ```
 $> kin
