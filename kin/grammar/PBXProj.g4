@@ -656,7 +656,7 @@ targets
     ;
 
 input_paths
-    : 'inputPaths' '=' non_quoted_strings_list ';'
+    : 'inputPaths' '=' any_string_list ';'
     ;
 
 output_paths

@@ -537,8 +537,8 @@ def serializedATN():
         buf.write(u"\u0487\7l\2\2\u0487\u0488\7\6\2\2\u0488\u00e9\3\2\2\2")
         buf.write(u"\u0489\u048a\7M\2\2\u048a\u048b\7\5\2\2\u048b\u048c\5")
         buf.write(u"\u00aaV\2\u048c\u048d\7\6\2\2\u048d\u00eb\3\2\2\2\u048e")
-        buf.write(u"\u048f\7N\2\2\u048f\u0490\7\5\2\2\u0490\u0491\5\u00ae")
-        buf.write(u"X\2\u0491\u0492\7\6\2\2\u0492\u00ed\3\2\2\2\u0493\u0494")
+        buf.write(u"\u048f\7N\2\2\u048f\u0490\7\5\2\2\u0490\u0491\5\u00ac")
+        buf.write(u"W\2\u0491\u0492\7\6\2\2\u0492\u00ed\3\2\2\2\u0493\u0494")
         buf.write(u"\7O\2\2\u0494\u0495\7\5\2\2\u0495\u0496\5\u00aeX\2\u0496")
         buf.write(u"\u0497\7\6\2\2\u0497\u00ef\3\2\2\2\u0498\u0499\7P\2\2")
         buf.write(u"\u0499\u049a\7\5\2\2\u049a\u049b\7m\2\2\u049b\u049c\7")
@@ -7794,8 +7794,8 @@ class PBXProjParser ( Parser ):
             super(PBXProjParser.Input_pathsContext, self).__init__(parent, invokingState)
             self.parser = parser
 
-        def non_quoted_strings_list(self):
-            return self.getTypedRuleContext(PBXProjParser.Non_quoted_strings_listContext,0)
+        def any_string_list(self):
+            return self.getTypedRuleContext(PBXProjParser.Any_string_listContext,0)
 
 
         def getRuleIndex(self):
@@ -7823,7 +7823,7 @@ class PBXProjParser ( Parser ):
             self.state = 1165
             self.match(PBXProjParser.T__2)
             self.state = 1166
-            self.non_quoted_strings_list()
+            self.any_string_list()
             self.state = 1167
             self.match(PBXProjParser.T__3)
         except RecognitionException as re:
