@@ -554,7 +554,7 @@ line_ending
     ;
 
 xc_language_specification_identifier
-    : 'xcLanguageSpecificationIdentifier' '=' NON_QUOTED_STRING ';'
+    : 'xcLanguageSpecificationIdentifier' '=' any_string ';'
     ;
 
 attributes
@@ -656,7 +656,7 @@ targets
     ;
 
 input_paths
-    : 'inputPaths' '=' non_quoted_strings_list ';'
+    : 'inputPaths' '=' any_string_list ';'
     ;
 
 output_paths
@@ -755,7 +755,7 @@ version_group_type
     ;
 
 class_prefix
-    : 'CLASSPREFIX' '=' NON_QUOTED_STRING ';'
+    : 'CLASSPREFIX' '=' any_string ';'
     ;
 
 any_string
