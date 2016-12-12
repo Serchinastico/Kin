@@ -598,6 +598,7 @@ target_attribute
       created_on_tools_version?
       test_target_id?
       development_team?
+      last_swift_migration?
       system_capabilities?
       '}' ';'
     ;
