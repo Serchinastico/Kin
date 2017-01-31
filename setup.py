@@ -17,7 +17,7 @@ setup(
     author_email='tech@karumi.com',
     license='Apache Software',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: Apache Software License',
@@ -29,8 +29,8 @@ setup(
     keywords='xcode project.pbxproj lint objective-c swift ios',
     packages=find_packages(exclude=['tests']),
     install_requires=[
-        'argparse',
-        'antlr4-python2-runtime'
+        'argparse==1.4.0',
+        'antlr4-python2-runtime==4.6'
     ],
     entry_points={
         'console_scripts': [
