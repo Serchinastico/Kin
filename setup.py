@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='kin',
-    version='1.7.0',
+    version='1.7.1',
     description='A simple project.pbxproj verifier',
     long_description=long_description,
     url='https://github.com/Karumi/Kin',
