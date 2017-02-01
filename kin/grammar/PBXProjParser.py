@@ -1,4 +1,4 @@
-# Generated from PBXProj.g4 by ANTLR 4.5.2
+# Generated from PBXProj.g4 by ANTLR 4.6
 # encoding: utf-8
 from __future__ import print_function
 from antlr4 import *
@@ -1015,7 +1015,7 @@ class PBXProjParser ( Parser ):
 
     def __init__(self, input):
         super(PBXProjParser, self).__init__(input)
-        self.checkVersion("4.5.2")
+        self.checkVersion("4.6")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -1385,7 +1385,7 @@ class PBXProjParser ( Parser ):
             self.state = 314
             self.match(PBXProjParser.T__0)
             self.state = 316
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
             if la_ == 1:
                 self.state = 315
@@ -1395,7 +1395,7 @@ class PBXProjParser ( Parser ):
             self.state = 318
             self.pbx_build_file_section()
             self.state = 320
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
             if la_ == 1:
                 self.state = 319
@@ -1403,7 +1403,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 323
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.state = 322
@@ -1417,7 +1417,7 @@ class PBXProjParser ( Parser ):
             self.state = 327
             self.pbx_group_section()
             self.state = 329
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.state = 328
@@ -1425,7 +1425,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 332
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
                 self.state = 331
@@ -1435,7 +1435,7 @@ class PBXProjParser ( Parser ):
             self.state = 334
             self.pbx_project_section()
             self.state = 336
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 self.state = 335
@@ -1443,7 +1443,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 339
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
                 self.state = 338
@@ -1451,7 +1451,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 342
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
             if la_ == 1:
                 self.state = 341
@@ -1461,7 +1461,7 @@ class PBXProjParser ( Parser ):
             self.state = 344
             self.pbx_sources_build_phase_section()
             self.state = 346
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.state = 345
@@ -1469,7 +1469,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 349
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
                 self.state = 348
@@ -1481,6 +1481,7 @@ class PBXProjParser ( Parser ):
             self.state = 352
             self.xc_configuration_list_section()
             self.state = 354
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.REFERENCE:
                 self.state = 353
@@ -2727,6 +2728,7 @@ class PBXProjParser ( Parser ):
             self.state = 475
             self.file_ref()
             self.state = 477
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__94:
                 self.state = 476
@@ -2897,6 +2899,7 @@ class PBXProjParser ( Parser ):
             self.state = 500
             self.files()
             self.state = 502
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__37:
                 self.state = 501
@@ -2996,6 +2999,7 @@ class PBXProjParser ( Parser ):
             self.state = 511
             self.isa_pbx_file_reference()
             self.state = 513
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__29:
                 self.state = 512
@@ -3003,6 +3007,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 516
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__28:
                 self.state = 515
@@ -3010,6 +3015,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 519
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__31:
                 self.state = 518
@@ -3017,6 +3023,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 522
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__30:
                 self.state = 521
@@ -3024,6 +3031,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 525
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__53:
                 self.state = 524
@@ -3031,6 +3039,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 528
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__37:
                 self.state = 527
@@ -3038,6 +3047,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 531
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__38:
                 self.state = 530
@@ -3045,6 +3055,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 534
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__39:
                 self.state = 533
@@ -3052,6 +3063,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 537
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__54:
                 self.state = 536
@@ -3214,6 +3226,7 @@ class PBXProjParser ( Parser ):
             self.state = 556
             self.children()
             self.state = 558
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__32:
                 self.state = 557
@@ -3221,6 +3234,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 561
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__37:
                 self.state = 560
@@ -3228,6 +3242,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 564
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__38:
                 self.state = 563
@@ -3237,6 +3252,7 @@ class PBXProjParser ( Parser ):
             self.state = 566
             self.source_tree()
             self.state = 568
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__33:
                 self.state = 567
@@ -3244,6 +3260,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 571
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__34:
                 self.state = 570
@@ -3422,6 +3439,7 @@ class PBXProjParser ( Parser ):
             self.state = 594
             self.name()
             self.state = 596
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__36:
                 self.state = 595
@@ -3551,6 +3569,7 @@ class PBXProjParser ( Parser ):
             self.state = 614
             self.main_group()
             self.state = 616
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__71:
                 self.state = 615
@@ -3560,6 +3579,7 @@ class PBXProjParser ( Parser ):
             self.state = 618
             self.project_dir_path()
             self.state = 620
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__73:
                 self.state = 619
@@ -3815,6 +3835,7 @@ class PBXProjParser ( Parser ):
             self.state = 654
             self.input_paths()
             self.state = 656
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__37:
                 self.state = 655
@@ -3830,6 +3851,7 @@ class PBXProjParser ( Parser ):
             self.state = 661
             self.shell_script()
             self.state = 663
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__80:
                 self.state = 662
@@ -3974,6 +3996,7 @@ class PBXProjParser ( Parser ):
             self.state = 681
             self.isa_pbx_target_dependency()
             self.state = 683
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__37:
                 self.state = 682
@@ -3981,6 +4004,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 686
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__81:
                 self.state = 685
@@ -4064,6 +4088,7 @@ class PBXProjParser ( Parser ):
             self.state = 697
             self.name()
             self.state = 699
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__38:
                 self.state = 698
@@ -4139,6 +4164,7 @@ class PBXProjParser ( Parser ):
             self.state = 708
             self.isa_xc_build_configuration()
             self.state = 710
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__85:
                 self.state = 709
@@ -4220,6 +4246,7 @@ class PBXProjParser ( Parser ):
             self.state = 722
             self.default_configuration_is_visible()
             self.state = 724
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__93:
                 self.state = 723
@@ -5852,6 +5879,7 @@ class PBXProjParser ( Parser ):
             if not(_la==PBXProjParser.QUOTED_STRING or _la==PBXProjParser.NON_QUOTED_STRING):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
             self.state = 909
             self.match(PBXProjParser.T__3)
@@ -5905,6 +5933,7 @@ class PBXProjParser ( Parser ):
             if not(_la==PBXProjParser.QUOTED_STRING or _la==PBXProjParser.NON_QUOTED_STRING):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
             self.state = 914
             self.match(PBXProjParser.T__3)
@@ -5958,6 +5987,7 @@ class PBXProjParser ( Parser ):
             if not(_la==PBXProjParser.QUOTED_STRING or _la==PBXProjParser.NON_QUOTED_STRING):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
             self.state = 919
             self.match(PBXProjParser.T__3)
@@ -6749,6 +6779,7 @@ class PBXProjParser ( Parser ):
             self.state = 1014
             self.match(PBXProjParser.T__0)
             self.state = 1016
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__98:
                 self.state = 1015
@@ -6756,6 +6787,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1019
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__56:
                 self.state = 1018
@@ -6763,6 +6795,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1022
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__57:
                 self.state = 1021
@@ -6772,6 +6805,7 @@ class PBXProjParser ( Parser ):
             self.state = 1024
             self.last_upgrade_check()
             self.state = 1026
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__59:
                 self.state = 1025
@@ -6779,6 +6813,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1029
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__60:
                 self.state = 1028
@@ -6786,6 +6821,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1032
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__61:
                 self.state = 1031
@@ -7156,6 +7192,7 @@ class PBXProjParser ( Parser ):
             self.state = 1076
             self.match(PBXProjParser.T__0)
             self.state = 1078
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__62:
                 self.state = 1077
@@ -7163,7 +7200,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1081
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,67,self._ctx)
             if la_ == 1:
                 self.state = 1080
@@ -7171,6 +7208,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1084
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__64:
                 self.state = 1083
@@ -7178,6 +7216,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1087
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__56:
                 self.state = 1086
@@ -7185,6 +7224,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1090
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__65:
                 self.state = 1089
@@ -7192,6 +7232,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1093
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__95:
                 self.state = 1092
@@ -7199,6 +7240,7 @@ class PBXProjParser ( Parser ):
 
 
             self.state = 1096
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PBXProjParser.T__63:
                 self.state = 1095
@@ -7747,7 +7789,7 @@ class PBXProjParser ( Parser ):
         self.enterRule(localctx, 230, self.RULE_project_references)
         try:
             self.state = 1168
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,73,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -8634,7 +8676,7 @@ class PBXProjParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 1296
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,77,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -9136,6 +9178,7 @@ class PBXProjParser ( Parser ):
             if not(((((_la - 107)) & ~0x3f) == 0 and ((1 << (_la - 107)) & ((1 << (PBXProjParser.QUOTED_STRING - 107)) | (1 << (PBXProjParser.NON_QUOTED_STRING - 107)) | (1 << (PBXProjParser.VARIABLE - 107)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
+                self._errHandler.reportMatch(self)
                 self.consume()
         except RecognitionException as re:
             localctx.exception = re
