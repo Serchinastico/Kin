@@ -13,7 +13,7 @@ Have you ever found yourself undoing a merge due to a broken Xcode build? Then K
 How does it work?
 -----------------
 
-Kin is just a syntax checker built with ANTLR 4 with a very thin layer to be usable from command line.
+Kin is just a syntax checker built with ANTLR 4 with a very thin layer to be usable from command line. On the fly syntax checking integration for text editors and IDEs is a work in progress (see the "Text editor/IDE integration" section below).
 
 Usage
 -----------------
@@ -50,6 +50,15 @@ Optionally, you can provide the location of your project.pbxproj to Kin:
 $> kin myProject/myProject.xcodeproj/project.pbxproj
 CORRECT
 ```
+
+Text editor/IDE integration
+---------------------------
+
+The following text editor and IDE integration packages are available:
+
+Emacs
+
+- [flycheck-pbxproj](https://github.com/danielmartin/flycheck-pbxproj)
 
 Do you want to contribute?
 --------------------------
