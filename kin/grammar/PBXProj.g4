@@ -789,6 +789,7 @@ REFERENCE
       HEX HEX HEX HEX
       HEX HEX HEX HEX
       HEX HEX HEX HEX
+    | ('FR_'|'G_') (HEX)+
     ;
 
 QUOTED_STRING
