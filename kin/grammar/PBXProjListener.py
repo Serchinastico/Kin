@@ -1066,12 +1066,30 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#input_file_list_paths.
+    def enterInput_file_list_paths(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#input_file_list_paths.
+    def exitInput_file_list_paths(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#input_paths.
     def enterInput_paths(self, ctx):
         pass
 
     # Exit a parse tree produced by PBXProjParser#input_paths.
     def exitInput_paths(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#output_file_list_paths.
+    def enterOutput_file_list_paths(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#output_file_list_paths.
+    def exitOutput_file_list_paths(self, ctx):
         pass
 
 

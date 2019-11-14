@@ -282,8 +282,10 @@ pbx_shell_script_build_phase
         isa_pbx_shell_script_build_phase
         build_action_mask
         files
+        input_file_list_paths?
         input_paths
         name?
+        output_file_list_paths?
         output_paths
         run_only_for_deployment_postprocessing
         shell_path
@@ -662,8 +664,16 @@ targets
     : 'targets' '=' reference_list ';'
     ;
 
+input_file_list_paths
+    : 'inputFileListPaths' '=' any_string_list ';'
+    ;
+
 input_paths
     : 'inputPaths' '=' any_string_list ';'
+    ;
+
+output_file_list_paths
+    : 'outputFileListPaths' '=' any_string_list ';'
     ;
 
 output_paths
