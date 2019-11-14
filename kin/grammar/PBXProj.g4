@@ -562,6 +562,7 @@ xc_language_specification_identifier
 attributes
     : 'attributes' '=' '{'
         class_prefix?
+        default_build_system_type_for_workspace?
         last_swift_migration?
         last_swift_update_check?
         last_upgrade_check
@@ -573,6 +574,10 @@ attributes
 
 last_swift_migration
     : 'LastSwiftMigration' '=' NON_QUOTED_STRING ';'
+    ;
+
+default_build_system_type_for_workspace
+    : 'DefaultBuildSystemTypeForWorkspace' '=' NON_QUOTED_STRING ';'
     ;
 
 last_swift_update_check

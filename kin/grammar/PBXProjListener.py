@@ -886,6 +886,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#default_build_system_type_for_workspace.
+    def enterDefault_build_system_type_for_workspace(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#default_build_system_type_for_workspace.
+    def exitDefault_build_system_type_for_workspace(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#last_swift_update_check.
     def enterLast_swift_update_check(self, ctx):
         pass
