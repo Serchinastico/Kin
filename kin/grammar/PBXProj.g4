@@ -677,7 +677,7 @@ output_file_list_paths
     ;
 
 output_paths
-    : 'outputPaths' '=' non_quoted_strings_list ';'
+    : 'outputPaths' '=' any_string_list ';'
     ;
 
 shell_path
