@@ -1,1 +1,1 @@
-line 400:3 mismatched input ')' expecting 'inputPaths'
+line 400:3 mismatched input ')' expecting {'inputFileListPaths', 'inputPaths'}

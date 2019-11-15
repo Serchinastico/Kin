@@ -282,8 +282,10 @@ pbx_shell_script_build_phase
         isa_pbx_shell_script_build_phase
         build_action_mask
         files
+        input_file_list_paths?
         input_paths
         name?
+        output_file_list_paths?
         output_paths
         run_only_for_deployment_postprocessing
         shell_path
@@ -560,6 +562,7 @@ xc_language_specification_identifier
 attributes
     : 'attributes' '=' '{'
         class_prefix?
+        default_build_system_type_for_workspace?
         last_swift_migration?
         last_swift_update_check?
         last_upgrade_check
@@ -571,6 +574,10 @@ attributes
 
 last_swift_migration
     : 'LastSwiftMigration' '=' NON_QUOTED_STRING ';'
+    ;
+
+default_build_system_type_for_workspace
+    : 'DefaultBuildSystemTypeForWorkspace' '=' NON_QUOTED_STRING ';'
     ;
 
 last_swift_update_check
@@ -662,12 +669,20 @@ targets
     : 'targets' '=' reference_list ';'
     ;
 
+input_file_list_paths
+    : 'inputFileListPaths' '=' any_string_list ';'
+    ;
+
 input_paths
     : 'inputPaths' '=' any_string_list ';'
     ;
 
+output_file_list_paths
+    : 'outputFileListPaths' '=' any_string_list ';'
+    ;
+
 output_paths
-    : 'outputPaths' '=' non_quoted_strings_list ';'
+    : 'outputPaths' '=' any_string_list ';'
     ;
 
 shell_path
@@ -789,6 +804,7 @@ REFERENCE
       HEX HEX HEX HEX
       HEX HEX HEX HEX
       HEX HEX HEX HEX
+    | ('FR_'|'G_') (HEX)+
     ;
 
 QUOTED_STRING
