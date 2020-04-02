@@ -757,7 +757,7 @@ default_configuration_is_visible
     ;
 
 default_configuration_name
-    : 'defaultConfigurationName' '=' NON_QUOTED_STRING ';'
+    : 'defaultConfigurationName' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 settings
