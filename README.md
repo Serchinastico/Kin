@@ -65,7 +65,11 @@ Do you want to contribute?
 
 Feel free to add any useful feature to Kin, we will be glad to improve it with your help.
 
-Keep in mind that your PRs **must** be validated by Travis-CI. Please, run your tests locally with `./tests/tester.py` before submiting your code.
+If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). This project is quite old and we are still using Python 2 so, if you have `antlr` installed in your system, go to the `kin/grammar` directory and run `antlr PBXProj.g4 -Dlanguage=Python2` to compile it.
+
+To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
+
+Keep in mind that your PRs **must** be validated by Travis-CI.
 
 License
 -------
