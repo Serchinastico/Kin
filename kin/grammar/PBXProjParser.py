@@ -612,21 +612,21 @@ def serializedATN():
         buf.write(u"\2\2\u0536\u0115\3\2\2\2\u0537\u0538\7b\2\2\u0538\u0539")
         buf.write(u"\7\5\2\2\u0539\u053a\7q\2\2\u053a\u053b\7\6\2\2\u053b")
         buf.write(u"\u0117\3\2\2\2\u053c\u053d\7c\2\2\u053d\u053e\7\5\2\2")
-        buf.write(u"\u053e\u053f\7q\2\2\u053f\u0540\7\6\2\2\u0540\u0119\3")
-        buf.write(u"\2\2\2\u0541\u0542\7d\2\2\u0542\u0543\7\5\2\2\u0543\u0547")
-        buf.write(u"\7\3\2\2\u0544\u0546\5\u0112\u008a\2\u0545\u0544\3\2")
-        buf.write(u"\2\2\u0546\u0549\3\2\2\2\u0547\u0545\3\2\2\2\u0547\u0548")
-        buf.write(u"\3\2\2\2\u0548\u054a\3\2\2\2\u0549\u0547\3\2\2\2\u054a")
-        buf.write(u"\u054b\7\4\2\2\u054b\u054c\7\6\2\2\u054c\u011b\3\2\2")
-        buf.write(u"\2\u054d\u054e\7e\2\2\u054e\u054f\7\5\2\2\u054f\u0553")
-        buf.write(u"\7\3\2\2\u0550\u0552\5\u0112\u008a\2\u0551\u0550\3\2")
-        buf.write(u"\2\2\u0552\u0555\3\2\2\2\u0553\u0551\3\2\2\2\u0553\u0554")
-        buf.write(u"\3\2\2\2\u0554\u0556\3\2\2\2\u0555\u0553\3\2\2\2\u0556")
-        buf.write(u"\u0557\7\4\2\2\u0557\u0558\7\6\2\2\u0558\u011d\3\2\2")
-        buf.write(u"\2\u0559\u055a\7f\2\2\u055a\u055b\7\5\2\2\u055b\u055c")
-        buf.write(u"\7o\2\2\u055c\u055d\7\6\2\2\u055d\u011f\3\2\2\2\u055e")
-        buf.write(u"\u055f\7g\2\2\u055f\u0560\7\5\2\2\u0560\u0561\7q\2\2")
-        buf.write(u"\u0561\u0562\7\6\2\2\u0562\u0121\3\2\2\2\u0563\u0564")
+        buf.write(u"\u053e\u053f\t\2\2\2\u053f\u0540\7\6\2\2\u0540\u0119")
+        buf.write(u"\3\2\2\2\u0541\u0542\7d\2\2\u0542\u0543\7\5\2\2\u0543")
+        buf.write(u"\u0547\7\3\2\2\u0544\u0546\5\u0112\u008a\2\u0545\u0544")
+        buf.write(u"\3\2\2\2\u0546\u0549\3\2\2\2\u0547\u0545\3\2\2\2\u0547")
+        buf.write(u"\u0548\3\2\2\2\u0548\u054a\3\2\2\2\u0549\u0547\3\2\2")
+        buf.write(u"\2\u054a\u054b\7\4\2\2\u054b\u054c\7\6\2\2\u054c\u011b")
+        buf.write(u"\3\2\2\2\u054d\u054e\7e\2\2\u054e\u054f\7\5\2\2\u054f")
+        buf.write(u"\u0553\7\3\2\2\u0550\u0552\5\u0112\u008a\2\u0551\u0550")
+        buf.write(u"\3\2\2\2\u0552\u0555\3\2\2\2\u0553\u0551\3\2\2\2\u0553")
+        buf.write(u"\u0554\3\2\2\2\u0554\u0556\3\2\2\2\u0555\u0553\3\2\2")
+        buf.write(u"\2\u0556\u0557\7\4\2\2\u0557\u0558\7\6\2\2\u0558\u011d")
+        buf.write(u"\3\2\2\2\u0559\u055a\7f\2\2\u055a\u055b\7\5\2\2\u055b")
+        buf.write(u"\u055c\7o\2\2\u055c\u055d\7\6\2\2\u055d\u011f\3\2\2\2")
+        buf.write(u"\u055e\u055f\7g\2\2\u055f\u0560\7\5\2\2\u0560\u0561\7")
+        buf.write(u"q\2\2\u0561\u0562\7\6\2\2\u0562\u0121\3\2\2\2\u0563\u0564")
         buf.write(u"\7h\2\2\u0564\u0565\7\5\2\2\u0565\u0566\5\u0124\u0093")
         buf.write(u"\2\u0566\u0567\7\6\2\2\u0567\u0123\3\2\2\2\u0568\u0569")
         buf.write(u"\t\3\2\2\u0569\u0125\3\2\2\2U\u0144\u0148\u014b\u0151")
@@ -9035,6 +9035,9 @@ class PBXProjParser ( Parser ):
             super(PBXProjParser.Default_configuration_nameContext, self).__init__(parent, invokingState)
             self.parser = parser
 
+        def QUOTED_STRING(self):
+            return self.getToken(PBXProjParser.QUOTED_STRING, 0)
+
         def NON_QUOTED_STRING(self):
             return self.getToken(PBXProjParser.NON_QUOTED_STRING, 0)
 
@@ -9056,6 +9059,7 @@ class PBXProjParser ( Parser ):
 
         localctx = PBXProjParser.Default_configuration_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 278, self.RULE_default_configuration_name)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1338
@@ -9063,7 +9067,12 @@ class PBXProjParser ( Parser ):
             self.state = 1339
             self.match(PBXProjParser.T__2)
             self.state = 1340
-            self.match(PBXProjParser.NON_QUOTED_STRING)
+            _la = self._input.LA(1)
+            if not(_la==PBXProjParser.QUOTED_STRING or _la==PBXProjParser.NON_QUOTED_STRING):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
             self.state = 1341
             self.match(PBXProjParser.T__3)
         except RecognitionException as re:
