@@ -50,6 +50,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A17EE1AB211A62BB00811AE1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C7CBAA2196521000315028 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Test;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D90B4EBF4714D2C4F8805EE /* Pods_MitsumoriTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MitsumoriTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		274E42B0193BA6FEFA8FD71C /* Pods-MitsumoriUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MitsumoriUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MitsumoriUITests/Pods-MitsumoriUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -341,8 +363,8 @@
 			);
 			mainGroup = 49FBBF851C10C2A200A1A4BB;
 			productRefGroup = 49FBBF8F1C10C2A200A1A4BB /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
+			projectDirPath = Test;
+			projectRoot = Test;
 			targets = (
 				49FBBF8D1C10C2A200A1A4BB /* Mitsumori */,
 				4973659B1C19BC6E00837617 /* MitsumoriUITests */,
