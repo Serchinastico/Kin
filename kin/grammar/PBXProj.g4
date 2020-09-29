@@ -50,6 +50,8 @@ objects
         pbx_variant_group_section?
         xc_build_configuration_section
         xc_configuration_list_section
+        xc_remote_swift_package_reference_section?
+        xc_swift_package_product_dependency_section?
         xc_version_group_section?
       '}' ';'
     ;
@@ -130,6 +132,14 @@ xc_build_configuration_section
 
 xc_configuration_list_section
     : (xc_configuration_list)+
+    ;
+
+xc_remote_swift_package_reference_section
+    : (xc_remote_swift_package_reference)+
+    ;
+
+xc_swift_package_product_dependency_section
+    : (xc_swift_package_product_dependency)+
     ;
 
 xc_version_group_section
@@ -236,6 +246,7 @@ pbx_native_target
         dependencies
         name
         product_install_path?
+        package_product_dependencies?
         product_name
         product_reference
         product_type
@@ -252,6 +263,7 @@ pbx_project
         has_scanned_for_encodings
         known_regions
         main_group
+        package_references?
         product_ref_group?
         project_dir_path
         project_references?
@@ -342,6 +354,22 @@ xc_configuration_list
       '}' ';'
     ;
 
+xc_remote_swift_package_reference
+    : REFERENCE '=' '{'
+        isa_xc_remote_swift_package_reference
+        repository_url
+        requirement
+      '}' ';'
+    ;
+
+xc_swift_package_product_dependency
+    : REFERENCE '=' '{'
+        isa_xc_swift_package_product_dependency
+        package
+        product_name
+      '}' ';'
+    ;
+
 xc_version_group
     : REFERENCE '=' '{'
         isa_xc_version_group
@@ -427,6 +455,14 @@ isa_xc_configuration_list
     : ISA '=' 'XCConfigurationList' ';'
     ;
 
+isa_xc_remote_swift_package_reference
+    : ISA '=' 'XCRemoteSwiftPackageReference' ';'
+    ;
+
+isa_xc_swift_package_product_dependency
+    : ISA '=' 'XCSwiftPackageProductDependency' ';'
+    ;
+
 isa_xc_version_group
     : ISA '=' 'XCVersionGroup' ';'
     ;
@@ -435,6 +471,7 @@ isa_xc_version_group
 
 file_ref
     : 'fileRef' '=' REFERENCE ';'
+    | 'productRef' '=' REFERENCE ';'
     ;
 
 container_portal
@@ -487,6 +524,22 @@ children
 
 product_install_path
     : 'productInstallPath' '=' QUOTED_STRING ';'
+    ;
+
+repository_url
+    : 'repositoryURL' '=' QUOTED_STRING ';'
+    ;
+
+requirement
+    : 'requirement' '=' '{' key_value* '}' ';'
+    ;
+
+package
+    : 'package' '=' REFERENCE ';'
+    ;
+
+package_product_dependencies
+    : 'packageProductDependencies' '=' reference_list ';'
     ;
 
 name
@@ -656,6 +709,10 @@ main_group
 
 product_ref_group
     : 'productRefGroup' '=' REFERENCE ';'
+    ;
+
+package_references
+    : 'packageReferences' '=' reference_list ';'
     ;
 
 project_dir_path
