@@ -80,10 +80,10 @@ cd kin/grammar
 bash /usr/local/Cellar/antlr/4.6/bin/antlr4 PBXProj.g4 -Dlanguage=Python2
 ```
 
-The updated file can optionally be copied with this command for testing:
+The updated files can optionally be copied with this command for testing:
 
 ```bash
-cp PBXProjParser.py path/to/site-packages/kin/grammar/PBXProjParser.py
+cp * path/to/site-packages/kin/grammar/
 ```
 
 To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
