@@ -59,7 +59,7 @@
 		4959011A1C58F8AB000EE944 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		4973659C1C19BC6E00837617 /* MitsumoriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MitsumoriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4973659E1C19BC6E00837617 /* MitsumoriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MitsumoriUITests.swift; sourceTree = "<group>"; };
-		497365A01C19BC6E00837617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497365A01C19BC6E00837617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		497365A61C19BC9500837617 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Pods/../build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		497365A81C19BD5A00837617 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Pods/../build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		49C4EEDD1C5E152800B38CD9 /* SelectedCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCardViewModel.swift; sourceTree = "<group>"; };
