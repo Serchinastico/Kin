@@ -653,7 +653,7 @@ product_ref_group
     ;
 
 project_dir_path
-    : 'projectDirPath' '=' QUOTED_STRING ';'
+    : 'projectDirPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 project_references
@@ -662,7 +662,7 @@ project_references
     ;
 
 project_root
-    : 'projectRoot' '=' QUOTED_STRING ';'
+    : 'projectRoot' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 targets
@@ -724,7 +724,7 @@ build_settings
     ;
 
 dst_path
-    : 'dstPath' '=' QUOTED_STRING ';'
+    : 'dstPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 dst_subfolder_spec

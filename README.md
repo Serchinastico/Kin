@@ -65,7 +65,26 @@ Do you want to contribute?
 
 Feel free to add any useful feature to Kin, we will be glad to improve it with your help.
 
-If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). This project is quite old and we are still using Python 2 so, if you have `antlr` installed in your system, go to the `kin/grammar` directory and run `antlr PBXProj.g4 -Dlanguage=Python2` to compile it.
+If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). ANLTR version 4.6 can be installed with the following commands (the current version is 4.8 but is not compatible):
+
+```bash
+curl -O https://raw.githubusercontent.com/Homebrew/homebrew-core/92cd4dbae4ae77853e3693b4eb3c24d71855103f/Formula/antlr.rb
+sed -i -e 's/EOS.undent/EOS/g' antlr.rb
+brew install antlr.rb
+```
+
+After changes have been made to the `PBXProj.g4` file it can be compiled with:
+
+```bash
+cd kin/grammar
+bash /usr/local/Cellar/antlr/4.6/bin/antlr4 PBXProj.g4 -Dlanguage=Python2
+```
+
+The updated files can optionally be copied with this command for testing:
+
+```bash
+cp * path/to/site-packages/kin/grammar/
+```
 
 To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
 
