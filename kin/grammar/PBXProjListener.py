@@ -229,6 +229,24 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#xc_remote_swift_package_reference_section.
+    def enterXc_remote_swift_package_reference_section(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_remote_swift_package_reference_section.
+    def exitXc_remote_swift_package_reference_section(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#xc_swift_package_product_dependency_section.
+    def enterXc_swift_package_product_dependency_section(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_swift_package_product_dependency_section.
+    def exitXc_swift_package_product_dependency_section(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#xc_version_group_section.
     def enterXc_version_group_section(self, ctx):
         pass
@@ -397,6 +415,24 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#xc_configuration_list.
     def exitXc_configuration_list(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#xc_remote_swift_package_reference.
+    def enterXc_remote_swift_package_reference(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_remote_swift_package_reference.
+    def exitXc_remote_swift_package_reference(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#xc_swift_package_product_dependency.
+    def enterXc_swift_package_product_dependency(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_swift_package_product_dependency.
+    def exitXc_swift_package_product_dependency(self, ctx):
         pass
 
 
@@ -571,6 +607,24 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#isa_xc_remote_swift_package_reference.
+    def enterIsa_xc_remote_swift_package_reference(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_xc_remote_swift_package_reference.
+    def exitIsa_xc_remote_swift_package_reference(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_xc_swift_package_product_dependency.
+    def enterIsa_xc_swift_package_product_dependency(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_xc_swift_package_product_dependency.
+    def exitIsa_xc_swift_package_product_dependency(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#isa_xc_version_group.
     def enterIsa_xc_version_group(self, ctx):
         pass
@@ -703,6 +757,42 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#product_install_path.
     def exitProduct_install_path(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#repository_url.
+    def enterRepository_url(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#repository_url.
+    def exitRepository_url(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#requirement.
+    def enterRequirement(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#requirement.
+    def exitRequirement(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#package.
+    def enterPackage(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#package.
+    def exitPackage(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#package_product_dependencies.
+    def enterPackage_product_dependencies(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#package_product_dependencies.
+    def exitPackage_product_dependencies(self, ctx):
         pass
 
 
@@ -1045,6 +1135,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#product_ref_group.
     def exitProduct_ref_group(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#package_references.
+    def enterPackage_references(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#package_references.
+    def exitPackage_references(self, ctx):
         pass
 
 
