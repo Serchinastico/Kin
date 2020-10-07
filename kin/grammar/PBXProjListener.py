@@ -868,6 +868,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#plist_structure_definition_identifier.
+    def enterPlist_structure_definition_identifier(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#plist_structure_definition_identifier.
+    def exitPlist_structure_definition_identifier(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#attributes.
     def enterAttributes(self, ctx):
         pass

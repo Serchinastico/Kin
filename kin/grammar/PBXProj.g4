@@ -189,6 +189,7 @@ pbx_file_reference
         line_ending?
         name?
         path?
+        plist_structure_definition_identifier?
         source_tree?
         xc_language_specification_identifier?
       '}' ';'
@@ -557,6 +558,10 @@ line_ending
 
 xc_language_specification_identifier
     : 'xcLanguageSpecificationIdentifier' '=' any_string ';'
+    ;
+
+plist_structure_definition_identifier
+    : 'plistStructureDefinitionIdentifier' '=' any_string ';'
     ;
 
 attributes
