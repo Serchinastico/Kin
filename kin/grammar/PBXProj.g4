@@ -192,6 +192,7 @@ pbx_file_reference
         plist_structure_definition_identifier?
         source_tree?
         xc_language_specification_identifier?
+        uses_tabs?
       '}' ';'
     ;
 
