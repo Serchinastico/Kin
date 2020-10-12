@@ -633,7 +633,7 @@ def serializedATN():
         buf.write(u"\u010f\3\2\2\2\u0540\u0541\7]\2\2\u0541\u0542\7\5\2\2")
         buf.write(u"\u0542\u0543\7z\2\2\u0543\u0544\7\6\2\2\u0544\u0111\3")
         buf.write(u"\2\2\2\u0545\u0546\7^\2\2\u0546\u0547\7\5\2\2\u0547\u0548")
-        buf.write(u"\7y\2\2\u0548\u0549\7\6\2\2\u0549\u0113\3\2\2\2\u054a")
+        buf.write(u"\t\2\2\2\u0548\u0549\7\6\2\2\u0549\u0113\3\2\2\2\u054a")
         buf.write(u"\u054b\7_\2\2\u054b\u054c\7\5\2\2\u054c\u054d\7z\2\2")
         buf.write(u"\u054d\u054e\7\6\2\2\u054e\u0115\3\2\2\2\u054f\u0550")
         buf.write(u"\7`\2\2\u0550\u0551\7\5\2\2\u0551\u0552\7x\2\2\u0552")
@@ -9093,6 +9093,9 @@ class PBXProjParser ( Parser ):
         def QUOTED_STRING(self):
             return self.getToken(PBXProjParser.QUOTED_STRING, 0)
 
+        def NON_QUOTED_STRING(self):
+            return self.getToken(PBXProjParser.NON_QUOTED_STRING, 0)
+
         def getRuleIndex(self):
             return PBXProjParser.RULE_shell_script
 
@@ -9111,6 +9114,7 @@ class PBXProjParser ( Parser ):
 
         localctx = PBXProjParser.Shell_scriptContext(self, self._ctx, self.state)
         self.enterRule(localctx, 272, self.RULE_shell_script)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1347
@@ -9118,7 +9122,12 @@ class PBXProjParser ( Parser ):
             self.state = 1348
             self.match(PBXProjParser.T__2)
             self.state = 1349
-            self.match(PBXProjParser.QUOTED_STRING)
+            _la = self._input.LA(1)
+            if not(_la==PBXProjParser.QUOTED_STRING or _la==PBXProjParser.NON_QUOTED_STRING):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
             self.state = 1350
             self.match(PBXProjParser.T__3)
         except RecognitionException as re:
