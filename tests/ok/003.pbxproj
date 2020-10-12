@@ -426,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mitsumori/Pods-Mitsumori-resources.sh\"\n";
+			shellScript = /bin/echo;
 			showEnvVarsInLog = 0;
 		};
 		77A1B287EDAA82F36793B49B /* Copy Pods Resources */ = {
