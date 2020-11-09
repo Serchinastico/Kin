@@ -753,7 +753,7 @@ shell_path
     ;
 
 shell_script
-    : 'shellScript' '=' QUOTED_STRING ';'
+    : 'shellScript' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 show_env_vars_in_log
