@@ -1,4 +1,4 @@
-# Generated from PBXProj.g4 by ANTLR 4.6
+# Generated from kin/grammar/PBXProj.g4 by ANTLR 4.6
 from antlr4 import *
 
 # This class defines a complete listener for a parse tree produced by PBXProjParser.
@@ -778,12 +778,12 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PBXProjParser#package.
-    def enterPackage(self, ctx):
+    # Enter a parse tree produced by PBXProjParser#xc_package.
+    def enterXc_package(self, ctx):
         pass
 
-    # Exit a parse tree produced by PBXProjParser#package.
-    def exitPackage(self, ctx):
+    # Exit a parse tree produced by PBXProjParser#xc_package.
+    def exitXc_package(self, ctx):
         pass
 
 

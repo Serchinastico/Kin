@@ -19,7 +19,7 @@ root_element
     ;
 
 archive_version
-    : ARCHIVE_VERSION '=' NON_QUOTED_STRING ';'
+    : 'archiveVersion' '=' NUMBER ';'
     ;
 
 classes
@@ -27,7 +27,7 @@ classes
     ;
 
 object_version
-    : OBJECT_VERSION '=' NON_QUOTED_STRING ';'
+    : 'objectVersion' '=' NUMBER ';'
     ;
 
 objects
@@ -365,7 +365,7 @@ xc_remote_swift_package_reference
 xc_swift_package_product_dependency
     : REFERENCE '=' '{'
         isa_xc_swift_package_product_dependency
-        package
+        xc_package
         product_name
       '}' ';'
     ;
@@ -479,7 +479,7 @@ container_portal
     ;
 
 proxy_type
-    : 'proxyType' '=' NON_QUOTED_STRING ';'
+    : 'proxyType' '=' NUMBER ';'
     ;
 
 remote_global_id_string
@@ -491,7 +491,7 @@ remote_info
     ;
 
 file_encoding
-    : 'fileEncoding' '=' NON_QUOTED_STRING ';'
+    : 'fileEncoding' '=' NUMBER ';'
     ;
 
 explicit_file_type
@@ -503,19 +503,19 @@ last_known_file_type
     ;
 
 include_in_index
-    : 'includeInIndex' '=' NON_QUOTED_STRING ';'
+    : 'includeInIndex' '=' NUMBER ';'
     ;
 
 indent_width
-    : 'indentWidth' '=' NON_QUOTED_STRING ';'
+    : 'indentWidth' '=' NUMBER ';'
     ;
 
 tab_width
-    : 'tabWidth' '=' NON_QUOTED_STRING ';' // NUMBER
+    : 'tabWidth' '=' NUMBER ';'
     ;
 
 uses_tabs
-    : 'usesTabs' '=' NON_QUOTED_STRING ';' // NUMBER
+    : 'usesTabs' '=' NUMBER ';'
     ;
 
 children
@@ -534,7 +534,7 @@ requirement
     : 'requirement' '=' '{' key_value* '}' ';'
     ;
 
-package
+xc_package
     : 'package' '=' REFERENCE ';'
     ;
 
@@ -555,7 +555,7 @@ source_tree
     ;
 
 build_action_mask
-    : 'buildActionMask' '=' NON_QUOTED_STRING ';'
+    : 'buildActionMask' '=' NUMBER ';'
     ;
 
 files
@@ -563,7 +563,7 @@ files
     ;
 
 run_only_for_deployment_postprocessing
-    : 'runOnlyForDeploymentPostprocessing' '=' NON_QUOTED_STRING ';'
+    : 'runOnlyForDeploymentPostprocessing' '=' NUMBER ';'
     ;
 
 reference_list
@@ -607,7 +607,7 @@ product_type
     ;
 
 line_ending
-    : 'lineEnding' '=' NON_QUOTED_STRING ';' // NUMBER
+    : 'lineEnding' '=' NUMBER ';'
     ;
 
 xc_language_specification_identifier
@@ -632,7 +632,7 @@ attributes
     ;
 
 last_swift_migration
-    : 'LastSwiftMigration' '=' NON_QUOTED_STRING ';'
+    : 'LastSwiftMigration' '=' NUMBER ';'
     ;
 
 default_build_system_type_for_workspace
@@ -640,11 +640,11 @@ default_build_system_type_for_workspace
     ;
 
 last_swift_update_check
-    : 'LastSwiftUpdateCheck' '=' NON_QUOTED_STRING ';'
+    : 'LastSwiftUpdateCheck' '=' NUMBER ';'
     ;
 
 last_upgrade_check
-    : 'LastUpgradeCheck' '=' NON_QUOTED_STRING ';'
+    : 'LastUpgradeCheck' '=' NUMBER ';'
     ;
 
 last_testing_upgrade_check
@@ -696,7 +696,7 @@ development_region
     ;
 
 has_scanned_for_encodings
-    : 'hasScannedForEncodings' '=' NON_QUOTED_STRING ';'
+    : 'hasScannedForEncodings' '=' NUMBER ';'
     ;
 
 known_regions
@@ -757,7 +757,7 @@ shell_script
     ;
 
 show_env_vars_in_log
-    : 'showEnvVarsInLog' '=' NON_QUOTED_STRING ';'
+    : 'showEnvVarsInLog' '=' NUMBER ';'
     ;
 
 target
@@ -791,7 +791,7 @@ dst_path
     ;
 
 dst_subfolder_spec
-    : 'dstSubfolderSpec' '=' NON_QUOTED_STRING ';'
+    : 'dstSubfolderSpec' '=' NUMBER ';'
     ;
 
 project_references_list
@@ -807,6 +807,8 @@ project_references_list_element
 
 key_value
     : any_string '=' any_string ';'
+    | any_string '=' NUMBER ';'
+    | any_string '=' ALPHA_NUMERIC ';'
     | any_string '=' '{' key_value '}' ';'
     | any_string '=' '(' (any_string ',')* ')' ';'
     ;
@@ -816,7 +818,7 @@ build_configurations
     ;
 
 default_configuration_is_visible
-    : 'defaultConfigurationIsVisible' '=' NON_QUOTED_STRING ';'
+    : 'defaultConfigurationIsVisible' '=' NUMBER ';'
     ;
 
 default_configuration_name
@@ -846,19 +848,26 @@ class_prefix
 any_string
     : NON_QUOTED_STRING
     | QUOTED_STRING
+    | NUMBER
     | VARIABLE
     ;
+
 
 // LEXER
 
 // Keywords
 
-ARCHIVE_VERSION: 'archiveVersion';
 CLASSES: 'classes';
 ISA: 'isa';
-OBJECT_VERSION: 'objectVersion';
 OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
+NUMBER: ('0'..'9')+;
+DOT: '.';
+ALPHA_NUMERIC: [0-9a-zA-Z];
+ALPHA_NUMERIC_CAP: [0-9A-Z];
+DASH: '-';
+UNDERSCORE: '_';
+SLASH: '/';
 
 REFERENCE
     : HEX HEX HEX HEX
@@ -868,6 +877,15 @@ REFERENCE
       HEX HEX HEX HEX
       HEX HEX HEX HEX
     | ('FR_'|'G_') (HEX)+
+    // Carthage references contain non-hex characters
+    // This is a problem because if we ever find a name 24 chars long that uses only alpha numeric values with
+    // capitalized letters, the lexer will find a REFERENCE when in reality we may just need a NON_QUOTED_STRING
+    | ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
     ;
 
 QUOTED_STRING
@@ -875,13 +893,9 @@ QUOTED_STRING
     | '"' '"'
     ;
 
-NON_QUOTED_STRING
-    : [0-9a-zA-Z_\\-/\\.]+
-    ;
+NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT)+;
 
-VARIABLE
-    : '$' NON_QUOTED_STRING
-    ;
+VARIABLE: '$' NON_QUOTED_STRING;
 
 fragment HEX
     : [0-9a-fA-F]
@@ -894,13 +908,8 @@ fragment QUOTED_STRING_CHARACTER
 
 // Whitespace & comments
 
-WS  :  [ \t\r\n\u000C]+ -> skip
-    ;
+WS:  [ \t\r\n\u000C]+ -> skip;
 
-COMMENT
-    :   '/*' .*? '*/' -> skip
-    ;
+COMMENT: '/*' .*? '*/' -> skip;
 
-LINE_COMMENT
-    :   '//' ~[\r\n]* -> skip
-    ;
+LINE_COMMENT: '//' ~[\r\n]* -> skip;
