@@ -625,7 +625,7 @@ attributes
         last_swift_migration?
         last_swift_update_check?
         build_targets_in_parallel?
-        last_upgrade_check
+        last_upgrade_check?
         last_testing_upgrade_check?
         organization_name?
         target_attributes?
