@@ -197,12 +197,14 @@ pbx_file_reference
         explicit_file_type?
         file_encoding?
         include_in_index?
+        indent_width?
         last_known_file_type?
         line_ending?
         name?
         path?
         plist_structure_definition_identifier?
         source_tree?
+        tab_width?
         xc_language_specification_identifier?
         uses_tabs?
       '}' ';'
