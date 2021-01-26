@@ -279,6 +279,7 @@ pbx_reference_proxy
     : REFERENCE '=' '{'
         isa_pbx_reference_proxy
         file_type
+        name?
         path
         remote_ref
         source_tree
