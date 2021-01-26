@@ -33,19 +33,20 @@ object_version
 objects
     : OBJECTS '=' '{'
         pbx_aggregate_target_section?
-        pbx_build_file_section
+        pbx_build_file_section?
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
         pbx_file_reference_section
-        pbx_frameworks_build_phase_section
+        pbx_frameworks_build_phase_section?
         pbx_group_section
         pbx_headers_build_phase_section?
+        pbx_legacy_target_section?
         pbx_native_target_section?
         pbx_project_section
         pbx_reference_proxy_section?
         pbx_resources_build_phase_section?
         pbx_shell_script_build_phase_section?
-        pbx_sources_build_phase_section
+        pbx_sources_build_phase_section?
         pbx_target_dependency_section?
         pbx_variant_group_section?
         xc_build_configuration_section
@@ -96,6 +97,10 @@ pbx_headers_build_phase_section
 
 pbx_native_target_section
     : (pbx_native_target)+
+    ;
+
+pbx_legacy_target_section
+    : (pbx_legacy_target)+
     ;
 
 pbx_project_section
@@ -255,6 +260,21 @@ pbx_native_target
         product_name
         product_reference
         product_type
+      '}' ';'
+    ;
+
+pbx_legacy_target
+    : REFERENCE '=' '{'
+        isa_pbx_legacy_target
+        build_arguments_string
+        build_configuration_list
+        build_phases
+        build_tool_path
+        build_working_directory
+        dependencies
+        name
+        pass_build_settings_in_environment
+        product_name
       '}' ';'
     ;
 
@@ -425,6 +445,10 @@ isa_pbx_header_build_phase
 
 isa_pbx_native_target
     : ISA '=' 'PBXNativeTarget' ';'
+    ;
+
+isa_pbx_legacy_target
+    : ISA '=' 'PBXLegacyTarget' ';'
     ;
 
 isa_pbx_project
@@ -607,6 +631,22 @@ build_phases
 
 build_rules
     : 'buildRules' '=' reference_list ';'
+    ;
+
+build_arguments_string
+    : 'buildArgumentsString' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    ;
+
+build_tool_path
+    : 'buildToolPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    ;
+
+build_working_directory
+    : 'buildWorkingDirectory' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    ;
+
+pass_build_settings_in_environment
+    : 'passBuildSettingsInEnvironment' '=' NUMBER ';'
     ;
 
 dependencies
