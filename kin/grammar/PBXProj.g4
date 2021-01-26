@@ -701,7 +701,7 @@ test_target_id
     ;
 
 development_team
-    : 'DevelopmentTeam' '=' NON_QUOTED_STRING ';'
+    : 'DevelopmentTeam' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 provisioning_style
