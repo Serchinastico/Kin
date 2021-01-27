@@ -148,6 +148,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_legacy_target_section.
+    def enterPbx_legacy_target_section(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_legacy_target_section.
+    def exitPbx_legacy_target_section(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_project_section.
     def enterPbx_project_section(self, ctx):
         pass
@@ -337,6 +346,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_legacy_target.
+    def enterPbx_legacy_target(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_legacy_target.
+    def exitPbx_legacy_target(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_project.
     def enterPbx_project(self, ctx):
         pass
@@ -523,6 +541,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#isa_pbx_native_target.
     def exitIsa_pbx_native_target(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_pbx_legacy_target.
+    def enterIsa_pbx_legacy_target(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_pbx_legacy_target.
+    def exitIsa_pbx_legacy_target(self, ctx):
         pass
 
 
@@ -901,6 +928,42 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#build_rules.
     def exitBuild_rules(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#build_arguments_string.
+    def enterBuild_arguments_string(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#build_arguments_string.
+    def exitBuild_arguments_string(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#build_tool_path.
+    def enterBuild_tool_path(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#build_tool_path.
+    def exitBuild_tool_path(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#build_working_directory.
+    def enterBuild_working_directory(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#build_working_directory.
+    def exitBuild_working_directory(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#pass_build_settings_in_environment.
+    def enterPass_build_settings_in_environment(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pass_build_settings_in_environment.
+    def exitPass_build_settings_in_environment(self, ctx):
         pass
 
 
