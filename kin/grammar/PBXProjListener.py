@@ -1,4 +1,4 @@
-# Generated from kin/grammar/PBXProj.g4 by ANTLR 4.6
+# Generated from PBXProj.g4 by ANTLR 4.6
 from antlr4 import *
 
 # This class defines a complete listener for a parse tree produced by PBXProjParser.
@@ -1000,6 +1000,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#last_swift_update_check.
     def exitLast_swift_update_check(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#build_targets_in_parallel.
+    def enterBuild_targets_in_parallel(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#build_targets_in_parallel.
+    def exitBuild_targets_in_parallel(self, ctx):
         pass
 
 
