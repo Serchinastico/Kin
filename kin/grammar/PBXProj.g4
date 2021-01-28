@@ -382,6 +382,7 @@ xc_version_group
         isa_xc_version_group
         children
         current_version
+        name?
         path
         source_tree
         version_group_type
