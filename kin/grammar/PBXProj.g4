@@ -679,6 +679,7 @@ target_attribute
       created_on_tools_version?
       test_target_id?
       development_team?
+      development_team_name?
       last_swift_migration?
       provisioning_style?
       system_capabilities?
@@ -696,6 +697,10 @@ test_target_id
 
 development_team
     : 'DevelopmentTeam' '=' NON_QUOTED_STRING ';'
+    ;
+
+development_team_name
+    : 'DevelopmentTeamName' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
     ;
 
 provisioning_style
