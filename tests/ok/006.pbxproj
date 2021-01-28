@@ -318,6 +318,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 0720;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Karumi;
 				TargetAttributes = {
