@@ -1,0 +1,34 @@
+name: Commit Grammar
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ kin/grammar/PBXProj.g4 ]
+
+jobs:
+  commit_grammar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Download ANTLR 4.6
+        working-directory: /tmp
+        run: |
+          wget https://www.antlr.org/download/antlr-4.6-complete.jar
+      - name: Update grammar
+        working-directory: kin/grammar
+        run: |
+          java -jar /tmp/antlr-4.6-complete.jar PBXProj.g4 -Dlanguage=Python2
+      - name: Commit changes
+        run: |
+          git add kin/grammar
+          git status
+          if [ "$(git status --porcelain)" ]; then
+            git config --global user.email "actions@users.noreply.github.com"
+            git config --global user.name "Kin grammar bot"
+            git commit -m "Update grammar"
+            git push
+          fi
