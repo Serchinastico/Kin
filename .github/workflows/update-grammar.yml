@@ -14,13 +14,13 @@ jobs:
         with:
           java-version: 1.8
       - name: Download ANTLR 4.6
-        working-directory: /usr/local/lib
+        working-directory: /tmp
         run: |
           wget https://www.antlr.org/download/antlr-4.6-complete.jar
       - name: Update grammar
         working-directory: kin/grammar
         run: |
-          java -jar /usr/local/lib/antlr-4.6-complete.jar PBXProj.g4 -Dlanguage=Python2
+          java -jar /tmp/antlr-4.6-complete.jar PBXProj.g4 -Dlanguage=Python2
       - name: Commit any changes
         run: |
           git add kin/grammar
