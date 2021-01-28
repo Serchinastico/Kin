@@ -3,6 +3,7 @@ name: Update Grammar
 on:
   push:
     branches: [ master ]
+    paths: [ kin/grammar/PBXProj.g4 ]
 
 jobs:
   update_grammar:
