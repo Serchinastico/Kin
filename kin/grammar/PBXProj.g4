@@ -46,7 +46,7 @@ objects
         pbx_resources_build_phase_section?
         pbx_shell_script_build_phase_section?
         pbx_sources_build_phase_section
-        pbx_target_dependency_section?
+        pbx_target_dependency_section
         pbx_variant_group_section?
         xc_build_configuration_section
         xc_configuration_list_section
