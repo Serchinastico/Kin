@@ -299,10 +299,10 @@ pbx_shell_script_build_phase
         build_action_mask
         files
         input_file_list_paths?
-        input_paths
+        input_paths?
         name?
         output_file_list_paths?
-        output_paths
+        output_paths?
         run_only_for_deployment_postprocessing
         shell_path
         shell_script
