@@ -394,7 +394,7 @@ xc_remote_swift_package_reference
 xc_swift_package_product_dependency
     : REFERENCE '=' '{'
         isa_xc_swift_package_product_dependency
-        xc_package
+        xc_package?
         product_name
       '}' ';'
     ;
