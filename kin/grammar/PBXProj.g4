@@ -323,6 +323,7 @@ pbx_target_dependency
     : REFERENCE '=' '{'
         isa_pbx_target_dependency
         name?
+        platform_filter?
         target?
         target_proxy
       '}' ';'
