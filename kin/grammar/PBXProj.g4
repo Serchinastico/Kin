@@ -258,7 +258,7 @@ pbx_native_target
 pbx_project
     : REFERENCE '=' '{'
         isa_pbx_project
-        attributes
+        attributes?
         build_configuration_list
         compatibility_version
         development_region
