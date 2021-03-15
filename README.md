@@ -86,9 +86,9 @@ The updated files can optionally be copied with this command for testing:
 cp * path/to/site-packages/kin/grammar/
 ```
 
-To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
+Only the `PBXProj.g4` file needs to be committed, GitHub Actions will produce the compiled grammar files.
 
-Keep in mind that your PRs **must** be validated by Travis-CI.
+To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
 
 License
 -------
