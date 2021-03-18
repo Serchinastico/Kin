@@ -30,7 +30,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'argparse==1.4.0',
-        'antlr4-python2-runtime==4.6'
+        'antlr4-python3-runtime==4.9.2'
     ],
     entry_points={
         'console_scripts': [
