@@ -1,7 +1,7 @@
 from antlr4 import *
-from grammar.PBXProjLexer import PBXProjLexer
-from grammar.PBXProjParser import PBXProjParser
-from kin_error_listener import KinErrorListener
+from .grammar.PBXProjLexer import PBXProjLexer
+from .grammar.PBXProjParser import PBXProjParser
+from .kin_error_listener import KinErrorListener
 
 
 class Verifier:

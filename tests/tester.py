@@ -46,7 +46,7 @@ class Tester:
             passed_mark = "✗"
             self.has_errors = True
 
-        print("Testing " + path + "... " + passed_mark)
+        print(("Testing " + path + "... " + passed_mark))
 
 
 def main():
