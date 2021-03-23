@@ -65,19 +65,17 @@ Do you want to contribute?
 
 Feel free to add any useful feature to Kin, we will be glad to improve it with your help.
 
-If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). ANLTR version 4.6 can be installed with the following commands (the current version is 4.8 but is not compatible):
+If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). ANLTR can be installed with the following command:
 
 ```bash
-curl -O https://raw.githubusercontent.com/Homebrew/homebrew-core/92cd4dbae4ae77853e3693b4eb3c24d71855103f/Formula/antlr.rb
-sed -i -e 's/EOS.undent/EOS/g' antlr.rb
-brew install antlr.rb
+brew install antlr
 ```
 
 After changes have been made to the `PBXProj.g4` file it can be compiled with:
 
 ```bash
 cd kin/grammar
-bash /usr/local/Cellar/antlr/4.6/bin/antlr4 PBXProj.g4 -Dlanguage=Python2
+antlr4 PBXProj.g4 -Dlanguage=Python3
 ```
 
 The updated files can optionally be copied with this command for testing:

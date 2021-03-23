@@ -21,16 +21,14 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
     ],
 
     keywords='xcode project.pbxproj lint objective-c swift ios',
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'argparse==1.4.0',
-        'antlr4-python2-runtime==4.6'
+        'antlr4-python3-runtime==4.9.2'
     ],
     entry_points={
         'console_scripts': [
