@@ -3,7 +3,6 @@ name: Commit Grammar
 on:
   push:
     branches: [ master ]
-    paths: [ kin/grammar/PBXProj.g4 ]
 
 jobs:
   commit_grammar:
