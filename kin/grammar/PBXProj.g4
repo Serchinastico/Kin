@@ -261,7 +261,7 @@ pbx_project
         attributes?
         build_configuration_list
         compatibility_version
-        development_region
+        development_region?
         has_scanned_for_encodings
         known_regions
         main_group
