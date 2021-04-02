@@ -266,7 +266,7 @@ pbx_project
         compatibility_version
         development_region?
         has_scanned_for_encodings
-        known_regions
+        known_regions?
         main_group
         package_references?
         product_ref_group?
