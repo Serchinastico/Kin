@@ -229,6 +229,7 @@ pbx_group
         isa_pbx_group
         children
         indent_width?
+        include_in_index?
         name?
         path?
         source_tree
