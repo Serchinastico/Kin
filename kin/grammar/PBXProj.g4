@@ -199,6 +199,7 @@ pbx_copy_files_build_phase
 pbx_file_reference
     : REFERENCE '=' '{'
         isa_pbx_file_reference
+        comments?
         explicit_file_type?
         file_encoding?
         include_in_index?
@@ -528,6 +529,10 @@ remote_info
 
 file_encoding
     : 'fileEncoding' '=' NUMBER ';'
+    ;
+
+comments
+    : 'comments' '=' any_string ';'
     ;
 
 explicit_file_type
