@@ -755,6 +755,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#wraps_lines.
+    def enterWraps_lines(self, ctx:PBXProjParser.Wraps_linesContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#wraps_lines.
+    def exitWraps_lines(self, ctx:PBXProjParser.Wraps_linesContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#platform_filter.
     def enterPlatform_filter(self, ctx:PBXProjParser.Platform_filterContext):
         pass
