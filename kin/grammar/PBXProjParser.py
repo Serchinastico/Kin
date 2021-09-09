@@ -632,13 +632,13 @@ def serializedATN():
         buf.write("\u00eb\3\2\2\2\u0500\u0501\7K\2\2\u0501\u0502\7\6\2\2")
         buf.write("\u0502\u0503\5\u0156\u00ac\2\u0503\u0504\7\7\2\2\u0504")
         buf.write("\u00ed\3\2\2\2\u0505\u0506\7L\2\2\u0506\u0507\7\6\2\2")
-        buf.write("\u0507\u0509\7\3\2\2\u0508\u050a\5\u0154\u00ab\2\u0509")
-        buf.write("\u0508\3\2\2\2\u0509\u050a\3\2\2\2\u050a\u050c\3\2\2\2")
-        buf.write("\u050b\u050d\5\u00f2z\2\u050c\u050b\3\2\2\2\u050c\u050d")
-        buf.write("\3\2\2\2\u050d\u050f\3\2\2\2\u050e\u0510\5\u00f0y\2\u050f")
+        buf.write("\u0507\u0509\7\3\2\2\u0508\u050a\5\u00f6|\2\u0509\u0508")
+        buf.write("\3\2\2\2\u0509\u050a\3\2\2\2\u050a\u050c\3\2\2\2\u050b")
+        buf.write("\u050d\5\u0154\u00ab\2\u050c\u050b\3\2\2\2\u050c\u050d")
+        buf.write("\3\2\2\2\u050d\u050f\3\2\2\2\u050e\u0510\5\u00f2z\2\u050f")
         buf.write("\u050e\3\2\2\2\u050f\u0510\3\2\2\2\u0510\u0512\3\2\2\2")
-        buf.write("\u0511\u0513\5\u00f4{\2\u0512\u0511\3\2\2\2\u0512\u0513")
-        buf.write("\3\2\2\2\u0513\u0515\3\2\2\2\u0514\u0516\5\u00f6|\2\u0515")
+        buf.write("\u0511\u0513\5\u00f0y\2\u0512\u0511\3\2\2\2\u0512\u0513")
+        buf.write("\3\2\2\2\u0513\u0515\3\2\2\2\u0514\u0516\5\u00f4{\2\u0515")
         buf.write("\u0514\3\2\2\2\u0515\u0516\3\2\2\2\u0516\u0518\3\2\2\2")
         buf.write("\u0517\u0519\5\u00f8}\2\u0518\u0517\3\2\2\2\u0518\u0519")
         buf.write("\3\2\2\2\u0519\u051b\3\2\2\2\u051a\u051c\5\u00fa~\2\u051b")
@@ -8696,6 +8696,10 @@ class PBXProjParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def build_targets_in_parallel(self):
+            return self.getTypedRuleContext(PBXProjParser.Build_targets_in_parallelContext,0)
+
+
         def class_prefix(self):
             return self.getTypedRuleContext(PBXProjParser.Class_prefixContext,0)
 
@@ -8710,10 +8714,6 @@ class PBXProjParser ( Parser ):
 
         def last_swift_update_check(self):
             return self.getTypedRuleContext(PBXProjParser.Last_swift_update_checkContext,0)
-
-
-        def build_targets_in_parallel(self):
-            return self.getTypedRuleContext(PBXProjParser.Build_targets_in_parallelContext,0)
 
 
         def last_testing_upgrade_check(self):
@@ -8762,41 +8762,41 @@ class PBXProjParser ( Parser ):
             self.state = 1287
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==PBXProjParser.T__122:
+            if _la==PBXProjParser.T__77:
                 self.state = 1286
-                self.class_prefix()
+                self.build_targets_in_parallel()
 
 
             self.state = 1290
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==PBXProjParser.T__75:
+            if _la==PBXProjParser.T__122:
                 self.state = 1289
-                self.default_build_system_type_for_workspace()
+                self.class_prefix()
 
 
             self.state = 1293
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==PBXProjParser.T__74:
+            if _la==PBXProjParser.T__75:
                 self.state = 1292
-                self.last_swift_migration()
+                self.default_build_system_type_for_workspace()
 
 
             self.state = 1296
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==PBXProjParser.T__76:
+            if _la==PBXProjParser.T__74:
                 self.state = 1295
-                self.last_swift_update_check()
+                self.last_swift_migration()
 
 
             self.state = 1299
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==PBXProjParser.T__77:
+            if _la==PBXProjParser.T__76:
                 self.state = 1298
-                self.build_targets_in_parallel()
+                self.last_swift_update_check()
 
 
             self.state = 1302
