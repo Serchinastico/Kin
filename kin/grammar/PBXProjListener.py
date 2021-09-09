@@ -728,6 +728,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#comments.
+    def enterComments(self, ctx:PBXProjParser.CommentsContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#comments.
+    def exitComments(self, ctx:PBXProjParser.CommentsContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#explicit_file_type.
     def enterExplicit_file_type(self, ctx:PBXProjParser.Explicit_file_typeContext):
         pass
