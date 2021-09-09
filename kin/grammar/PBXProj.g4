@@ -685,11 +685,11 @@ plist_structure_definition_identifier
 
 attributes
     : 'attributes' '=' '{'
+        build_targets_in_parallel?
         class_prefix?
         default_build_system_type_for_workspace?
         last_swift_migration?
         last_swift_update_check?
-        build_targets_in_parallel?
         last_testing_upgrade_check?
         last_upgrade_check?
         organization_name?
