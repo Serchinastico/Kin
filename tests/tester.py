@@ -32,11 +32,8 @@ class Tester:
                 self.report_test_case(file, expected_errors == found_errors)
 
     def input_files_in(self, path):
-        input_files = []
-        for root, dirs, files in os.walk(path):
-            for file in files:
-                if file.endswith(".pbxproj"):
-                    input_files.append(path + file)
+        input_files = [path + file for (root, dirs, files) in os.walk(path) 
+                                       for file in files if file.endswith('.pbxproj')]
         return input_files
 
     def report_test_case(self, path, passed):
