@@ -169,6 +169,7 @@ pbx_build_file
         isa_pbx_build_file
         file_ref?
         platform_filter?
+        platform_filters?
         product_ref?
         settings?
       '}' ';'
@@ -350,6 +351,7 @@ pbx_target_dependency
         isa_pbx_target_dependency
         name?
         platform_filter?
+        platform_filters?
         target?
         target_proxy
       '}' ';'
@@ -565,6 +567,10 @@ wraps_lines
 
 platform_filter
     : 'platformFilter' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    ;
+
+platform_filters
+    : 'platformFilters' '=' any_string_list ';'
     ;
 
 children

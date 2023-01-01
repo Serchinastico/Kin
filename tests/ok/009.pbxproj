@@ -13,7 +13,7 @@
 		A207F94FF6AD04901B4DBCA551325593 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E05E22B44C4EDB0BE8ACC7D61FE96 /* CardViewModel.swift */; };
 		6BCBD0183F3552253263D09004324D84 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D9FEA7A3F51F4809D3A24927C5B0B /* CustomView.swift */; };
 		3356A5C793425C411FC198ED32365449 /* MitsumoriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC7A905A225F3F055926AB6596F6EC8 /* MitsumoriUITests.swift */; };
-		688F185B4BF5BBBCE31B6006C3E1E9E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8091776EEE74A58418253B483F4B31A /* Nimble.framework */; };
+		688F185B4BF5BBBCE31B6006C3E1E9E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8091776EEE74A58418253B483F4B31A /* Nimble.framework */; platformFilters = (ios, tvos, watchos, ); };
 		18D98659540E44300DA59C4252ECB21F /* SelectedCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E90D79DC3CED36619E3B1389A985C4 /* SelectedCardViewModel.swift */; };
 		EBEDF888AF5AB1FC0855D8C3F5E87E02 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D710DCB251565514FA1AFC676B1B5 /* SnapshotHelper.swift */; };
 		DFDBC48E722605CB5CE1C2262D02440F /* SnapshotCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EC8442CE9991F932071E00931CC2B /* SnapshotCapturer.swift */; };
