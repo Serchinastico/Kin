@@ -15,19 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
-      - name: Download ANTLR 4.9.2
+          java-version: 11
+      - name: Download ANTLR 4.11.1
         working-directory: /tmp
         run: |
-          wget https://www.antlr.org/download/antlr-4.9.2-complete.jar
+          wget https://www.antlr.org/download/antlr-4.11.1-complete.jar
       - name: Generate grammar
         working-directory: kin/grammar
         run: |
-          java -jar /tmp/antlr-4.9.2-complete.jar PBXProj.g4 -Dlanguage=Python3
+          java -jar /tmp/antlr-4.11.1-complete.jar PBXProj.g4 -Dlanguage=Python3
       - name: Upload grammar
         uses: actions/upload-artifact@master
         with:
@@ -43,7 +43,7 @@ jobs:
         python-version: ['3.x']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Download grammar
       uses: actions/download-artifact@master
       with:

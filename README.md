@@ -75,13 +75,13 @@ After changes have been made to the `PBXProj.g4` file it can be compiled with:
 
 ```bash
 cd kin/grammar
-antlr4 PBXProj.g4 -Dlanguage=Python3
+antlr PBXProj.g4 -Dlanguage=Python3
 ```
 
-The updated files can optionally be copied with this command for testing:
+The global `kin` command can optionally be symlinked to the local project with:
 
 ```bash
-cp * path/to/site-packages/kin/grammar/
+pip install -e ../..
 ```
 
 Only the `PBXProj.g4` file needs to be committed, GitHub Actions will produce the compiled grammar files.
