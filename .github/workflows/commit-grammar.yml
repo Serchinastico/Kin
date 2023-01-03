@@ -12,6 +12,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
+          distribution: 'zulu'
           java-version: 11
       - name: Download ANTLR 4.11.1
         working-directory: /tmp
