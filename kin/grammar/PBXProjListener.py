@@ -1,4 +1,4 @@
-# Generated from PBXProj.g4 by ANTLR 4.9.2
+# Generated from PBXProj.g4 by ANTLR 4.11.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .PBXProjParser import PBXProjParser
@@ -806,6 +806,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#platform_filter.
     def exitPlatform_filter(self, ctx:PBXProjParser.Platform_filterContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#platform_filters.
+    def enterPlatform_filters(self, ctx:PBXProjParser.Platform_filtersContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#platform_filters.
+    def exitPlatform_filters(self, ctx:PBXProjParser.Platform_filtersContext):
         pass
 
 
