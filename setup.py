@@ -1,6 +1,11 @@
-from setuptools import setup, find_packages
+import sys
 from codecs import open
 from os import path
+
+from setuptools import find_packages, setup
+
+if sys.version_info.major < 3:
+    raise RuntimeError('Please use python3 to install this package')
 
 here = path.abspath(path.dirname(__file__))
 
