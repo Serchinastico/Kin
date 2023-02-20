@@ -18,11 +18,11 @@ Kin is just a syntax checker built with ANTLR 4 with a very thin layer to be usa
 Usage
 -----------------
 
-Install Kin with your favorite python package manager.
+Install Kin with your favorite python package manager. If you don't have one you can use [pipx](https://pypa.github.io/pipx/).
 
-Using `pip`
+Using `pipx`
 ```
-pip install kin
+pipx install kin
 ```
 
 Using `easy_install`
