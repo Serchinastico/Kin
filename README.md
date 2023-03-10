@@ -1,7 +1,6 @@
 ![logo][logo]
 
-Kin [![Build Status](https://github.com/Serchinastico/Kin/workflows/python-publish.yml/badge.svg)](https://github.com/Serchinastico/Kin/releases)
-
+Kin [![Build Status](https://github.com/Serchinastico/Kin/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Serchinastico/Kin/releases)
 ===
 
 Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
