@@ -1,6 +1,7 @@
 ![logo][logo]
 
-Kin [![Build Status](https://travis-ci.org/Serchinastico/Kin.svg?branch=master)](https://travis-ci.org/Serchinastico/Kin)
+Kin [![Build Status](https://github.com/Serchinastico/Kin/workflows/python-publish.yml/badge.svg)](https://github.com/Serchinastico/Kin/releases)
+
 ===
 
 Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
