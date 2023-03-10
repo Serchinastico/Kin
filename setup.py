@@ -17,9 +17,9 @@ setup(
     version='2.1.0',
     description='A simple project.pbxproj verifier',
     long_description=long_description,
-    url='https://github.com/Karumi/Kin',
-    author='Karumi',
-    author_email='tech@karumi.com',
+    url='https://github.com/Serchinastico/Kin',
+    author='Serchinastico',
+    author_email='oss@serchinastico.com',
     license='Apache Software',
     classifiers=[
         'Development Status :: 4 - Beta',

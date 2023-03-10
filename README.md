@@ -1,6 +1,6 @@
 ![logo][logo]
 
-Kin [![Build Status](https://travis-ci.org/Karumi/Kin.svg?branch=master)](https://travis-ci.org/Karumi/Kin)
+Kin [![Build Status](https://travis-ci.org/Serchinastico/Kin.svg?branch=master)](https://travis-ci.org/Serchinastico/Kin)
 ===
 
 Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
@@ -91,7 +91,7 @@ To run tests, first install the current version of kin by running `pip install .
 License
 -------
 
-    Copyright 2016 Karumi
+    Copyright 2023 Serchinastico
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
