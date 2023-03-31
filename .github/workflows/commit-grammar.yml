@@ -2,7 +2,7 @@ name: Commit Grammar
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   commit_grammar:
