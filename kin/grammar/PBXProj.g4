@@ -716,7 +716,7 @@ last_swift_update_check
     ;
 
 build_targets_in_parallel
-    : 'BuildIndependentTargetsInParallel' '=' NON_QUOTED_STRING ';'
+    : 'BuildIndependentTargetsInParallel' '=' (NUMBER|NON_QUOTED_STRING) ';'
     ;
 
 last_testing_upgrade_check
