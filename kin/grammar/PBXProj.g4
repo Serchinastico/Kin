@@ -19,7 +19,7 @@ root_element
     ;
 
 archive_version
-    : 'archiveVersion' '=' NUMBER ';'
+    : ARCHIVE_VERSION '=' NUMBER ';'
     ;
 
 classes
@@ -27,7 +27,7 @@ classes
     ;
 
 object_version
-    : 'objectVersion' '=' NUMBER ';'
+    : OBJECT_VERSION '=' NUMBER ';'
     ;
 
 objects
@@ -416,209 +416,209 @@ xc_version_group
 // ISA rules
 
 isa_pbx_aggregate_target
-    : ISA '=' 'PBXAggregateTarget' ';'
+    : ISA '=' PBX_AGGREGATE_TARGET ';'
     ;
 
 isa_pbx_build_file
-    : ISA '=' 'PBXBuildFile' ';'
+    : ISA '=' PBX_BUILD_FILE ';'
     ;
 
 isa_pbx_container_item_proxy
-    : ISA '=' 'PBXContainerItemProxy' ';'
+    : ISA '=' PBX_CONTAINER_ITEM_PROXY ';'
     ;
 
 isa_pbx_copy_files_build_phase
-    : ISA '=' 'PBXCopyFilesBuildPhase' ';'
+    : ISA '=' PBX_COPY_FILES_BUILD_PHASE ';'
     ;
 
 isa_pbx_file_reference
-    : ISA '=' 'PBXFileReference' ';'
+    : ISA '=' PBX_FILE_REFERENCE ';'
     ;
 
 isa_pbx_frameworks_build_phase
-    : ISA '=' 'PBXFrameworksBuildPhase' ';'
+    : ISA '=' PBX_FRAMEWORKS_BUILD_PHASE ';'
     ;
 
 isa_pbx_group
-    : ISA '=' 'PBXGroup' ';'
+    : ISA '=' PBX_GROUP ';'
     ;
 
 isa_pbx_header_build_phase
-    : ISA '=' 'PBXHeadersBuildPhase' ';'
+    : ISA '=' PBX_HEADERS_BUILD_PHASE ';'
     ;
 
 isa_pbx_native_target
-    : ISA '=' 'PBXNativeTarget' ';'
+    : ISA '=' PBX_NATIVE_TARGET ';'
     ;
 
 isa_pbx_legacy_target
-    : ISA '=' 'PBXLegacyTarget' ';'
+    : ISA '=' PBX_LEGACY_TARGET ';'
     ;
 
 isa_pbx_project
-    : ISA '=' 'PBXProject' ';'
+    : ISA '=' PBX_PROJECT ';'
     ;
 
 isa_pbx_reference_proxy
-    : ISA '=' 'PBXReferenceProxy' ';'
+    : ISA '=' PBX_REFERENCE_PROXY ';'
     ;
 
 isa_pbx_resources_build_phase
-    : ISA '=' 'PBXResourcesBuildPhase' ';'
+    : ISA '=' PBX_RESOURCES_BUILD_PHASE ';'
     ;
 
 isa_pbx_shell_script_build_phase
-    : ISA '=' 'PBXShellScriptBuildPhase' ';'
+    : ISA '=' PBX_SHELL_SCRIPT_BUILD_PHASE ';'
     ;
 
 isa_pbx_sources_build_phase
-    : ISA '=' 'PBXSourcesBuildPhase' ';'
+    : ISA '=' PBX_SOURCES_BUILD_PHASE ';'
     ;
 
 isa_pbx_target_dependency
-    : ISA '=' 'PBXTargetDependency' ';'
+    : ISA '=' PBX_TARGET_DEPENDENCY ';'
     ;
 
 isa_pbx_variant_group
-    : ISA '=' 'PBXVariantGroup' ';'
+    : ISA '=' PBX_VARIANT_GROUP ';'
     ;
 
 isa_xc_build_configuration
-    : ISA '=' 'XCBuildConfiguration' ';'
+    : ISA '=' XC_BUILD_CONFIGURATION ';'
     ;
 
 isa_xc_configuration_list
-    : ISA '=' 'XCConfigurationList' ';'
+    : ISA '=' XC_CONFIGURATION_LIST ';'
     ;
 
 isa_xc_remote_swift_package_reference
-    : ISA '=' 'XCRemoteSwiftPackageReference' ';'
+    : ISA '=' XC_REMOTE_SWIFT_PACKAGE_REFERENCE ';'
     ;
 
 isa_xc_swift_package_product_dependency
-    : ISA '=' 'XCSwiftPackageProductDependency' ';'
+    : ISA '=' XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY ';'
     ;
 
 isa_xc_version_group
-    : ISA '=' 'XCVersionGroup' ';'
+    : ISA '=' XC_VERSION_GROUP ';'
     ;
 
 // Other rules
 
 file_ref
-    : 'fileRef' '=' REFERENCE ';'
+    : FILE_REF '=' REFERENCE ';'
     ;
 
 product_ref
-    : 'productRef' '=' REFERENCE ';'
+    : PRODUCT_REF '=' REFERENCE ';'
     ;
 
 container_portal
-    : 'containerPortal' '=' REFERENCE ';'
+    : CONTAINER_PORTAL '=' REFERENCE ';'
     ;
 
 proxy_type
-    : 'proxyType' '=' NUMBER ';'
+    : PROXY_TYPE '=' NUMBER ';'
     ;
 
 remote_global_id_string
-    : 'remoteGlobalIDString' '=' REFERENCE ';'
+    : REMOTE_GLOBAL_ID_STRING '=' REFERENCE ';'
     ;
 
 remote_info
-    : 'remoteInfo' '=' any_string ';'
+    : REMOTE_INFO '=' str_number_variable ';'
     ;
 
 file_encoding
-    : 'fileEncoding' '=' NUMBER ';'
+    : FILE_ENCODING '=' NUMBER ';'
     ;
 
 comments
-    : 'comments' '=' any_string ';'
+    : COMMENTS '=' str_number_variable ';'
     ;
 
 explicit_file_type
-    : 'explicitFileType' '=' any_string ';'
+    : EXPLICIT_FILE_TYPE '=' str_number_variable ';'
     ;
 
 last_known_file_type
-    : 'lastKnownFileType' '=' any_string ';'
+    : LAST_KNOWN_FILE_TYPE '=' str_number_variable ';'
     ;
 
 include_in_index
-    : 'includeInIndex' '=' NUMBER ';'
+    : INCLUDE_IN_INDEX '=' NUMBER ';'
     ;
 
 indent_width
-    : 'indentWidth' '=' NUMBER ';'
+    : INDENT_WIDTH '=' NUMBER ';'
     ;
 
 tab_width
-    : 'tabWidth' '=' NUMBER ';'
+    : TAB_WIDTH '=' NUMBER ';'
     ;
 
 uses_tabs
-    : 'usesTabs' '=' NUMBER ';'
+    : USES_TABS '=' NUMBER ';'
     ;
 
 wraps_lines
-    : 'wrapsLines' '=' NUMBER ';'
+    : WRAPS_LINES '=' NUMBER ';'
     ;
 
 platform_filter
-    : 'platformFilter' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : PLATFORM_FILTER '=' any_string ';'
     ;
 
 platform_filters
-    : 'platformFilters' '=' any_string_list ';'
+    : PLATFORM_FILTERS '=' any_string_list ';'
     ;
 
 children
-    : 'children' '=' reference_list ';'
+    : CHILDREN '=' reference_list ';'
     ;
 
 product_install_path
-    : 'productInstallPath' '=' QUOTED_STRING ';'
+    : PRODUCT_INSTALL_PATH '=' QUOTED_STRING ';'
     ;
 
 repository_url
-    : 'repositoryURL' '=' QUOTED_STRING ';'
+    : REPOSITORY_URL '=' QUOTED_STRING ';'
     ;
 
 requirement
-    : 'requirement' '=' '{' key_value* '}' ';'
+    : REQUIREMENT '=' '{' key_value* '}' ';'
     ;
 
 xc_package
-    : 'package' '=' REFERENCE ';'
+    : PACKAGE '=' REFERENCE ';'
     ;
 
 package_product_dependencies
-    : 'packageProductDependencies' '=' reference_list ';'
+    : PACKAGE_PRODUCT_DEPENDENCIES '=' reference_list ';'
     ;
 
 name
-    : 'name' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : NAME '=' any_string ';'
     ;
 
 path
-    : 'path' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : PATH '=' any_string ';'
     ;
 
 source_tree
-    : 'sourceTree' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : SOURCE_TREE '=' any_string ';'
     ;
 
 build_action_mask
-    : 'buildActionMask' '=' NUMBER ';'
+    : BUILD_ACTION_MASK '=' NUMBER ';'
     ;
 
 files
-    : 'files' '=' reference_list ';'
+    : FILES '=' reference_list ';'
     ;
 
 run_only_for_deployment_postprocessing
-    : 'runOnlyForDeploymentPostprocessing' '=' NUMBER ';'
+    : RUN_ONLY_FOR_DEPLOYMENT_POSTPROCESSING '=' NUMBER ';'
     ;
 
 reference_list
@@ -626,7 +626,7 @@ reference_list
     ;
 
 any_string_list
-    : '(' (any_string ',')* ')'
+    : '(' (str_number_variable ',')* ')'
     ;
 
 non_quoted_strings_list
@@ -634,63 +634,63 @@ non_quoted_strings_list
     ;
 
 build_configuration_list
-    : 'buildConfigurationList' '=' REFERENCE ';'
+    : BUILD_CONFIGURATION_LIST '=' REFERENCE ';'
     ;
 
 build_phases
-    : 'buildPhases' '=' reference_list ';'
+    : BUILD_PHASES '=' reference_list ';'
     ;
 
 build_rules
-    : 'buildRules' '=' reference_list ';'
+    : BUILD_RULES '=' reference_list ';'
     ;
 
 build_arguments_string
-    : 'buildArgumentsString' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : BUILD_ARGUMENTS_STRING '=' any_string ';'
     ;
 
 build_tool_path
-    : 'buildToolPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : BUILD_TOOL_PATH '=' any_string ';'
     ;
 
 build_working_directory
-    : 'buildWorkingDirectory' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : BUILD_WORKING_DIRECTORY '=' any_string ';'
     ;
 
 pass_build_settings_in_environment
-    : 'passBuildSettingsInEnvironment' '=' NUMBER ';'
+    : PASS_BUILD_SETTINGS_IN_ENVIRONMENT '=' NUMBER ';'
     ;
 
 dependencies
-    : 'dependencies' '=' reference_list ';'
+    : DEPENDENCIES '=' reference_list ';'
     ;
 
 product_name
-    : 'productName' '=' any_string ';'
+    : PRODUCT_NAME '=' str_number_variable ';'
     ;
 
 product_reference
-    : 'productReference' '=' REFERENCE ';'
+    : PRODUCT_REFERENCE '=' REFERENCE ';'
     ;
 
 product_type
-    : 'productType' '=' QUOTED_STRING ';'
+    : PRODUCT_TYPE '=' QUOTED_STRING ';'
     ;
 
 line_ending
-    : 'lineEnding' '=' NUMBER ';'
+    : LINE_ENDING '=' NUMBER ';'
     ;
 
 xc_language_specification_identifier
-    : 'xcLanguageSpecificationIdentifier' '=' any_string ';'
+    : XC_LANGUAGE_SPECIFICATION_IDENTIFIER '=' str_number_variable ';'
     ;
 
 plist_structure_definition_identifier
-    : 'plistStructureDefinitionIdentifier' '=' any_string ';'
+    : PLIST_STRUCTURE_DEFINITION_IDENTIFIER '=' str_number_variable ';'
     ;
 
 attributes
-    : 'attributes' '=' '{'
+    : ATTRIBUTES '=' '{'
         build_targets_in_parallel?
         class_prefix?
         default_build_system_type_for_workspace?
@@ -704,35 +704,35 @@ attributes
     ;
 
 last_swift_migration
-    : 'LastSwiftMigration' '=' NUMBER ';'
+    : LAST_SWIFT_MIGRATION '=' NUMBER ';'
     ;
 
 default_build_system_type_for_workspace
-    : 'DefaultBuildSystemTypeForWorkspace' '=' NON_QUOTED_STRING ';'
+    : DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE '=' NON_QUOTED_STRING ';'
     ;
 
 last_swift_update_check
-    : 'LastSwiftUpdateCheck' '=' NUMBER ';'
+    : LAST_SWIFT_UPDATE_CHECK '=' NUMBER ';'
     ;
 
 build_targets_in_parallel
-    : 'BuildIndependentTargetsInParallel' '=' (NUMBER|NON_QUOTED_STRING) ';'
+    : BUILD_INDEPENDENT_TARGETS_IN_PARALLEL '=' (NUMBER|NON_QUOTED_STRING) ';'
     ;
 
 last_testing_upgrade_check
-    : 'LastTestingUpgradeCheck' '=' NUMBER ';'
+    : LAST_TESTING_UPGRADE_CHECK '=' NUMBER ';'
     ;
 
 last_upgrade_check
-    : 'LastUpgradeCheck' '=' NUMBER ';'
+    : LAST_UPGRADE_CHECK '=' NUMBER ';'
     ;
 
 organization_name
-    : 'ORGANIZATIONNAME' '=' any_string ';'
+    : ORGANIZATION_NAME '=' str_number_variable ';'
     ;
 
 target_attributes
-    : 'TargetAttributes' '=' '{' (target_attribute)* '}' ';'
+    : TARGET_ATTRIBUTES '=' '{' (target_attribute)* '}' ';'
     ;
 
 target_attribute
@@ -749,130 +749,130 @@ target_attribute
     ;
 
 created_on_tools_version
-    : 'CreatedOnToolsVersion' '=' NON_QUOTED_STRING ';'
+    : CREATED_ON_TOOLS_VERSION '=' NON_QUOTED_STRING ';'
     ;
 
 test_target_id
-    : 'TestTargetID' '=' REFERENCE ';'
+    : TEST_TARGET_ID '=' REFERENCE ';'
     ;
 
 development_team
-    : 'DevelopmentTeam' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : DEVELOPMENT_TEAM '=' any_string ';'
     ;
 
 development_team_name
-    : 'DevelopmentTeamName' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : DEVELOPMENT_TEAM_NAME '=' any_string ';'
     ;
 
 provisioning_style
-    : 'ProvisioningStyle' '=' NON_QUOTED_STRING ';'
+    : PROVISIONING_STYLE '=' NON_QUOTED_STRING ';'
     ;
 
 compatibility_version
-    : 'compatibilityVersion' '=' QUOTED_STRING ';'
+    : COMPATIBILITY_VERSION '=' QUOTED_STRING ';'
     ;
 
 development_region
-    : 'developmentRegion' '=' NON_QUOTED_STRING ';'
+    : DEVELOPMENT_REGION '=' NON_QUOTED_STRING ';'
     ;
 
 has_scanned_for_encodings
-    : 'hasScannedForEncodings' '=' NUMBER ';'
+    : HAS_SCANNED_FOR_ENCODINGS '=' NUMBER ';'
     ;
 
 known_regions
-    : 'knownRegions' '=' any_string_list ';'
+    : KNOWN_REGIONS '=' any_string_list ';'
     ;
 
 main_group
-    : 'mainGroup' '=' REFERENCE ';'
+    : MAIN_GROUP '=' REFERENCE ';'
     ;
 
 product_ref_group
-    : 'productRefGroup' '=' REFERENCE ';'
+    : PRODUCT_REF_GROUP '=' REFERENCE ';'
     ;
 
 package_references
-    : 'packageReferences' '=' reference_list ';'
+    : PACKAGE_REFERENCES '=' reference_list ';'
     ;
 
 project_dir_path
-    : 'projectDirPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : PRODUCT_DIR_PATH '=' any_string ';'
     ;
 
 project_references
-    : 'projectReferences' '=' any_string ';'
-    | 'projectReferences' '=' '(' project_references_list ')' ';'
+    : PROJECT_REFERENCES '=' str_number_variable ';'
+    | PROJECT_REFERENCES '=' '(' project_references_list ')' ';'
     ;
 
 project_root
-    : 'projectRoot' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : PROJECT_ROOT '=' any_string ';'
     ;
 
 targets
-    : 'targets' '=' reference_list ';'
+    : TARGETS '=' reference_list ';'
     ;
 
 input_file_list_paths
-    : 'inputFileListPaths' '=' any_string_list ';'
+    : INPUT_FILE_LIST_PATHS '=' any_string_list ';'
     ;
 
 input_paths
-    : 'inputPaths' '=' any_string_list ';'
+    : INPUT_PATHS '=' any_string_list ';'
     ;
 
 output_file_list_paths
-    : 'outputFileListPaths' '=' any_string_list ';'
+    : OUTPUT_FILE_LIST_PATHS '=' any_string_list ';'
     ;
 
 output_paths
-    : 'outputPaths' '=' any_string_list ';'
+    : OUTPUT_PATHS '=' any_string_list ';'
     ;
 
 shell_path
-    : 'shellPath' '=' NON_QUOTED_STRING ';'
+    : SHELL_PATH '=' NON_QUOTED_STRING ';'
     ;
 
 shell_script
-    : 'shellScript' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : SHELL_SCRIPT '=' any_string ';'
     ;
 
 show_env_vars_in_log
-    : 'showEnvVarsInLog' '=' NUMBER ';'
+    : SHOW_ENV_VARS_IN_LOG '=' NUMBER ';'
     ;
 
 target
-    : 'target' '=' REFERENCE ';'
+    : TARGET '=' REFERENCE ';'
     ;
 
 target_proxy
-    : 'targetProxy' '=' REFERENCE ';'
+    : TARGET_PROXY '=' REFERENCE ';'
     ;
 
 file_type
-    : 'fileType' '=' any_string ';'
+    : FILE_TYPE '=' str_number_variable ';'
     ;
 
 remote_ref
-    : 'remoteRef' '=' REFERENCE ';'
+    : REMOTE_REF '=' REFERENCE ';'
     ;
 
 base_configuration_reference
-    : 'baseConfigurationReference' '=' REFERENCE ';'
+    : BASE_CONFIGURATION_REFERENCE '=' REFERENCE ';'
     ;
 
 build_settings
-    : 'buildSettings' '=' '{'
+    : BUILD_SETTINGS '=' '{'
         key_value*
       '}' ';'
     ;
 
 dst_path
-    : 'dstPath' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : DST_PATH '=' any_string ';'
     ;
 
 dst_subfolder_spec
-    : 'dstSubfolderSpec' '=' NUMBER ';'
+    : DST_SUBFOLDER_SPEC '=' NUMBER ';'
     ;
 
 project_references_list
@@ -881,71 +881,315 @@ project_references_list
 
 project_references_list_element
     : '{'
-        'ProductGroup' '=' REFERENCE ';'
-        'ProjectRef' '=' REFERENCE ';'
+        PRODUCT_GROUP '=' REFERENCE ';'
+        PROJECT_REF '=' REFERENCE ';'
       '}' ','
     ;
 
 key_value
-    : any_string '=' any_string ';'
-    | any_string '=' NUMBER ';'
-    | any_string '=' ALPHA_NUMERIC ';'
-    | any_string '=' '{' key_value '}' ';'
-    | any_string '=' '(' (any_string ',')* ')' ';'
+    : str_number_variable '=' str_number_variable ';'
+    | str_number_variable '=' NUMBER ';'
+    | str_number_variable '=' ALPHA_NUMERIC ';'
+    | str_number_variable '=' '{' key_value '}' ';'
+    | str_number_variable '=' '(' (str_number_variable ',')* ')' ';'
     ;
 
 build_configurations
-    : 'buildConfigurations' '=' reference_list ';'
+    : BUILD_CONFIGURATIONS '=' reference_list ';'
     ;
 
 default_configuration_is_visible
-    : 'defaultConfigurationIsVisible' '=' NUMBER ';'
+    : DEFAULT_CONFIGURATION_IS_VISIBLE '=' NUMBER ';'
     ;
 
 default_configuration_name
-    : 'defaultConfigurationName' '=' (QUOTED_STRING|NON_QUOTED_STRING) ';'
+    : DEFAULT_CONFIGURATION_NAME '=' any_string ';'
     ;
 
 settings
-    : 'settings' '=' '{' key_value* '}' ';'
+    : SETTINGS '=' '{' key_value* '}' ';'
     ;
 
 system_capabilities
-    : 'SystemCapabilities' '=' '{' key_value* '}' ';'
+    : SYSTEM_CAPABILITIES '=' '{' key_value* '}' ';'
     ;
 
 current_version
-    : 'currentVersion' '=' REFERENCE ';'
+    : CURRENT_VERSION '=' REFERENCE ';'
     ;
 
 version_group_type
-    : 'versionGroupType' '=' NON_QUOTED_STRING ';'
+    : VERSION_GROUP_TYPE '=' NON_QUOTED_STRING ';'
     ;
 
 class_prefix
-    : 'CLASSPREFIX' '=' any_string ';'
+    : CLASSPREFIX '=' str_number_variable ';'
     ;
 
 any_string
     : NON_QUOTED_STRING
     | QUOTED_STRING
+    | any_token
+    ;
+
+str_number_variable
+    : any_string
     | NUMBER
     | VARIABLE
     ;
 
+any_token
+    : ARCHIVE_VERSION
+    | CLASSES
+    | ISA
+    | OBJECT_VERSION
+    | OBJECTS
+    | ROOT_OBJECT
+    | PBX_AGGREGATE_TARGET
+    | PBX_BUILD_FILE
+    | PBX_CONTAINER_ITEM_PROXY
+    | PBX_COPY_FILES_BUILD_PHASE
+    | PBX_FILE_REFERENCE
+    | PBX_FRAMEWORKS_BUILD_PHASE
+    | PBX_NATIVE_TARGET
+    | PBX_LEGACY_TARGET
+    | PBX_PROJECT
+    | PBX_REFERENCE_PROXY
+    | PBX_RESOURCES_BUILD_PHASE
+    | PBX_SHELL_SCRIPT_BUILD_PHASE
+    | PBX_SOURCES_BUILD_PHASE
+    | PBX_TARGET_DEPENDENCY
+    | PBX_VARIANT_GROUP
+    | XC_BUILD_CONFIGURATION
+    | XC_CONFIGURATION_LIST
+    | XC_REMOTE_SWIFT_PACKAGE_REFERENCE
+    | XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY
+    | XC_VERSION_GROUP
+    | FILE_REF
+    | PRODUCT_REF
+    | CONTAINER_PORTAL
+    | PROXY_TYPE
+    | REMOTE_GLOBAL_ID_STRING
+    | REMOTE_INFO
+    | FILE_ENCODING
+    | COMMENTS
+    | EXPLICIT_FILE_TYPE
+    | LAST_KNOWN_FILE_TYPE
+    | INCLUDE_IN_INDEX
+    | INDENT_WIDTH
+    | TAB_WIDTH
+    | USES_TABS
+    | WRAPS_LINES
+    | PLATFORM_FILTER
+    | PLATFORM_FILTERS
+    | CHILDREN
+    | PRODUCT_INSTALL_PATH
+    | REPOSITORY_URL
+    | REQUIREMENT
+    | PACKAGE
+    | PACKAGE_PRODUCT_DEPENDENCIES
+    | NAME
+    | PATH
+    | SOURCE_TREE
+    | BUILD_ACTION_MASK
+    | FILES
+    | RUN_ONLY_FOR_DEPLOYMENT_POSTPROCESSING
+    | BUILD_CONFIGURATION_LIST
+    | BUILD_PHASES
+    | BUILD_RULES
+    | BUILD_ARGUMENTS_STRING
+    | BUILD_TOOL_PATH
+    | BUILD_WORKING_DIRECTORY
+    | PASS_BUILD_SETTINGS_IN_ENVIRONMENT
+    | DEPENDENCIES
+    | PRODUCT_NAME
+    | PRODUCT_REFERENCE
+    | PRODUCT_TYPE
+    | LINE_ENDING
+    | XC_LANGUAGE_SPECIFICATION_IDENTIFIER
+    | PLIST_STRUCTURE_DEFINITION_IDENTIFIER
+    | ATTRIBUTES
+    | LAST_SWIFT_MIGRATION
+    | DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE
+    | LAST_SWIFT_UPDATE_CHECK
+    | BUILD_INDEPENDENT_TARGETS_IN_PARALLEL
+    | LAST_TESTING_UPGRADE_CHECK
+    | LAST_UPGRADE_CHECK
+    | ORGANIZATION_NAME
+    | TARGET_ATTRIBUTES
+    | CREATED_ON_TOOLS_VERSION
+    | TEST_TARGET_ID
+    | DEVELOPMENT_TEAM
+    | DEVELOPMENT_TEAM_NAME
+    | PROVISIONING_STYLE
+    | COMPATIBILITY_VERSION
+    | DEVELOPMENT_REGION
+    | HAS_SCANNED_FOR_ENCODINGS
+    | KNOWN_REGIONS
+    | MAIN_GROUP
+    | PRODUCT_REF_GROUP
+    | PACKAGE_REFERENCES
+    | PRODUCT_DIR_PATH
+    | PROJECT_REFERENCES
+    | PROJECT_ROOT
+    | TARGETS
+    | INPUT_FILE_LIST_PATHS
+    | INPUT_PATHS
+    | OUTPUT_FILE_LIST_PATHS
+    | OUTPUT_PATHS
+    | SHELL_PATH
+    | SHELL_SCRIPT
+    | SHOW_ENV_VARS_IN_LOG
+    | TARGET
+    | TARGET_PROXY
+    | FILE_TYPE
+    | REMOTE_REF
+    | BASE_CONFIGURATION_REFERENCE
+    | BUILD_SETTINGS
+    | DST_PATH
+    | DST_SUBFOLDER_SPEC
+    | PRODUCT_GROUP
+    | PROJECT_REF
+    | BUILD_CONFIGURATIONS
+    | DEFAULT_CONFIGURATION_IS_VISIBLE
+    | DEFAULT_CONFIGURATION_NAME
+    | SETTINGS
+    | SYSTEM_CAPABILITIES
+    | CURRENT_VERSION
+    | VERSION_GROUP_TYPE
+    | CLASSPREFIX
+    ;
 
 // LEXER
 
 // Keywords
+ARCHIVE_VERSION: 'archiveVersion';
 CLASSES: 'classes';
+DASH: '-';
+DOT: '.';
 ISA: 'isa';
+NUMBER: [0-9]+;
+OBJECT_VERSION: 'objectVersion';
 OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
-NUMBER: [0-9]+;
-DOT: '.';
-DASH: '-';
-UNDERSCORE: '_';
 SLASH: '/';
+UNDERSCORE: '_';
+PBX_AGGREGATE_TARGET: 'PBXAggregateTarget';
+PBX_BUILD_FILE: 'PBXBuildFile';
+PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
+PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
+PBX_FILE_REFERENCE: 'PBXFileReference';
+PBX_FRAMEWORKS_BUILD_PHASE: 'PBXFrameworksBuildPhase';
+PBX_GROUP: 'PBXGroup';
+PBX_HEADERS_BUILD_PHASE: 'PBXHeadersBuildPhase';
+PBX_NATIVE_TARGET: 'PBXNativeTarget';
+PBX_LEGACY_TARGET: 'PBXLegacyTarget';
+PBX_PROJECT: 'PBXProject';
+PBX_REFERENCE_PROXY: 'PBXReferenceProxy';
+PBX_RESOURCES_BUILD_PHASE: 'PBXResourcesBuildPhase';
+PBX_SHELL_SCRIPT_BUILD_PHASE: 'PBXShellScriptBuildPhase';
+PBX_SOURCES_BUILD_PHASE: 'PBXSourcesBuildPhase';
+PBX_TARGET_DEPENDENCY: 'PBXTargetDependency';
+PBX_VARIANT_GROUP: 'PBXVariantGroup';
+XC_BUILD_CONFIGURATION: 'XCBuildConfiguration';
+XC_CONFIGURATION_LIST: 'XCConfigurationList';
+XC_REMOTE_SWIFT_PACKAGE_REFERENCE: 'XCRemoteSwiftPackageReference';
+XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY: 'XCSwiftPackageProductDependency';
+XC_VERSION_GROUP: 'XCVersionGroup';
+FILE_REF: 'fileRef';
+PRODUCT_REF: 'productRef';
+CONTAINER_PORTAL: 'containerPortal';
+PROXY_TYPE: 'proxyType';
+REMOTE_GLOBAL_ID_STRING: 'remoteGlobalIDString';
+REMOTE_INFO: 'remoteInfo';
+FILE_ENCODING: 'fileEncoding';
+COMMENTS: 'comments';
+EXPLICIT_FILE_TYPE: 'explicitFileType';
+LAST_KNOWN_FILE_TYPE: 'lastKnownFileType';
+INCLUDE_IN_INDEX: 'includeInIndex';
+INDENT_WIDTH: 'indentWidth';
+TAB_WIDTH: 'tabWidth';
+USES_TABS: 'usesTabs';
+WRAPS_LINES: 'wrapsLines';
+PLATFORM_FILTER: 'platformFilter';
+PLATFORM_FILTERS: 'platformFilters';
+CHILDREN: 'children';
+PRODUCT_INSTALL_PATH: 'productInstallPath';
+REPOSITORY_URL: 'repositoryURL';
+REQUIREMENT: 'requirement';
+PACKAGE: 'package';
+PACKAGE_PRODUCT_DEPENDENCIES: 'packageProductDependencies';
+NAME: 'name';
+PATH: 'path';
+SOURCE_TREE: 'sourceTree';
+BUILD_ACTION_MASK: 'buildActionMask';
+FILES: 'files';
+RUN_ONLY_FOR_DEPLOYMENT_POSTPROCESSING : 'runOnlyForDeploymentPostprocessing';
+BUILD_CONFIGURATION_LIST : 'buildConfigurationList';
+BUILD_PHASES : 'buildPhases';
+BUILD_RULES : 'buildRules';
+BUILD_ARGUMENTS_STRING : 'buildArgumentsString';
+BUILD_TOOL_PATH : 'buildToolPath';
+BUILD_WORKING_DIRECTORY : 'buildWorkingDirectory';
+PASS_BUILD_SETTINGS_IN_ENVIRONMENT : 'passBuildSettingsInEnvironment';
+DEPENDENCIES : 'dependencies';
+PRODUCT_NAME : 'productName';
+PRODUCT_REFERENCE : 'productReference';
+PRODUCT_TYPE : 'productType';
+LINE_ENDING : 'lineEnding';
+XC_LANGUAGE_SPECIFICATION_IDENTIFIER : 'xcLanguageSpecificationIdentifier';
+PLIST_STRUCTURE_DEFINITION_IDENTIFIER : 'plistStructureDefinitionIdentifier';
+ATTRIBUTES : 'attributes';
+LAST_SWIFT_MIGRATION : 'LastSwiftMigration';
+DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE : 'DefaultBuildSystemTypeForWorkspace';
+LAST_SWIFT_UPDATE_CHECK : 'LastSwiftUpdateCheck';
+BUILD_INDEPENDENT_TARGETS_IN_PARALLEL : 'BuildIndependentTargetsInParallel';
+LAST_TESTING_UPGRADE_CHECK : 'LastTestingUpgradeCheck';
+LAST_UPGRADE_CHECK : 'LastUpgradeCheck';
+ORGANIZATION_NAME : 'ORGANIZATIONNAME';
+TARGET_ATTRIBUTES : 'TargetAttributes';
+CREATED_ON_TOOLS_VERSION : 'CreatedOnToolsVersion';
+TEST_TARGET_ID : 'TestTargetID';
+DEVELOPMENT_TEAM : 'DevelopmentTeam';
+DEVELOPMENT_TEAM_NAME : 'DevelopmentTeamName';
+PROVISIONING_STYLE : 'ProvisioningStyle';
+COMPATIBILITY_VERSION : 'compatibilityVersion';
+DEVELOPMENT_REGION : 'developmentRegion';
+HAS_SCANNED_FOR_ENCODINGS : 'hasScannedForEncodings';
+KNOWN_REGIONS : 'knownRegions';
+MAIN_GROUP : 'mainGroup';
+PRODUCT_REF_GROUP : 'productRefGroup';
+PACKAGE_REFERENCES : 'packageReferences';
+PRODUCT_DIR_PATH : 'projectDirPath';
+PROJECT_REFERENCES : 'projectReferences';
+PROJECT_ROOT : 'projectRoot';
+TARGETS : 'targets';
+INPUT_FILE_LIST_PATHS : 'inputFileListPaths';
+INPUT_PATHS : 'inputPaths';
+OUTPUT_FILE_LIST_PATHS : 'outputFileListPaths';
+OUTPUT_PATHS : 'outputPaths';
+SHELL_PATH : 'shellPath';
+SHELL_SCRIPT : 'shellScript';
+SHOW_ENV_VARS_IN_LOG : 'showEnvVarsInLog';
+TARGET : 'target';
+TARGET_PROXY : 'targetProxy';
+FILE_TYPE : 'fileType';
+REMOTE_REF : 'remoteRef';
+BASE_CONFIGURATION_REFERENCE : 'baseConfigurationReference';
+BUILD_SETTINGS : 'buildSettings';
+DST_PATH : 'dstPath';
+DST_SUBFOLDER_SPEC : 'dstSubfolderSpec';
+PRODUCT_GROUP : 'ProductGroup';
+PROJECT_REF : 'ProjectRef';
+BUILD_CONFIGURATIONS : 'buildConfigurations';
+DEFAULT_CONFIGURATION_IS_VISIBLE : 'defaultConfigurationIsVisible';
+DEFAULT_CONFIGURATION_NAME : 'defaultConfigurationName';
+SETTINGS : 'settings';
+SYSTEM_CAPABILITIES : 'SystemCapabilities';
+CURRENT_VERSION : 'currentVersion';
+VERSION_GROUP_TYPE : 'versionGroupType';
+CLASSPREFIX : 'CLASSPREFIX';
+
 
 REFERENCE
     : HEX HEX HEX HEX
