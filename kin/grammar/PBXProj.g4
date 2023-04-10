@@ -937,15 +937,12 @@ any_string
 // LEXER
 
 // Keywords
-
 CLASSES: 'classes';
 ISA: 'isa';
 OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
-NUMBER: ('0'..'9')+;
+NUMBER: [0-9]+;
 DOT: '.';
-ALPHA_NUMERIC: [0-9a-zA-Z];
-ALPHA_NUMERIC_CAP: [0-9A-Z];
 DASH: '-';
 UNDERSCORE: '_';
 SLASH: '/';
@@ -979,6 +976,9 @@ QUOTED_STRING
 NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT)+;
 
 VARIABLE: ('$' NON_QUOTED_STRING) + SLASH?;
+
+ALPHA_NUMERIC: [0-9a-zA-Z];
+ALPHA_NUMERIC_CAP: [0-9A-Z];
 
 fragment HEX
     : [0-9a-fA-F]
