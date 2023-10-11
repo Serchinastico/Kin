@@ -1,31 +1,29 @@
 ![logo][logo]
 
-Kin [![Build Status](https://github.com/Serchinastico/Kin/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Serchinastico/Kin/releases)
-===
+# KIN [![Build Status](https://github.com/Serchinastico/Kin/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Serchinastico/Kin/releases)
 
 Kin is a minimalistic tool to check whether your project.pbxproj file is correct.
 
-What does it do?
------------------
+## What does it do?
 
 Have you ever found yourself undoing a merge due to a broken Xcode build? Then Kin is your tool. It will parse your project configuration file and detect errors.
 
-How does it work?
------------------
+## How does it work?
 
 Kin is just a syntax checker built with ANTLR 4 with a very thin layer to be usable from command line. On the fly syntax checking integration for text editors and IDEs is a work in progress (see the "Text editor/IDE integration" section below).
 
-Usage
------------------
+## Usage
 
 Install Kin with your favorite python package manager. If you don't have one you can use [pipx](https://pypa.github.io/pipx/).
 
 Using `pipx`
+
 ```
 pipx install kin
 ```
 
 Using `easy_install`
+
 ```
 easy_install kin
 ```
@@ -51,8 +49,7 @@ $> kin myProject/myProject.xcodeproj/project.pbxproj
 CORRECT
 ```
 
-Text editor/IDE integration
----------------------------
+## Text editor/IDE integration
 
 The following text editor and IDE integration packages are available:
 
@@ -60,8 +57,7 @@ Emacs
 
 - [flycheck-pbxproj](https://github.com/danielmartin/flycheck-pbxproj)
 
-Do you want to contribute?
---------------------------
+## Do you want to contribute?
 
 Feel free to add any useful feature to Kin, we will be glad to improve it with your help.
 
@@ -88,8 +84,7 @@ Only the `PBXProj.g4` file needs to be committed, GitHub Actions will produce th
 
 To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
 
-License
--------
+## License
 
     Copyright 2023 Serchinastico
 
