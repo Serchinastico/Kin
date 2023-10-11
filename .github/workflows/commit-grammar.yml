@@ -2,7 +2,7 @@ name: Commit Grammar
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   commit_grammar:
@@ -12,16 +12,16 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: 11
-      - name: Download ANTLR 4.11.1
+      - name: Download ANTLR 4.13.1
         working-directory: /tmp
         run: |
-          wget https://www.antlr.org/download/antlr-4.11.1-complete.jar
+          wget https://www.antlr.org/download/antlr-4.13.1-complete.jar
       - name: Update grammar
         working-directory: kin/grammar
         run: |
-          java -jar /tmp/antlr-4.11.1-complete.jar PBXProj.g4 -Dlanguage=Python3
+          java -jar /tmp/antlr-4.13.1-complete.jar PBXProj.g4 -Dlanguage=Python3
       - name: Commit changes
         run: |
           git add kin/grammar

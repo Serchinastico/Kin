@@ -5,13 +5,12 @@ name: Python Package
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   update_grammar:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,14 +19,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Download ANTLR 4.11.1
+      - name: Download ANTLR 4.13.1
         working-directory: /tmp
         run: |
-          wget https://www.antlr.org/download/antlr-4.11.1-complete.jar
+          wget https://www.antlr.org/download/antlr-4.13.1-complete.jar
       - name: Generate grammar
         working-directory: kin/grammar
         run: |
-          java -jar /tmp/antlr-4.11.1-complete.jar PBXProj.g4 -Dlanguage=Python3
+          java -jar /tmp/antlr-4.13.1-complete.jar PBXProj.g4 -Dlanguage=Python3
       - name: Upload grammar
         uses: actions/upload-artifact@master
         with:
@@ -40,24 +39,24 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.x']
+        python-version: ["3.x"]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Download grammar
-      uses: actions/download-artifact@master
-      with:
-        name: grammar
-        path: kin/grammar
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install pytest
-        pip install .
-    - name: Test
-      run: |
-        ./tests/tester.py
+      - uses: actions/checkout@v3
+      - name: Download grammar
+        uses: actions/download-artifact@master
+        with:
+          name: grammar
+          path: kin/grammar
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+          pip install .
+      - name: Test
+        run: |
+          ./tests/tester.py
