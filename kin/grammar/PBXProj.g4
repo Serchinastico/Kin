@@ -323,6 +323,7 @@ pbx_resources_build_phase
 pbx_shell_script_build_phase
     : REFERENCE '=' '{'
         isa_pbx_shell_script_build_phase
+        always_out_of_date?
         build_action_mask
         files
         input_file_list_paths?
@@ -505,6 +506,10 @@ isa_xc_version_group
     ;
 
 // Other rules
+
+always_out_of_date
+    : ALWAYS_OUT_OF_DATE '=' NUMBER ';'
+    ;
 
 file_ref
     : FILE_REF '=' REFERENCE ';'
@@ -1097,6 +1102,7 @@ XC_CONFIGURATION_LIST: 'XCConfigurationList';
 XC_REMOTE_SWIFT_PACKAGE_REFERENCE: 'XCRemoteSwiftPackageReference';
 XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY: 'XCSwiftPackageProductDependency';
 XC_VERSION_GROUP: 'XCVersionGroup';
+ALWAYS_OUT_OF_DATE: 'alwaysOutOfDate';
 FILE_REF: 'fileRef';
 PRODUCT_REF: 'productRef';
 CONTAINER_PORTAL: 'containerPortal';
