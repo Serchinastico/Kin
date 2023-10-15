@@ -665,6 +665,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#always_out_of_date.
+    def enterAlways_out_of_date(self, ctx:PBXProjParser.Always_out_of_dateContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#always_out_of_date.
+    def exitAlways_out_of_date(self, ctx:PBXProjParser.Always_out_of_dateContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#file_ref.
     def enterFile_ref(self, ctx:PBXProjParser.File_refContext):
         pass
