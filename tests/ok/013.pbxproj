@@ -497,8 +497,6 @@
 		497365A21C19BC6E00837617 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = F5F961FF2AD03AE000D334DA /* SwiftlintPlugin */;
-			target = 49FBBF8D1C10C2A200A1A4BB /* Mitsumori */;
-			targetProxy = 497365A11C19BC6E00837617 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

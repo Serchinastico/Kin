@@ -355,7 +355,7 @@ pbx_target_dependency
         platform_filters?
         product_ref?
         target?
-        target_proxy
+        target_proxy?
       '}' ';'
     ;
 
