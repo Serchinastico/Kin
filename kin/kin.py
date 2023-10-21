@@ -2,6 +2,7 @@
 
 import sys
 import os
+from pkg_resources import get_distribution
 from .verifier import Verifier
 from .grammar.PBXProjLexer import PBXProjLexer
 from .grammar.PBXProjParser import PBXProjParser
@@ -27,12 +28,15 @@ def find_target_files():
 
 
 def print_help():
+    version = get_distribution('kin').version
+
     print(("USAGE: kin [file]\n" +
           "DESCRIPTION: Verifies the correctness of your project.pbxproj " +
           "file. If no arguments are supplied, Kin will try to find a " +
           "project.pbxproj file in the current project.\nARGUMENTS:\n" +
           "\t- file\tOptionally provides the location of your " +
-          "project.pbxproj file"))
+          "project.pbxproj file\n\n" + 
+          "VERSION: " + version))
 
 
 def assert_valid_target_files(target_files):
