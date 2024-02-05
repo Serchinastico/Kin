@@ -28,6 +28,12 @@ Using `easy_install`
 easy_install kin
 ```
 
+Using Homebrew
+
+```
+brew install kin
+```
+
 Once installed, use Kin from your Xcode project directory. Kin will automatically detect where your project configuration is located and check whether it is correct.
 
 ```
