@@ -261,7 +261,7 @@ pbx_native_target
         product_install_path?
         package_product_dependencies?
         product_name
-        product_reference
+        product_reference?
         product_type
       '}' ';'
     ;
