@@ -34,6 +34,7 @@ objects
     : OBJECTS '=' '{'
         pbx_aggregate_target_section?
         pbx_build_file_section?
+        pbx_build_style_section?
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
         pbx_file_reference_section
@@ -69,6 +70,10 @@ pbx_aggregate_target_section
 
 pbx_build_file_section
     : (pbx_build_file)+
+    ;
+
+pbx_build_style_section
+    : (pbx_build_style)+
     ;
 
 pbx_container_item_proxy_section
@@ -172,6 +177,14 @@ pbx_build_file
         platform_filters?
         product_ref?
         settings?
+      '}' ';'
+    ;
+
+pbx_build_style
+    : REFERENCE '=' '{'
+        isa_pbx_build_style
+        build_settings
+        name
       '}' ';'
     ;
 
@@ -423,6 +436,10 @@ isa_pbx_aggregate_target
 
 isa_pbx_build_file
     : ISA '=' PBX_BUILD_FILE ';'
+    ;
+
+isa_pbx_build_style
+    : ISA '=' PBX_BUILD_STYLE ';'
     ;
 
 isa_pbx_container_item_proxy
@@ -1082,6 +1099,7 @@ SLASH: '/';
 UNDERSCORE: '_';
 PBX_AGGREGATE_TARGET: 'PBXAggregateTarget';
 PBX_BUILD_FILE: 'PBXBuildFile';
+PBX_BUILD_STYLE: 'PBXBuildStyle';
 PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
