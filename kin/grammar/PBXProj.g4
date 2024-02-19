@@ -230,6 +230,7 @@ pbx_group
     : REFERENCE '=' '{'
         isa_pbx_group
         children
+        comments?
         indent_width?
         include_in_index?
         name?
