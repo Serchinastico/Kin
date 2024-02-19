@@ -261,7 +261,7 @@ pbx_native_target
         product_install_path?
         package_product_dependencies?
         product_name
-        product_reference
+        product_reference?
         product_type
       '}' ';'
     ;
@@ -1217,6 +1217,8 @@ REFERENCE
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+    | 'OBJ_' NUMBER
+    | '"' NON_QUOTED_STRING+ ('::' NON_QUOTED_STRING+)+ '"'
     ;
 
 QUOTED_STRING
