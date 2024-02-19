@@ -14,7 +14,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='kin',
-    version='2.1.6',
+    version='2.1.7',
     description='A simple project.pbxproj verifier',
     long_description=long_description,
     url='https://github.com/Serchinastico/Kin',
