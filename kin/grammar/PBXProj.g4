@@ -308,7 +308,7 @@ pbx_project
         product_ref_group?
         project_dir_path
         project_references?
-        project_root
+        project_root?
         targets
       '}' ';'
     ;
