@@ -299,7 +299,7 @@ pbx_project
         isa_pbx_project
         attributes?
         build_configuration_list
-        compatibility_version
+        compatibility_version?
         development_region?
         has_scanned_for_encodings
         known_regions?
