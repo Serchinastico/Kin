@@ -607,7 +607,7 @@ children
     ;
 
 product_install_path
-    : PRODUCT_INSTALL_PATH '=' QUOTED_STRING ';'
+    : PRODUCT_INSTALL_PATH '=' any_string ';'
     ;
 
 repository_url
