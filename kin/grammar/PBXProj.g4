@@ -163,6 +163,7 @@ pbx_aggregate_target
         isa_pbx_aggregate_target
         build_configuration_list
         build_phases
+        build_settings?
         dependencies
         name
         product_name?
@@ -272,6 +273,7 @@ pbx_native_target
         build_phases
         build_rules
         comments?
+        build_settings?
         dependencies
         name
         product_install_path?
@@ -302,7 +304,8 @@ pbx_project
         isa_pbx_project
         attributes?
         build_configuration_list
-        compatibility_version?
+        build_settings?
+        compatibility_version
         development_region?
         has_scanned_for_encodings
         known_regions?
