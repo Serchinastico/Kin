@@ -89,6 +89,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_build_style_section.
+    def enterPbx_build_style_section(self, ctx:PBXProjParser.Pbx_build_style_sectionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_build_style_section.
+    def exitPbx_build_style_section(self, ctx:PBXProjParser.Pbx_build_style_sectionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_container_item_proxy_section.
     def enterPbx_container_item_proxy_section(self, ctx:PBXProjParser.Pbx_container_item_proxy_sectionContext):
         pass
@@ -287,6 +296,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_build_style.
+    def enterPbx_build_style(self, ctx:PBXProjParser.Pbx_build_styleContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_build_style.
+    def exitPbx_build_style(self, ctx:PBXProjParser.Pbx_build_styleContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_container_item_proxy.
     def enterPbx_container_item_proxy(self, ctx:PBXProjParser.Pbx_container_item_proxyContext):
         pass
@@ -482,6 +500,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#isa_pbx_build_file.
     def exitIsa_pbx_build_file(self, ctx:PBXProjParser.Isa_pbx_build_fileContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_pbx_build_style.
+    def enterIsa_pbx_build_style(self, ctx:PBXProjParser.Isa_pbx_build_styleContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_pbx_build_style.
+    def exitIsa_pbx_build_style(self, ctx:PBXProjParser.Isa_pbx_build_styleContext):
         pass
 
 
