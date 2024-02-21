@@ -185,8 +185,8 @@ pbx_build_file
 pbx_build_style
     : REFERENCE '=' '{'
         isa_pbx_build_style
-        build_settings
-        name
+        build_settings?
+        name?
       '}' ';'
     ;
 
