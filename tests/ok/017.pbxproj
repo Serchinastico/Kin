@@ -387,7 +387,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-			);
+../cmake/dep/cpuinfo/CMakeFiles/ZERO_CHECK			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which \"${SRCROOT}/scripts/swiftlint\" > /dev/null; then\n    \"${SRCROOT}/scripts/swiftlint\" --fix --config \"$SRCROOT/.swiftlint.yml\" && \"${SRCROOT}/scripts/swiftlint\" lint --config \"$SRCROOT/.swiftlint.yml\"\n  else\n    echo \"warning: SwiftLint not installed, ask for help in #ask-ios as it should be present by default.\"\n  fi\nfi\n";
