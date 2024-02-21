@@ -80,10 +80,10 @@ cd kin/grammar
 antlr PBXProj.g4 -Dlanguage=Python3
 ```
 
-The global `kin` command can optionally be symlinked to the local project with:
+`kin` can optionally be symlinked by running this command in the root of the project:
 
 ```bash
-pip install -e ../..
+pip install -e .
 ```
 
 Only the `PBXProj.g4` file needs to be committed, GitHub Actions will produce the compiled grammar files.
