@@ -214,6 +214,7 @@ pbx_file_reference
     : REFERENCE '=' '{'
         isa_pbx_file_reference
         comments?
+        file_encoding?
         explicit_file_type?
         file_encoding?
         include_in_index?
