@@ -164,6 +164,7 @@ pbx_aggregate_target
         build_configuration_list
         build_phases
         build_settings?
+        comments?
         dependencies
         name
         product_name?
