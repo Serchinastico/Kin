@@ -34,6 +34,7 @@ objects
     : OBJECTS '=' '{'
         pbx_aggregate_target_section?
         pbx_build_file_section?
+        pbx_build_rule_section?
         pbx_build_style_section?
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
@@ -70,6 +71,10 @@ pbx_aggregate_target_section
 
 pbx_build_file_section
     : (pbx_build_file)+
+    ;
+
+pbx_build_rule_section
+    : (pbx_build_rule)+
     ;
 
 pbx_build_style_section
@@ -179,6 +184,20 @@ pbx_build_file
         platform_filters?
         product_ref?
         settings?
+      '}' ';'
+    ;
+
+pbx_build_rule
+    : REFERENCE '=' '{'
+        isa_pbx_build_rule
+        compiler_spec
+        file_patterns?
+        file_type
+        input_files
+        is_editable
+        output_files
+        run_once_per_arch?
+        script?
       '}' ';'
     ;
 
@@ -445,6 +464,10 @@ isa_pbx_aggregate_target
 
 isa_pbx_build_file
     : ISA '=' PBX_BUILD_FILE ';'
+    ;
+
+isa_pbx_build_rule
+    : ISA '=' PBX_BUILD_RULE ';'
     ;
 
 isa_pbx_build_style
@@ -725,6 +748,34 @@ ref_type
     : REF_TYPE '=' NUMBER ';'
     ;
 
+compiler_spec
+    : COMPILER_SPEC '=' any_string ';'
+    ;
+
+file_patterns
+    : FILE_PATTERNS '=' any_string ';'
+    ;
+
+input_files
+    : INPUT_FILES '=' any_string_list ';'
+    ;
+
+is_editable
+    : IS_EDITABLE '=' NUMBER ';'
+    ;
+
+output_files
+    : OUTPUT_FILES '=' any_string_list ';'
+    ;
+
+run_once_per_arch
+    : RUN_ONCE_PER_ARCH '=' NUMBER ';'
+    ;
+
+script
+    : SCRIPT '=' any_string ';'
+    ;
+
 attributes
     : ATTRIBUTES '=' '{'
         build_targets_in_parallel?
@@ -987,6 +1038,7 @@ any_token
     | ROOT_OBJECT
     | PBX_AGGREGATE_TARGET
     | PBX_BUILD_FILE
+    | PBX_BUILD_RULE
     | PBX_BUILD_STYLE
     | PBX_CONTAINER_ITEM_PROXY
     | PBX_COPY_FILES_BUILD_PHASE
@@ -1050,6 +1102,13 @@ any_token
     | XC_LANGUAGE_SPECIFICATION_IDENTIFIER
     | PLIST_STRUCTURE_DEFINITION_IDENTIFIER
     | REF_TYPE
+    | COMPILER_SPEC
+    | FILE_PATTERNS
+    | INPUT_FILES
+    | IS_EDITABLE
+    | OUTPUT_FILES
+    | RUN_ONCE_PER_ARCH
+    | SCRIPT
     | ATTRIBUTES
     | LAST_SWIFT_MIGRATION
     | DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE
@@ -1118,6 +1177,7 @@ SLASH: '/';
 UNDERSCORE: '_';
 PBX_AGGREGATE_TARGET: 'PBXAggregateTarget';
 PBX_BUILD_FILE: 'PBXBuildFile';
+PBX_BUILD_RULE: 'PBXBuildRule';
 PBX_BUILD_STYLE: 'PBXBuildStyle';
 PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
@@ -1184,6 +1244,13 @@ LINE_ENDING : 'lineEnding';
 XC_LANGUAGE_SPECIFICATION_IDENTIFIER : 'xcLanguageSpecificationIdentifier';
 PLIST_STRUCTURE_DEFINITION_IDENTIFIER : 'plistStructureDefinitionIdentifier';
 REF_TYPE : 'refType';
+COMPILER_SPEC: 'compilerSpec';
+FILE_PATTERNS: 'filePatterns';
+INPUT_FILES: 'inputFiles';
+IS_EDITABLE: 'isEditable';
+OUTPUT_FILES: 'outputFiles';
+RUN_ONCE_PER_ARCH: 'runOncePerArchitecture';
+SCRIPT: 'script';
 ATTRIBUTES : 'attributes';
 LAST_SWIFT_MIGRATION : 'LastSwiftMigration';
 DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE : 'DefaultBuildSystemTypeForWorkspace';
