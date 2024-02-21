@@ -230,6 +230,7 @@ pbx_group
     : REFERENCE '=' '{'
         isa_pbx_group
         children
+        comments?
         indent_width?
         include_in_index?
         name?
@@ -256,6 +257,7 @@ pbx_native_target
         build_configuration_list
         build_phases
         build_rules
+        comments?
         dependencies
         name
         product_install_path?
