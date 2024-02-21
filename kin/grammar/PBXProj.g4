@@ -34,6 +34,7 @@ objects
     : OBJECTS '=' '{'
         pbx_aggregate_target_section?
         pbx_build_file_section?
+        pbx_build_style_section?
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
         pbx_file_reference_section
@@ -69,6 +70,10 @@ pbx_aggregate_target_section
 
 pbx_build_file_section
     : (pbx_build_file)+
+    ;
+
+pbx_build_style_section
+    : (pbx_build_style)+
     ;
 
 pbx_container_item_proxy_section
@@ -172,6 +177,14 @@ pbx_build_file
         platform_filters?
         product_ref?
         settings?
+      '}' ';'
+    ;
+
+pbx_build_style
+    : REFERENCE '=' '{'
+        isa_pbx_build_style
+        build_settings
+        name
       '}' ';'
     ;
 
@@ -288,7 +301,7 @@ pbx_project
         isa_pbx_project
         attributes?
         build_configuration_list
-        compatibility_version
+        compatibility_version?
         development_region?
         has_scanned_for_encodings
         known_regions?
@@ -297,7 +310,7 @@ pbx_project
         product_ref_group?
         project_dir_path
         project_references?
-        project_root
+        project_root?
         targets
       '}' ';'
     ;
@@ -425,6 +438,10 @@ isa_pbx_aggregate_target
 
 isa_pbx_build_file
     : ISA '=' PBX_BUILD_FILE ';'
+    ;
+
+isa_pbx_build_style
+    : ISA '=' PBX_BUILD_STYLE ';'
     ;
 
 isa_pbx_container_item_proxy
@@ -1084,6 +1101,7 @@ SLASH: '/';
 UNDERSCORE: '_';
 PBX_AGGREGATE_TARGET: 'PBXAggregateTarget';
 PBX_BUILD_FILE: 'PBXBuildFile';
+PBX_BUILD_STYLE: 'PBXBuildStyle';
 PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
@@ -1094,7 +1112,7 @@ PBX_NATIVE_TARGET: 'PBXNativeTarget';
 PBX_LEGACY_TARGET: 'PBXLegacyTarget';
 PBX_PROJECT: 'PBXProject';
 PBX_REFERENCE_PROXY: 'PBXReferenceProxy';
-PBX_RESOURCES_BUILD_PHASE: 'PBXResourcesBuildPhase';
+PBX_RESOURCES_BUILD_PHASE: 'PBXResourcesBuildPhase' | 'PBXRezBuildPhase';
 PBX_SHELL_SCRIPT_BUILD_PHASE: 'PBXShellScriptBuildPhase';
 PBX_SOURCES_BUILD_PHASE: 'PBXSourcesBuildPhase';
 PBX_TARGET_DEPENDENCY: 'PBXTargetDependency';
