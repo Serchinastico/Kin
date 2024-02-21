@@ -225,6 +225,7 @@ pbx_file_reference
         line_ending?
         name?
         path?
+        ref_type?
         plist_structure_definition_identifier?
         source_tree?
         tab_width?
@@ -720,6 +721,10 @@ plist_structure_definition_identifier
     : PLIST_STRUCTURE_DEFINITION_IDENTIFIER '=' str_number_variable ';'
     ;
 
+ref_type
+    : REF_TYPE '=' NUMBER ';'
+    ;
+
 attributes
     : ATTRIBUTES '=' '{'
         build_targets_in_parallel?
@@ -1044,6 +1049,7 @@ any_token
     | LINE_ENDING
     | XC_LANGUAGE_SPECIFICATION_IDENTIFIER
     | PLIST_STRUCTURE_DEFINITION_IDENTIFIER
+    | REF_TYPE
     | ATTRIBUTES
     | LAST_SWIFT_MIGRATION
     | DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE
@@ -1177,6 +1183,7 @@ PRODUCT_TYPE : 'productType';
 LINE_ENDING : 'lineEnding';
 XC_LANGUAGE_SPECIFICATION_IDENTIFIER : 'xcLanguageSpecificationIdentifier';
 PLIST_STRUCTURE_DEFINITION_IDENTIFIER : 'plistStructureDefinitionIdentifier';
+REF_TYPE : 'refType';
 ATTRIBUTES : 'attributes';
 LAST_SWIFT_MIGRATION : 'LastSwiftMigration';
 DEFAULT_BUILD_SYSTEM_TYPE_FOR_WORKSPACE : 'DefaultBuildSystemTypeForWorkspace';
