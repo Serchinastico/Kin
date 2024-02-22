@@ -656,7 +656,7 @@ reference_list
     ;
 
 any_string_list
-    : '(' (str_number_variable ',')* ')'
+    : '(' ')' |  '(' str_number_variable (',' str_number_variable)* ','? ')'
     ;
 
 non_quoted_strings_list
