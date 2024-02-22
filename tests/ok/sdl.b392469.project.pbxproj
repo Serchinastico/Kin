@@ -13,6 +13,7 @@
 			buildPhases = (
 				F3676F5E2A78852D0091160D /* ShellScript */,
 			);
+			comments = "Test comment.";
 			dependencies = (
 				F3676F5D2A7885130091160D /* PBXTargetDependency */,
 			);
