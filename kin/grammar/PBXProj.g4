@@ -926,7 +926,7 @@ key_value
     | str_number_variable '=' NUMBER ';'
     | str_number_variable '=' ALPHA_NUMERIC ';'
     | str_number_variable '=' '{' key_value '}' ';'
-    | str_number_variable '=' '(' (str_number_variable ',')* ')' ';'
+    | str_number_variable '=' '(' str_number_variable? (',' str_number_variable)* ','? ')' ';'
     ;
 
 build_configurations
