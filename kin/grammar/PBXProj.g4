@@ -1020,6 +1020,7 @@ class_prefix
 any_string
     : NON_QUOTED_STRING
     | QUOTED_STRING
+    | UNDERSCORE|DASH|DOT
     | any_token
     ;
 
