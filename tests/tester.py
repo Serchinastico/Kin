@@ -3,6 +3,11 @@
 import sys
 import os
 
+class terminal_colors:
+    SUCCESS = '\033[92m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
 
 class Tester:
     def __init__(self, verifier):
@@ -38,12 +43,14 @@ class Tester:
 
     def report_test_case(self, path, passed):
         if passed:
+            color = terminal_colors.SUCCESS
             passed_mark = "✓"
         else:
+            color = terminal_colors.FAIL
             passed_mark = "✗"
             self.has_errors = True
 
-        print(("Testing " + path + "... " + passed_mark))
+        print((color + "Testing " + path + "... " + passed_mark + terminal_colors.ENDC))
 
 
 def main():
