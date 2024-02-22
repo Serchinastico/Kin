@@ -1466,6 +1466,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#build_styles.
+    def enterBuild_styles(self, ctx:PBXProjParser.Build_stylesContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#build_styles.
+    def exitBuild_styles(self, ctx:PBXProjParser.Build_stylesContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#dst_path.
     def enterDst_path(self, ctx:PBXProjParser.Dst_pathContext):
         pass
