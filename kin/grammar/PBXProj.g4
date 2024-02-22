@@ -163,6 +163,7 @@ pbx_aggregate_target
         isa_pbx_aggregate_target
         build_configuration_list
         build_phases
+        build_settings?
         dependencies
         name
         product_name?
@@ -272,6 +273,7 @@ pbx_native_target
         build_phases
         build_rules
         comments?
+        build_settings?
         dependencies
         name
         product_install_path?
@@ -302,7 +304,9 @@ pbx_project
         isa_pbx_project
         attributes?
         build_configuration_list
+        build_settings?
         compatibility_version?
+        build_styles?
         development_region?
         has_scanned_for_encodings
         known_regions?
@@ -604,7 +608,7 @@ children
     ;
 
 product_install_path
-    : PRODUCT_INSTALL_PATH '=' QUOTED_STRING ';'
+    : PRODUCT_INSTALL_PATH '=' any_string ';'
     ;
 
 repository_url
@@ -893,6 +897,10 @@ build_settings
       '}' ';'
     ;
 
+build_styles
+    : BUILD_STYLES '=' reference_list ';'
+    ;
+
 dst_path
     : DST_PATH '=' any_string ';'
     ;
@@ -973,6 +981,7 @@ any_token
     | ROOT_OBJECT
     | PBX_AGGREGATE_TARGET
     | PBX_BUILD_FILE
+    | PBX_BUILD_STYLE
     | PBX_CONTAINER_ITEM_PROXY
     | PBX_COPY_FILES_BUILD_PHASE
     | PBX_FILE_REFERENCE
@@ -1205,6 +1214,7 @@ FILE_TYPE : 'fileType';
 REMOTE_REF : 'remoteRef';
 BASE_CONFIGURATION_REFERENCE : 'baseConfigurationReference';
 BUILD_SETTINGS : 'buildSettings';
+BUILD_STYLES : 'buildStyles';
 DST_PATH : 'dstPath';
 DST_SUBFOLDER_SPEC : 'dstSubfolderSpec';
 PRODUCT_GROUP : 'ProductGroup';
