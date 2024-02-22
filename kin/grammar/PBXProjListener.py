@@ -1115,6 +1115,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#ref_type.
+    def enterRef_type(self, ctx:PBXProjParser.Ref_typeContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#ref_type.
+    def exitRef_type(self, ctx:PBXProjParser.Ref_typeContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#attributes.
     def enterAttributes(self, ctx:PBXProjParser.AttributesContext):
         pass
