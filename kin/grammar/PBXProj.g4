@@ -307,8 +307,8 @@ pbx_project
         attributes?
         build_configuration_list
         build_settings?
-        compatibility_version?
         build_styles?
+        compatibility_version?
         development_region?
         has_scanned_for_encodings
         known_regions?
