@@ -891,7 +891,7 @@ output_paths
     ;
 
 shell_path
-    : SHELL_PATH '=' NON_QUOTED_STRING ';'
+    : SHELL_PATH '=' any_string ';'
     ;
 
 shell
