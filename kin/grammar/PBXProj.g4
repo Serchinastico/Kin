@@ -47,6 +47,7 @@ objects
         pbx_reference_proxy_section?
         pbx_resources_build_phase_section?
         pbx_shell_script_build_phase_section?
+        pbx_shell_build_phase_section?
         pbx_sources_build_phase_section?
         pbx_target_dependency_section?
         pbx_variant_group_section?
@@ -122,6 +123,10 @@ pbx_resources_build_phase_section
 
 pbx_shell_script_build_phase_section
     : (pbx_shell_script_build_phase)+
+    ;
+
+pbx_shell_build_phase_section
+    : (pbx_shell_build_phase)+
     ;
 
 pbx_sources_build_phase_section
@@ -360,6 +365,22 @@ pbx_shell_script_build_phase
       '}' ';'
     ;
 
+pbx_shell_build_phase
+    : REFERENCE '=' '{'
+        isa_pbx_shell_build_phase
+        build_action_mask
+        files
+        input_file_list_paths
+        input_paths
+        name
+        output_file_list_paths
+        output_paths
+        run_only_for_deployment_postprocessing
+        shell_path
+        shell
+      '}' ';'
+    ;
+
 pbx_sources_build_phase
     : REFERENCE '=' '{'
         isa_pbx_sources_build_phase
@@ -497,6 +518,10 @@ isa_pbx_resources_build_phase
 
 isa_pbx_shell_script_build_phase
     : ISA '=' PBX_SHELL_SCRIPT_BUILD_PHASE ';'
+    ;
+
+isa_pbx_shell_build_phase
+    : ISA '=' PBX_SHELL_BUILD_PHASE ';'
     ;
 
 isa_pbx_sources_build_phase
@@ -869,6 +894,10 @@ shell_path
     : SHELL_PATH '=' NON_QUOTED_STRING ';'
     ;
 
+shell
+    : SHELL '=' QUOTED_STRING ';'
+    ;
+
 shell_script
     : SHELL_SCRIPT '=' any_string ';'
     ;
@@ -1080,6 +1109,7 @@ any_token
     | OUTPUT_FILE_LIST_PATHS
     | OUTPUT_PATHS
     | SHELL_PATH
+    | SHELL
     | SHELL_SCRIPT
     | SHOW_ENV_VARS_IN_LOG
     | TARGET
@@ -1131,6 +1161,7 @@ PBX_PROJECT: 'PBXProject';
 PBX_REFERENCE_PROXY: 'PBXReferenceProxy';
 PBX_RESOURCES_BUILD_PHASE: 'PBXResourcesBuildPhase' | 'PBXRezBuildPhase';
 PBX_SHELL_SCRIPT_BUILD_PHASE: 'PBXShellScriptBuildPhase';
+PBX_SHELL_BUILD_PHASE: 'PBXShellBuildPhase';
 PBX_SOURCES_BUILD_PHASE: 'PBXSourcesBuildPhase';
 PBX_TARGET_DEPENDENCY: 'PBXTargetDependency';
 PBX_VARIANT_GROUP: 'PBXVariantGroup';
@@ -1214,6 +1245,7 @@ INPUT_PATHS : 'inputPaths';
 OUTPUT_FILE_LIST_PATHS : 'outputFileListPaths';
 OUTPUT_PATHS : 'outputPaths';
 SHELL_PATH : 'shellPath';
+SHELL : 'shell';
 SHELL_SCRIPT : 'shellScript';
 SHOW_ENV_VARS_IN_LOG : 'showEnvVarsInLog';
 TARGET : 'target';
