@@ -228,9 +228,9 @@ pbx_copy_files_build_phase
     : REFERENCE '=' '{'
         isa_pbx_copy_files_build_phase
         build_action_mask
-        dst_path
+        dst_path?
         dst_subfolder_spec
-        files
+        files?
         name?
         run_only_for_deployment_postprocessing
       '}' ';'
