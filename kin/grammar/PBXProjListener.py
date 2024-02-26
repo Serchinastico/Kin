@@ -215,6 +215,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_shell_build_phase_section.
+    def enterPbx_shell_build_phase_section(self, ctx:PBXProjParser.Pbx_shell_build_phase_sectionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_shell_build_phase_section.
+    def exitPbx_shell_build_phase_section(self, ctx:PBXProjParser.Pbx_shell_build_phase_sectionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_sources_build_phase_section.
     def enterPbx_sources_build_phase_section(self, ctx:PBXProjParser.Pbx_sources_build_phase_sectionContext):
         pass
@@ -431,6 +440,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_shell_build_phase.
+    def enterPbx_shell_build_phase(self, ctx:PBXProjParser.Pbx_shell_build_phaseContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_shell_build_phase.
+    def exitPbx_shell_build_phase(self, ctx:PBXProjParser.Pbx_shell_build_phaseContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_sources_build_phase.
     def enterPbx_sources_build_phase(self, ctx:PBXProjParser.Pbx_sources_build_phaseContext):
         pass
@@ -644,6 +662,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#isa_pbx_shell_script_build_phase.
     def exitIsa_pbx_shell_script_build_phase(self, ctx:PBXProjParser.Isa_pbx_shell_script_build_phaseContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_pbx_shell_build_phase.
+    def enterIsa_pbx_shell_build_phase(self, ctx:PBXProjParser.Isa_pbx_shell_build_phaseContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_pbx_shell_build_phase.
+    def exitIsa_pbx_shell_build_phase(self, ctx:PBXProjParser.Isa_pbx_shell_build_phaseContext):
         pass
 
 
@@ -1490,6 +1517,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#shell_path.
     def exitShell_path(self, ctx:PBXProjParser.Shell_pathContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#shell.
+    def enterShell(self, ctx:PBXProjParser.ShellContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#shell.
+    def exitShell(self, ctx:PBXProjParser.ShellContext):
         pass
 
 
