@@ -38,7 +38,7 @@ objects
         pbx_build_style_section?
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
-        pbx_file_reference_section
+        pbx_file_reference_section?
         pbx_frameworks_build_phase_section?
         pbx_group_section
         pbx_headers_build_phase_section?
