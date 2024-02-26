@@ -250,6 +250,7 @@ pbx_file_reference
         tab_width?
         xc_language_specification_identifier?
         uses_tabs?
+        wraps_lines?
       '}' ';'
     ;
 
