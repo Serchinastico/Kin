@@ -228,9 +228,9 @@ pbx_copy_files_build_phase
     : REFERENCE '=' '{'
         isa_pbx_copy_files_build_phase
         build_action_mask
-        dst_path
+        dst_path?
         dst_subfolder_spec
-        files
+        files?
         name?
         run_only_for_deployment_postprocessing
       '}' ';'
@@ -1207,6 +1207,7 @@ OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
 SLASH: '/';
 UNDERSCORE: '_';
+DOLLAR: '$';
 PBX_AGGREGATE_TARGET: 'PBXAggregateTarget';
 PBX_BUILD_FILE: 'PBXBuildFile';
 PBX_BUILD_RULE: 'PBXBuildRule';
@@ -1366,7 +1367,7 @@ QUOTED_STRING
     | '"' '"'
     ;
 
-NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT)+;
+NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT|DOLLAR)+;
 
 VARIABLE: ('$' NON_QUOTED_STRING) + SLASH?;
 
