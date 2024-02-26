@@ -89,6 +89,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_build_rule_section.
+    def enterPbx_build_rule_section(self, ctx:PBXProjParser.Pbx_build_rule_sectionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_build_rule_section.
+    def exitPbx_build_rule_section(self, ctx:PBXProjParser.Pbx_build_rule_sectionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_build_style_section.
     def enterPbx_build_style_section(self, ctx:PBXProjParser.Pbx_build_style_sectionContext):
         pass
@@ -296,6 +305,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_build_rule.
+    def enterPbx_build_rule(self, ctx:PBXProjParser.Pbx_build_ruleContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_build_rule.
+    def exitPbx_build_rule(self, ctx:PBXProjParser.Pbx_build_ruleContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_build_style.
     def enterPbx_build_style(self, ctx:PBXProjParser.Pbx_build_styleContext):
         pass
@@ -500,6 +518,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#isa_pbx_build_file.
     def exitIsa_pbx_build_file(self, ctx:PBXProjParser.Isa_pbx_build_fileContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_pbx_build_rule.
+    def enterIsa_pbx_build_rule(self, ctx:PBXProjParser.Isa_pbx_build_ruleContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_pbx_build_rule.
+    def exitIsa_pbx_build_rule(self, ctx:PBXProjParser.Isa_pbx_build_ruleContext):
         pass
 
 
@@ -1121,6 +1148,69 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#ref_type.
     def exitRef_type(self, ctx:PBXProjParser.Ref_typeContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#compiler_spec.
+    def enterCompiler_spec(self, ctx:PBXProjParser.Compiler_specContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#compiler_spec.
+    def exitCompiler_spec(self, ctx:PBXProjParser.Compiler_specContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#file_patterns.
+    def enterFile_patterns(self, ctx:PBXProjParser.File_patternsContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#file_patterns.
+    def exitFile_patterns(self, ctx:PBXProjParser.File_patternsContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#input_files.
+    def enterInput_files(self, ctx:PBXProjParser.Input_filesContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#input_files.
+    def exitInput_files(self, ctx:PBXProjParser.Input_filesContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#is_editable.
+    def enterIs_editable(self, ctx:PBXProjParser.Is_editableContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#is_editable.
+    def exitIs_editable(self, ctx:PBXProjParser.Is_editableContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#output_files.
+    def enterOutput_files(self, ctx:PBXProjParser.Output_filesContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#output_files.
+    def exitOutput_files(self, ctx:PBXProjParser.Output_filesContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#run_once_per_arch.
+    def enterRun_once_per_arch(self, ctx:PBXProjParser.Run_once_per_archContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#run_once_per_arch.
+    def exitRun_once_per_arch(self, ctx:PBXProjParser.Run_once_per_archContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#script.
+    def enterScript(self, ctx:PBXProjParser.ScriptContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#script.
+    def exitScript(self, ctx:PBXProjParser.ScriptContext):
         pass
 
 
