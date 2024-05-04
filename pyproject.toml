@@ -1,0 +1,27 @@
+[project]
+name = "kin"
+version = "2.1.9"
+description = "A simple project.pbxproj verifier"
+keywords = ["xcode", "project.pbxproj", "lint", "objective-c", "swift", "ios"]
+readme = "README.rst"
+authors = [{ name = "Serchinastico", email = "oss@serchinastico.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = ["antlr4-python3-runtime==4.13.1"]
+license = { text = "Apache Software" }
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/Serchinastico/Kin"
+
+[project.scripts]
+kin = "kin.kin:main"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
