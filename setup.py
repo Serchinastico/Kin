@@ -32,7 +32,6 @@ setup(
     keywords='xcode project.pbxproj lint objective-c swift ios',
     packages=find_packages(exclude=['tests']),
     install_requires=[
-        'argparse==1.4.0',
         'antlr4-python3-runtime==4.13.1'
     ],
     entry_points={
