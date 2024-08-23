@@ -683,7 +683,7 @@ name
     ;
 
 path
-    : PATH '=' any_string ';'
+    : PATH '=' str_number_variable ';'
     ;
 
 source_tree
