@@ -3,10 +3,13 @@ grammar PBXProj;
 // PARSER
 
 start
-    : root_element
+    : encoding? root_element
     ;
 
 // Root
+
+encoding: '// !$*UTF8*$!';
+
 
 root_element
     : '{'
@@ -980,7 +983,7 @@ base_configuration_reference
 
 build_settings
     : BUILD_SETTINGS '=' '{'
-        key_value*
+        (key_value|unicode_scalar_codepoint)*
       '}' ';'
     ;
 
@@ -1013,6 +1016,10 @@ key_value
     | str_number_variable '=' ALPHA_NUMERIC ';'
     | str_number_variable '=' '{' key_value '}' ';'
     | str_number_variable '=' '(' str_number_variable? (',' str_number_variable)* ','? ')' ';'
+    ;
+
+unicode_scalar_codepoint
+    : 'unicode_scalar_codepoint_' ALPHA_NUMERIC '=' QUOTED_UNICODE_STRING ';'
     ;
 
 build_configurations
@@ -1369,6 +1376,10 @@ QUOTED_STRING
 
 NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT|DOLLAR)+;
 
+QUOTED_UNICODE_STRING: '"' UNICODE_STRING '"';
+
+UNICODE_STRING: (ESC|SAFECODEPOINT)+;
+
 VARIABLE: ('$' NON_QUOTED_STRING) + SLASH?;
 
 ALPHA_NUMERIC: [0-9a-zA-Z];
@@ -1383,10 +1394,18 @@ fragment QUOTED_STRING_CHARACTER
     | '\\"'
     ;
 
+fragment ESC
+   : '\\' (["\\/bfnrt])
+   ;
+
+fragment SAFECODEPOINT
+   : [\u00FF-\uFFFF]
+   ;
+
 // Whitespace & comments
 
 WS:  [ \t\r\n\u000C]+ -> skip;
 
-COMMENT: '/*' .*? '*/' -> skip;
+BLOCK_COMMENT : '/*' ( BLOCK_COMMENT | . )*? '*/'  -> skip ;
 
 LINE_COMMENT: '//' ~[\r\n]* -> skip;

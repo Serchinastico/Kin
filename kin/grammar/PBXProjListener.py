@@ -17,6 +17,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#encoding.
+    def enterEncoding(self, ctx:PBXProjParser.EncodingContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#encoding.
+    def exitEncoding(self, ctx:PBXProjParser.EncodingContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#root_element.
     def enterRoot_element(self, ctx:PBXProjParser.Root_elementContext):
         pass
@@ -1652,6 +1661,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#key_value.
     def exitKey_value(self, ctx:PBXProjParser.Key_valueContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#unicode_scalar_codepoint.
+    def enterUnicode_scalar_codepoint(self, ctx:PBXProjParser.Unicode_scalar_codepointContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#unicode_scalar_codepoint.
+    def exitUnicode_scalar_codepoint(self, ctx:PBXProjParser.Unicode_scalar_codepointContext):
         pass
 
 
