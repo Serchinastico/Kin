@@ -537,7 +537,7 @@ def serializedATN():
         1350,5,68,0,0,1350,1351,5,3,0,0,1351,1352,3,224,112,0,1352,1353,
         5,4,0,0,1353,211,1,0,0,0,1354,1355,5,69,0,0,1355,1356,5,3,0,0,1356,
         1357,3,382,191,0,1357,1358,5,4,0,0,1358,213,1,0,0,0,1359,1360,5,
-        70,0,0,1360,1361,5,3,0,0,1361,1362,3,382,191,0,1362,1363,5,4,0,0,
+        70,0,0,1360,1361,5,3,0,0,1361,1362,3,384,192,0,1362,1363,5,4,0,0,
         1363,215,1,0,0,0,1364,1365,5,71,0,0,1365,1366,5,3,0,0,1366,1367,
         3,382,191,0,1367,1368,5,4,0,0,1368,217,1,0,0,0,1369,1370,5,72,0,
         0,1370,1371,5,3,0,0,1371,1372,5,13,0,0,1372,1373,5,4,0,0,1373,219,
@@ -8678,8 +8678,8 @@ class PBXProjParser ( Parser ):
         def PATH(self):
             return self.getToken(PBXProjParser.PATH, 0)
 
-        def any_string(self):
-            return self.getTypedRuleContext(PBXProjParser.Any_stringContext,0)
+        def str_number_variable(self):
+            return self.getTypedRuleContext(PBXProjParser.Str_number_variableContext,0)
 
 
         def getRuleIndex(self):
@@ -8707,7 +8707,7 @@ class PBXProjParser ( Parser ):
             self.state = 1360
             self.match(PBXProjParser.T__2)
             self.state = 1361
-            self.any_string()
+            self.str_number_variable()
             self.state = 1362
             self.match(PBXProjParser.T__3)
         except RecognitionException as re:
