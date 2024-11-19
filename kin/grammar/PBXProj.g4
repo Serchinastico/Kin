@@ -39,6 +39,7 @@ objects
         pbx_container_item_proxy_section?
         pbx_copy_files_build_phase_section?
         pbx_file_reference_section?
+        pbx_file_system_synchronized_build_file_exception_set_section?
         pbx_frameworks_build_phase_section?
         pbx_group_section
         pbx_headers_build_phase_section?
@@ -92,6 +93,10 @@ pbx_copy_files_build_phase_section
 
 pbx_file_reference_section
     : (pbx_file_reference)+
+    ;
+
+pbx_file_system_synchronized_build_file_exception_set_section
+    : (pbx_file_system_synchronized_build_file_exception_set)+
     ;
 
 pbx_frameworks_build_phase_section
@@ -257,6 +262,14 @@ pbx_file_reference
         uses_tabs?
         wraps_lines?
       '}' ';'
+    ;
+
+pbx_file_system_synchronized_build_file_exception_set
+    : REFERENCE '=' '{'
+        isa_pbx_file_system_synchronized_build_file_exception_set
+        membership_exceptions
+        target
+    '}' ';'
     ;
 
 pbx_frameworks_build_phase
@@ -506,6 +519,10 @@ isa_pbx_copy_files_build_phase
 
 isa_pbx_file_reference
     : ISA '=' PBX_FILE_REFERENCE ';'
+    ;
+
+isa_pbx_file_system_synchronized_build_file_exception_set
+    : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET ';'
     ;
 
 isa_pbx_frameworks_build_phase
@@ -1007,6 +1024,9 @@ project_references_list_element
       '}' ','
     ;
 
+membership_exceptions
+    : MEMBERSHIP_EXCEPTIONS '=' any_string_list ';';
+
 key_value
     : str_number_variable '=' str_number_variable ';'
     | str_number_variable '=' NUMBER ';'
@@ -1074,6 +1094,7 @@ any_token
     | PBX_CONTAINER_ITEM_PROXY
     | PBX_COPY_FILES_BUILD_PHASE
     | PBX_FILE_REFERENCE
+    | PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET
     | PBX_FRAMEWORKS_BUILD_PHASE
     | PBX_NATIVE_TARGET
     | PBX_LEGACY_TARGET
@@ -1215,6 +1236,7 @@ PBX_BUILD_STYLE: 'PBXBuildStyle';
 PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
+PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET: 'PBXFileSystemSynchronizedBuildFileExceptionSet';
 PBX_FRAMEWORKS_BUILD_PHASE: 'PBXFrameworksBuildPhase';
 PBX_GROUP: 'PBXGroup';
 PBX_HEADERS_BUILD_PHASE: 'PBXHeadersBuildPhase';
@@ -1336,6 +1358,7 @@ SETTINGS : 'settings';
 SYSTEM_CAPABILITIES : 'SystemCapabilities';
 CURRENT_VERSION : 'currentVersion';
 VERSION_GROUP_TYPE : 'versionGroupType';
+MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
 CLASSPREFIX : 'CLASSPREFIX';
 
 
