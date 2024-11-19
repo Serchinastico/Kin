@@ -63,3 +63,6 @@ target/
 
 # ANTLR
 .antlr
+
+# IDE
+.vscode

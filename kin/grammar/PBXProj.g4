@@ -40,6 +40,7 @@ objects
         pbx_copy_files_build_phase_section?
         pbx_file_reference_section?
         pbx_file_system_synchronized_build_file_exception_set_section?
+        pbx_file_system_synchronized_root_group_section?
         pbx_frameworks_build_phase_section?
         pbx_group_section
         pbx_headers_build_phase_section?
@@ -97,6 +98,10 @@ pbx_file_reference_section
 
 pbx_file_system_synchronized_build_file_exception_set_section
     : (pbx_file_system_synchronized_build_file_exception_set)+
+    ;
+
+pbx_file_system_synchronized_root_group_section
+    : (pbx_file_system_synchronized_root_group)+
     ;
 
 pbx_frameworks_build_phase_section
@@ -272,6 +277,17 @@ pbx_file_system_synchronized_build_file_exception_set
     '}' ';'
     ;
 
+pbx_file_system_synchronized_root_group
+    : REFERENCE '=' '{'
+        isa_pbx_file_system_synchronized_root_group
+        exceptions
+        explicit_file_types
+        explicit_folders
+        path
+        source_tree
+    '}' ';'
+    ;
+
 pbx_frameworks_build_phase
     : REFERENCE '=' '{'
         isa_pbx_frameworks_build_phase
@@ -352,6 +368,7 @@ pbx_project
         known_regions?
         main_group
         package_references?
+        preferred_project_object_version?
         product_ref_group?
         project_dir_path
         project_references?
@@ -525,6 +542,10 @@ isa_pbx_file_system_synchronized_build_file_exception_set
     : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET ';'
     ;
 
+isa_pbx_file_system_synchronized_root_group
+    : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP ';'
+    ;
+
 isa_pbx_frameworks_build_phase
     : ISA '=' PBX_FRAMEWORKS_BUILD_PHASE ';'
     ;
@@ -637,6 +658,14 @@ comments
 
 explicit_file_type
     : EXPLICIT_FILE_TYPE '=' str_number_variable ';'
+    ;
+
+explicit_file_types
+    : EXPLICIT_FILE_TYPES '=' '{' key_value* '}' ';'
+    ;
+
+explicit_folders
+    : EXPLICIT_FOLDERS '=' any_string_list ';'
     ;
 
 last_known_file_type
@@ -926,6 +955,10 @@ package_references
     : PACKAGE_REFERENCES '=' reference_list ';'
     ;
 
+preferred_project_object_version
+    : PREFERRED_PROJECT_OBJECT_VERSION '=' NUMBER ';'
+    ;
+
 project_dir_path
     : PRODUCT_DIR_PATH '=' any_string ';'
     ;
@@ -1027,6 +1060,9 @@ project_references_list_element
 membership_exceptions
     : MEMBERSHIP_EXCEPTIONS '=' any_string_list ';';
 
+exceptions
+    : EXCEPTIONS '=' reference_list ';';
+
 key_value
     : str_number_variable '=' str_number_variable ';'
     | str_number_variable '=' NUMBER ';'
@@ -1095,6 +1131,7 @@ any_token
     | PBX_COPY_FILES_BUILD_PHASE
     | PBX_FILE_REFERENCE
     | PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET
+    | PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP
     | PBX_FRAMEWORKS_BUILD_PHASE
     | PBX_NATIVE_TARGET
     | PBX_LEGACY_TARGET
@@ -1105,6 +1142,7 @@ any_token
     | PBX_SOURCES_BUILD_PHASE
     | PBX_TARGET_DEPENDENCY
     | PBX_VARIANT_GROUP
+    | PREFERRED_PROJECT_OBJECT_VERSION
     | XC_BUILD_CONFIGURATION
     | XC_CONFIGURATION_LIST
     | XC_REMOTE_SWIFT_PACKAGE_REFERENCE
@@ -1119,6 +1157,8 @@ any_token
     | FILE_ENCODING
     | COMMENTS
     | EXPLICIT_FILE_TYPE
+    | EXPLICIT_FILE_TYPES
+    | EXPLICIT_FOLDERS
     | LAST_KNOWN_FILE_TYPE
     | INCLUDE_IN_INDEX
     | INDENT_WIDTH
@@ -1211,6 +1251,8 @@ any_token
     | SYSTEM_CAPABILITIES
     | CURRENT_VERSION
     | VERSION_GROUP_TYPE
+    | MEMBERSHIP_EXCEPTIONS
+    | EXCEPTIONS
     | CLASSPREFIX
     ;
 
@@ -1237,6 +1279,7 @@ PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
 PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET: 'PBXFileSystemSynchronizedBuildFileExceptionSet';
+PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP: 'PBXFileSystemSynchronizedRootGroup';
 PBX_FRAMEWORKS_BUILD_PHASE: 'PBXFrameworksBuildPhase';
 PBX_GROUP: 'PBXGroup';
 PBX_HEADERS_BUILD_PHASE: 'PBXHeadersBuildPhase';
@@ -1265,6 +1308,8 @@ REMOTE_INFO: 'remoteInfo';
 FILE_ENCODING: 'fileEncoding';
 COMMENTS: 'comments';
 EXPLICIT_FILE_TYPE: 'explicitFileType';
+EXPLICIT_FILE_TYPES: 'explicitFileTypes';
+EXPLICIT_FOLDERS: 'explicitFolders';
 LAST_KNOWN_FILE_TYPE: 'lastKnownFileType';
 INCLUDE_IN_INDEX: 'includeInIndex';
 INDENT_WIDTH: 'indentWidth';
@@ -1328,6 +1373,7 @@ KNOWN_REGIONS : 'knownRegions';
 MAIN_GROUP : 'mainGroup';
 PRODUCT_REF_GROUP : 'productRefGroup';
 PACKAGE_REFERENCES : 'packageReferences';
+PREFERRED_PROJECT_OBJECT_VERSION : 'preferredProjectObjectVersion';
 PRODUCT_DIR_PATH : 'projectDirPath';
 PROJECT_REFERENCES : 'projectReferences';
 PROJECT_ROOT : 'projectRoot';
@@ -1359,6 +1405,7 @@ SYSTEM_CAPABILITIES : 'SystemCapabilities';
 CURRENT_VERSION : 'currentVersion';
 VERSION_GROUP_TYPE : 'versionGroupType';
 MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
+EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
 
 

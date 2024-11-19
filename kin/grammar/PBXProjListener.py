@@ -143,6 +143,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_file_system_synchronized_root_group_section.
+    def enterPbx_file_system_synchronized_root_group_section(self, ctx:PBXProjParser.Pbx_file_system_synchronized_root_group_sectionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_file_system_synchronized_root_group_section.
+    def exitPbx_file_system_synchronized_root_group_section(self, ctx:PBXProjParser.Pbx_file_system_synchronized_root_group_sectionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_frameworks_build_phase_section.
     def enterPbx_frameworks_build_phase_section(self, ctx:PBXProjParser.Pbx_frameworks_build_phase_sectionContext):
         pass
@@ -377,6 +386,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#pbx_file_system_synchronized_root_group.
+    def enterPbx_file_system_synchronized_root_group(self, ctx:PBXProjParser.Pbx_file_system_synchronized_root_groupContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#pbx_file_system_synchronized_root_group.
+    def exitPbx_file_system_synchronized_root_group(self, ctx:PBXProjParser.Pbx_file_system_synchronized_root_groupContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#pbx_frameworks_build_phase.
     def enterPbx_frameworks_build_phase(self, ctx:PBXProjParser.Pbx_frameworks_build_phaseContext):
         pass
@@ -608,6 +626,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#isa_pbx_file_system_synchronized_build_file_exception_set.
     def exitIsa_pbx_file_system_synchronized_build_file_exception_set(self, ctx:PBXProjParser.Isa_pbx_file_system_synchronized_build_file_exception_setContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#isa_pbx_file_system_synchronized_root_group.
+    def enterIsa_pbx_file_system_synchronized_root_group(self, ctx:PBXProjParser.Isa_pbx_file_system_synchronized_root_groupContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_pbx_file_system_synchronized_root_group.
+    def exitIsa_pbx_file_system_synchronized_root_group(self, ctx:PBXProjParser.Isa_pbx_file_system_synchronized_root_groupContext):
         pass
 
 
@@ -860,6 +887,24 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#explicit_file_type.
     def exitExplicit_file_type(self, ctx:PBXProjParser.Explicit_file_typeContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#explicit_file_types.
+    def enterExplicit_file_types(self, ctx:PBXProjParser.Explicit_file_typesContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#explicit_file_types.
+    def exitExplicit_file_types(self, ctx:PBXProjParser.Explicit_file_typesContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#explicit_folders.
+    def enterExplicit_folders(self, ctx:PBXProjParser.Explicit_foldersContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#explicit_folders.
+    def exitExplicit_folders(self, ctx:PBXProjParser.Explicit_foldersContext):
         pass
 
 
@@ -1466,6 +1511,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#preferred_project_object_version.
+    def enterPreferred_project_object_version(self, ctx:PBXProjParser.Preferred_project_object_versionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#preferred_project_object_version.
+    def exitPreferred_project_object_version(self, ctx:PBXProjParser.Preferred_project_object_versionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#project_dir_path.
     def enterProject_dir_path(self, ctx:PBXProjParser.Project_dir_pathContext):
         pass
@@ -1679,6 +1733,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#membership_exceptions.
     def exitMembership_exceptions(self, ctx:PBXProjParser.Membership_exceptionsContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#exceptions.
+    def enterExceptions(self, ctx:PBXProjParser.ExceptionsContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#exceptions.
+    def exitExceptions(self, ctx:PBXProjParser.ExceptionsContext):
         pass
 
 
