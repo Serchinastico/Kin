@@ -1,6 +1,6 @@
 [project]
 name = "kin"
-version = "2.1.12"
+version = "2.1.13"
 description = "A simple project.pbxproj verifier"
 keywords = ["xcode", "project.pbxproj", "lint", "objective-c", "swift", "ios"]
 readme = "README.rst"
