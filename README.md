@@ -67,28 +67,20 @@ Emacs
 
 Feel free to add any useful feature to Kin, we will be glad to improve it with your help.
 
-If you modify the grammar file (`PBXProj.g4`), make sure you compile it using [ANTLR](https://www.antlr.org/). ANLTR can be installed with the following command:
+Kin uses [ANTLR](https://www.antlr.org/) to build a parser for pbxproj files. ANLTR can be installed with the following command:
 
 ```bash
 brew install antlr
 ```
 
-After changes have been made to the `PBXProj.g4` file it can be compiled with:
+There is a [Makefile](./Makefile) that defines commands to work with Kin locally.
 
-```bash
-cd kin/grammar
-antlr PBXProj.g4 -Dlanguage=Python3
-```
-
-`kin` can optionally be symlinked by running this command in the root of the project:
-
-```bash
-pip install -e .
-```
+- `make compile` - Compiles the grammar into an ANTLR parser. Run it every time you make changes to the `PBXProj.g4` file.
+- `make install` - Installs a symlink of kin in your machine so that you can run it your local build.
+- `make test` - Runs all tests.
+- `make test_last` - It builds and installs kin and then runs it against the latest modified test file. This is usually your go-to command while working on kin.
 
 Only the `PBXProj.g4` file needs to be committed, GitHub Actions will produce the compiled grammar files.
-
-To run tests, first install the current version of kin by running `pip install .`. Then you can execute `./tests/tester.py` to run all the scenarios we created.
 
 ## License
 
