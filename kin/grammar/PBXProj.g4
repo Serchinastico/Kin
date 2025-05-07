@@ -56,6 +56,7 @@ objects
         pbx_variant_group_section?
         xc_build_configuration_section
         xc_configuration_list_section
+        xc_local_swift_package_reference_section?
         xc_remote_swift_package_reference_section?
         xc_swift_package_product_dependency_section?
         xc_version_group_section?
@@ -166,6 +167,10 @@ xc_configuration_list_section
 
 xc_remote_swift_package_reference_section
     : (xc_remote_swift_package_reference)+
+    ;
+
+xc_local_swift_package_reference_section
+    : (xc_local_swift_pacakge_reference)+
     ;
 
 xc_swift_package_product_dependency_section
@@ -488,6 +493,13 @@ xc_remote_swift_package_reference
       '}' ';'
     ;
 
+xc_local_swift_pacakge_reference
+    : REFERENCE '=' '{'
+        isa_xc_local_swift_package_reference
+        relative_path
+      '}' ';'
+    ;
+
 xc_swift_package_product_dependency
     : REFERENCE '=' '{'
         isa_xc_swift_package_product_dependency
@@ -610,6 +622,10 @@ isa_xc_remote_swift_package_reference
     : ISA '=' XC_REMOTE_SWIFT_PACKAGE_REFERENCE ';'
     ;
 
+isa_xc_local_swift_package_reference
+    : ISA '=' XC_LOCAL_SWIFT_PACKAGE_REFERENCE ';'
+    ;
+
 isa_xc_swift_package_product_dependency
     : ISA '=' XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY ';'
     ;
@@ -710,6 +726,10 @@ product_install_path
 
 repository_url
     : REPOSITORY_URL '=' QUOTED_STRING ';'
+    ;
+
+relative_path
+    : RELATIVE_PATH '=' any_string ';'
     ;
 
 requirement
@@ -1146,6 +1166,7 @@ any_token
     | XC_BUILD_CONFIGURATION
     | XC_CONFIGURATION_LIST
     | XC_REMOTE_SWIFT_PACKAGE_REFERENCE
+    | XC_LOCAL_SWIFT_PACKAGE_REFERENCE
     | XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY
     | XC_VERSION_GROUP
     | FILE_REF
@@ -1170,6 +1191,7 @@ any_token
     | CHILDREN
     | PRODUCT_INSTALL_PATH
     | REPOSITORY_URL
+    | RELATIVE_PATH
     | REQUIREMENT
     | PACKAGE
     | PACKAGE_PRODUCT_DEPENDENCIES
@@ -1296,6 +1318,7 @@ PBX_VARIANT_GROUP: 'PBXVariantGroup';
 XC_BUILD_CONFIGURATION: 'XCBuildConfiguration';
 XC_CONFIGURATION_LIST: 'XCConfigurationList';
 XC_REMOTE_SWIFT_PACKAGE_REFERENCE: 'XCRemoteSwiftPackageReference';
+XC_LOCAL_SWIFT_PACKAGE_REFERENCE: 'XCLocalSwiftPackageReference';
 XC_SWIFT_PACKAGE_PRODUCT_DEPENDENCY: 'XCSwiftPackageProductDependency';
 XC_VERSION_GROUP: 'XCVersionGroup';
 ALWAYS_OUT_OF_DATE: 'alwaysOutOfDate';
@@ -1321,6 +1344,7 @@ PLATFORM_FILTERS: 'platformFilters';
 CHILDREN: 'children';
 PRODUCT_INSTALL_PATH: 'productInstallPath';
 REPOSITORY_URL: 'repositoryURL';
+RELATIVE_PATH: 'relativePath';
 REQUIREMENT: 'requirement';
 PACKAGE: 'package';
 PACKAGE_PRODUCT_DEPENDENCIES: 'packageProductDependencies';
