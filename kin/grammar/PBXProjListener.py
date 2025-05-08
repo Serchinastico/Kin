@@ -296,6 +296,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#xc_local_swift_package_reference_section.
+    def enterXc_local_swift_package_reference_section(self, ctx:PBXProjParser.Xc_local_swift_package_reference_sectionContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_local_swift_package_reference_section.
+    def exitXc_local_swift_package_reference_section(self, ctx:PBXProjParser.Xc_local_swift_package_reference_sectionContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#xc_swift_package_product_dependency_section.
     def enterXc_swift_package_product_dependency_section(self, ctx:PBXProjParser.Xc_swift_package_product_dependency_sectionContext):
         pass
@@ -536,6 +545,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#xc_remote_swift_package_reference.
     def exitXc_remote_swift_package_reference(self, ctx:PBXProjParser.Xc_remote_swift_package_referenceContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#xc_local_swift_pacakge_reference.
+    def enterXc_local_swift_pacakge_reference(self, ctx:PBXProjParser.Xc_local_swift_pacakge_referenceContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#xc_local_swift_pacakge_reference.
+    def exitXc_local_swift_pacakge_reference(self, ctx:PBXProjParser.Xc_local_swift_pacakge_referenceContext):
         pass
 
 
@@ -782,6 +800,15 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PBXProjParser#isa_xc_local_swift_package_reference.
+    def enterIsa_xc_local_swift_package_reference(self, ctx:PBXProjParser.Isa_xc_local_swift_package_referenceContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#isa_xc_local_swift_package_reference.
+    def exitIsa_xc_local_swift_package_reference(self, ctx:PBXProjParser.Isa_xc_local_swift_package_referenceContext):
+        pass
+
+
     # Enter a parse tree produced by PBXProjParser#isa_xc_swift_package_product_dependency.
     def enterIsa_xc_swift_package_product_dependency(self, ctx:PBXProjParser.Isa_xc_swift_package_product_dependencyContext):
         pass
@@ -1004,6 +1031,15 @@ class PBXProjListener(ParseTreeListener):
 
     # Exit a parse tree produced by PBXProjParser#repository_url.
     def exitRepository_url(self, ctx:PBXProjParser.Repository_urlContext):
+        pass
+
+
+    # Enter a parse tree produced by PBXProjParser#relative_path.
+    def enterRelative_path(self, ctx:PBXProjParser.Relative_pathContext):
+        pass
+
+    # Exit a parse tree produced by PBXProjParser#relative_path.
+    def exitRelative_path(self, ctx:PBXProjParser.Relative_pathContext):
         pass
 
 
