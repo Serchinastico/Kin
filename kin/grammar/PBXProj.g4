@@ -1126,7 +1126,7 @@ class_prefix
 any_string
     : NON_QUOTED_STRING
     | QUOTED_STRING
-    | UNDERSCORE|DASH|DOT
+    | UNDERSCORE|DASH|DOT|SLASH|DOLLAR
     | any_token
     ;
 
@@ -1457,8 +1457,7 @@ REFERENCE
     ;
 
 QUOTED_STRING
-    : '"' (QUOTED_STRING_CHARACTER)+ '"'
-    | '"' '"'
+    : '"' (QUOTED_STRING_CHARACTER)* '"'
     ;
 
 NON_QUOTED_STRING: (ALPHA_NUMERIC|UNDERSCORE|DASH|SLASH|DOT|DOLLAR)+;
@@ -1473,8 +1472,8 @@ fragment HEX
     ;
 
 fragment QUOTED_STRING_CHARACTER
-    : ~["]
-    | '\\"'
+    : '\\' .
+    | ~["\\]
     ;
 
 // Whitespace & comments
