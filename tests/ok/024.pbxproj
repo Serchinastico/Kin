@@ -1,0 +1,45 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		E41375FA15F44519AC314732 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		AC3A0B6E4094498FAB228FD0 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3FD98592D615C5100397643 = {
+			isa = PBXProject;
+			buildConfigurationList = 3722E582397A4AF990D8376A;
+			hasScannedForEncodings = 0;
+			mainGroup = E41375FA15F44519AC314732;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		C78D531AD3344146993D6352 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3722E582397A4AF990D8376A = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C78D531AD3344146993D6352,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = B3FD98592D615C5100397643;
+}

@@ -32,35 +32,39 @@ object_version
 
 objects
     : OBJECTS '=' '{'
-        pbx_aggregate_target_section?
-        pbx_build_file_section?
-        pbx_build_rule_section?
-        pbx_build_style_section?
-        pbx_container_item_proxy_section?
-        pbx_copy_files_build_phase_section?
-        pbx_file_reference_section?
-        pbx_file_system_synchronized_build_file_exception_set_section?
-        pbx_file_system_synchronized_root_group_section?
-        pbx_frameworks_build_phase_section?
-        pbx_group_section
-        pbx_headers_build_phase_section?
-        pbx_legacy_target_section?
-        pbx_native_target_section?
-        pbx_project_section
-        pbx_reference_proxy_section?
-        pbx_resources_build_phase_section?
-        pbx_shell_script_build_phase_section?
-        pbx_shell_build_phase_section?
-        pbx_sources_build_phase_section?
-        pbx_target_dependency_section?
-        pbx_variant_group_section?
-        xc_build_configuration_section
-        xc_configuration_list_section
-        xc_local_swift_package_reference_section?
-        xc_remote_swift_package_reference_section?
-        xc_swift_package_product_dependency_section?
-        xc_version_group_section?
+        object*
       '}' ';'
+    ;
+
+object
+    : pbx_aggregate_target
+    | pbx_build_file
+    | pbx_build_rule
+    | pbx_build_style
+    | pbx_container_item_proxy
+    | pbx_copy_files_build_phase
+    | pbx_file_reference
+    | pbx_file_system_synchronized_build_file_exception_set
+    | pbx_file_system_synchronized_root_group
+    | pbx_frameworks_build_phase
+    | pbx_group
+    | pbx_headers_build_phase
+    | pbx_legacy_target
+    | pbx_native_target
+    | pbx_project
+    | pbx_reference_proxy
+    | pbx_resources_build_phase
+    | pbx_shell_script_build_phase
+    | pbx_shell_build_phase
+    | pbx_sources_build_phase
+    | pbx_target_dependency
+    | pbx_variant_group
+    | xc_build_configuration
+    | xc_configuration_list
+    | xc_local_swift_pacakge_reference
+    | xc_remote_swift_package_reference
+    | xc_swift_package_product_dependency
+    | xc_version_group
     ;
 
 root_object
