@@ -1119,8 +1119,11 @@ project_references_list_element
 membership_exceptions
     : MEMBERSHIP_EXCEPTIONS '=' any_string_list ';';
 
+public_headers
+    : PUBLIC_HEADERS '=' any_string_list ';';
+
 file_system_synchronized_build_file_exception_set_fields
-    : (membership_exceptions | platform_filters_by_relative_path)+
+    : (membership_exceptions | platform_filters_by_relative_path | public_headers)+
     ;
 
 exceptions
@@ -1493,9 +1496,10 @@ VERSION_GROUP_TYPE : 'versionGroupType';
 MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
 EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
-EXPECTED_SIGNATURE : 'expectedSignature';
-FILE_SYSTEM_SYNCHRONIZED_GROUPS : 'fileSystemSynchronizedGroups';
 MINIMIZED_PROJECT_REFERENCE_PROXIES : 'minimizedProjectReferenceProxies';
+FILE_SYSTEM_SYNCHRONIZED_GROUPS : 'fileSystemSynchronizedGroups';
+EXPECTED_SIGNATURE : 'expectedSignature';
+PUBLIC_HEADERS : 'publicHeaders';
 
 
 REFERENCE
