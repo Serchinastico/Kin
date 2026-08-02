@@ -1,0 +1,39 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		A11111111111111111111111 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		A22222222222222222222222 = {
+			isa = PBXProject;
+			buildConfigurationList = A33333333333333333333333;
+			hasScannedForEncodings = 0;
+			mainGroup = A11111111111111111111111;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		A44444444444444444444444 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A33333333333333333333333 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A44444444444444444444444,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = A22222222222222222222222;
+}

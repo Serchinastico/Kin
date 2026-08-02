@@ -393,6 +393,7 @@ pbx_project
         has_scanned_for_encodings
         known_regions?
         main_group
+        minimized_project_reference_proxies?
         package_references?
         preferred_project_object_version?
         product_ref_group?
@@ -1008,6 +1009,10 @@ preferred_project_object_version
     : PREFERRED_PROJECT_OBJECT_VERSION '=' NUMBER ';'
     ;
 
+minimized_project_reference_proxies
+    : MINIMIZED_PROJECT_REFERENCE_PROXIES '=' NUMBER ';'
+    ;
+
 project_dir_path
     : PRODUCT_DIR_PATH '=' any_string ';'
     ;
@@ -1489,6 +1494,7 @@ EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
 EXPECTED_SIGNATURE : 'expectedSignature';
 FILE_SYSTEM_SYNCHRONIZED_GROUPS : 'fileSystemSynchronizedGroups';
+MINIMIZED_PROJECT_REFERENCE_PROXIES : 'minimizedProjectReferenceProxies';
 
 
 REFERENCE
