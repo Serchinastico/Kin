@@ -1329,7 +1329,6 @@ CLASSES: 'classes';
 DASH: '-';
 DOT: '.';
 ISA: 'isa';
-NUMBER: [0-9]+;
 OBJECT_VERSION: 'objectVersion';
 OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
@@ -1504,6 +1503,8 @@ REFERENCE
     | 'OBJ_' NUMBER
     | '"' NON_QUOTED_STRING+ ('::' NON_QUOTED_STRING+)+ '"'
     ;
+
+NUMBER: [0-9]+;
 
 QUOTED_STRING
     : '"' (QUOTED_STRING_CHARACTER)* '"'

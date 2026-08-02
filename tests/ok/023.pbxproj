@@ -1,0 +1,38 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		069528875199469182948411 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		E41375FA15F44519AC314732 = {
+			isa = PBXProject;
+			buildConfigurationList = 3722E582397A4AF990D8376A;
+			hasScannedForEncodings = 0;
+			mainGroup = 069528875199469182948411;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		B3FD98592D615C5100397643 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3722E582397A4AF990D8376A = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3FD98592D615C5100397643,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = E41375FA15F44519AC314732;
+}
