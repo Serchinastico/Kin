@@ -201,6 +201,7 @@ pbx_aggregate_target
         comments?
         dependencies
         name
+        package_product_dependencies?
         product_name?
       '}' ';'
     ;
