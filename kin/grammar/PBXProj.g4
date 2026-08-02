@@ -264,6 +264,7 @@ pbx_file_reference
     : REFERENCE '=' '{'
         isa_pbx_file_reference
         comments?
+        expected_signature?
         file_encoding?
         explicit_file_type?
         file_encoding?
@@ -689,6 +690,10 @@ remote_info
 
 file_encoding
     : FILE_ENCODING '=' NUMBER ';'
+    ;
+
+expected_signature
+    : EXPECTED_SIGNATURE '=' QUOTED_STRING ';'
     ;
 
 comments
@@ -1477,6 +1482,7 @@ VERSION_GROUP_TYPE : 'versionGroupType';
 MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
 EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
+EXPECTED_SIGNATURE : 'expectedSignature';
 
 
 REFERENCE

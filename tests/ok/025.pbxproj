@@ -1,0 +1,39 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		49FBBF8F1C10C2A200A1A4BB = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:67RAULRX93:Example Developer"; };
+		49FBBF851C10C2A200A1A4BB = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		49FBBF861C10C2A200A1A4BB = {
+			isa = PBXProject;
+			buildConfigurationList = 49FBBF891C10C2A200A1A4BB;
+			hasScannedForEncodings = 0;
+			mainGroup = 49FBBF851C10C2A200A1A4BB;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		49FBBFB71C10C2A200A1A4BB = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		49FBBF891C10C2A200A1A4BB = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FBBFB71C10C2A200A1A4BB,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = 49FBBF861C10C2A200A1A4BB;
+}
