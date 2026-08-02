@@ -1,0 +1,54 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		A11111111111111111111111 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		A22222222222222222222222 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A44444444444444444444444;
+			buildPhases = (
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A11111111111111111111111,
+			);
+			name = App;
+			productName = App;
+			productType = "com.apple.product-type.application";
+		};
+		A33333333333333333333333 = {
+			isa = PBXProject;
+			buildConfigurationList = A44444444444444444444444;
+			hasScannedForEncodings = 0;
+			mainGroup = A11111111111111111111111;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		A55555555555555555555555 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A44444444444444444444444 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A55555555555555555555555,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = A33333333333333333333333;
+}

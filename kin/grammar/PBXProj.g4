@@ -356,6 +356,7 @@ pbx_native_target
         comments?
         build_settings?
         dependencies
+        file_system_synchronized_groups?
         name
         product_install_path?
         package_product_dependencies?
@@ -1060,6 +1061,10 @@ target
     : TARGET '=' REFERENCE ';'
     ;
 
+file_system_synchronized_groups
+    : FILE_SYSTEM_SYNCHRONIZED_GROUPS '=' reference_list ';'
+    ;
+
 target_proxy
     : TARGET_PROXY '=' REFERENCE ';'
     ;
@@ -1483,6 +1488,7 @@ MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
 EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
 EXPECTED_SIGNATURE : 'expectedSignature';
+FILE_SYSTEM_SYNCHRONIZED_GROUPS : 'fileSystemSynchronizedGroups';
 
 
 REFERENCE
