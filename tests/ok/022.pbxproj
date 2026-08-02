@@ -1,0 +1,57 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		B3THUMB0126520001BBBBBBBB = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+			);
+			platformFiltersByRelativePath = {
+			};
+			target = C0C0CA0100000001;
+		};
+		B3FD98592D615C5100397643 = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+			};
+			buildPhase = B3THUMB0526520001BBBBBBBB;
+			membershipExceptions = (
+			);
+			platformFiltersByRelativePath = {
+			};
+		};
+		B3FD95D52D613D2B00397643 = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B3THUMB0126520001BBBBBBBB, B3FD98592D615C5100397643, ); sourceTree = "<group>"; };
+		B3THUMB0626520001BBBBBBBB = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		B3THUMB0926520001BBBBBBBB = {
+			isa = PBXProject;
+			buildConfigurationList = B3THUMB1026520001BBBBBBBB;
+			hasScannedForEncodings = 0;
+			mainGroup = B3THUMB0626520001BBBBBBBB;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		B3THUMB1126520001BBBBBBBB = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		B3THUMB1026520001BBBBBBBB = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3THUMB1126520001BBBBBBBB,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = B3THUMB0926520001BBBBBBBB;
+}

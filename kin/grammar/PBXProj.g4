@@ -45,6 +45,7 @@ object
     | pbx_copy_files_build_phase
     | pbx_file_reference
     | pbx_file_system_synchronized_build_file_exception_set
+    | pbx_file_system_synchronized_group_build_phase_membership_exception_set
     | pbx_file_system_synchronized_root_group
     | pbx_frameworks_build_phase
     | pbx_group
@@ -103,6 +104,10 @@ pbx_file_reference_section
 
 pbx_file_system_synchronized_build_file_exception_set_section
     : (pbx_file_system_synchronized_build_file_exception_set)+
+    ;
+
+pbx_file_system_synchronized_group_build_phase_membership_exception_set_section
+    : (pbx_file_system_synchronized_group_build_phase_membership_exception_set)+
     ;
 
 pbx_file_system_synchronized_root_group_section
@@ -281,20 +286,30 @@ pbx_file_reference
 pbx_file_system_synchronized_build_file_exception_set
     : REFERENCE '=' '{'
         isa_pbx_file_system_synchronized_build_file_exception_set
-        membership_exceptions
+        file_system_synchronized_build_file_exception_set_fields
         target
+    '}' ';'
+    ;
+
+pbx_file_system_synchronized_group_build_phase_membership_exception_set
+    : REFERENCE '=' '{'
+        isa_pbx_file_system_synchronized_group_build_phase_membership_exception_set
+        attributes_by_relative_path?
+        build_phase
+        membership_exceptions
+        platform_filters_by_relative_path?
     '}' ';'
     ;
 
 pbx_file_system_synchronized_root_group
     : REFERENCE '=' '{'
         isa_pbx_file_system_synchronized_root_group
-        exceptions
-        explicit_file_types
-        explicit_folders
-        path
-        source_tree
+        file_system_synchronized_root_group_fields
     '}' ';'
+    ;
+
+file_system_synchronized_root_group_fields
+    : (exceptions | explicit_file_types | explicit_folders | name | path | source_tree)+
     ;
 
 pbx_frameworks_build_phase
@@ -556,6 +571,10 @@ isa_pbx_file_reference
 
 isa_pbx_file_system_synchronized_build_file_exception_set
     : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET ';'
+    ;
+
+isa_pbx_file_system_synchronized_group_build_phase_membership_exception_set
+    : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET ';'
     ;
 
 isa_pbx_file_system_synchronized_root_group
@@ -1084,8 +1103,24 @@ project_references_list_element
 membership_exceptions
     : MEMBERSHIP_EXCEPTIONS '=' any_string_list ';';
 
+file_system_synchronized_build_file_exception_set_fields
+    : (membership_exceptions | platform_filters_by_relative_path)+
+    ;
+
 exceptions
     : EXCEPTIONS '=' reference_list ';';
+
+platform_filters_by_relative_path
+    : PLATFORM_FILTERS_BY_RELATIVE_PATH '=' '{' key_value* '}' ';'
+    ;
+
+attributes_by_relative_path
+    : ATTRIBUTES_BY_RELATIVE_PATH '=' '{' key_value* '}' ';'
+    ;
+
+build_phase
+    : BUILD_PHASE '=' REFERENCE ';'
+    ;
 
 key_value
     : str_number_variable '=' str_number_variable ';'
@@ -1155,6 +1190,7 @@ any_token
     | PBX_COPY_FILES_BUILD_PHASE
     | PBX_FILE_REFERENCE
     | PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET
+    | PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET
     | PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP
     | PBX_FRAMEWORKS_BUILD_PHASE
     | PBX_NATIVE_TARGET
@@ -1192,6 +1228,9 @@ any_token
     | WRAPS_LINES
     | PLATFORM_FILTER
     | PLATFORM_FILTERS
+    | PLATFORM_FILTERS_BY_RELATIVE_PATH
+    | ATTRIBUTES_BY_RELATIVE_PATH
+    | BUILD_PHASE
     | CHILDREN
     | PRODUCT_INSTALL_PATH
     | REPOSITORY_URL
@@ -1305,6 +1344,7 @@ PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
 PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET: 'PBXFileSystemSynchronizedBuildFileExceptionSet';
+PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET: 'PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet';
 PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP: 'PBXFileSystemSynchronizedRootGroup';
 PBX_FRAMEWORKS_BUILD_PHASE: 'PBXFrameworksBuildPhase';
 PBX_GROUP: 'PBXGroup';
@@ -1345,6 +1385,9 @@ USES_TABS: 'usesTabs';
 WRAPS_LINES: 'wrapsLines';
 PLATFORM_FILTER: 'platformFilter';
 PLATFORM_FILTERS: 'platformFilters';
+PLATFORM_FILTERS_BY_RELATIVE_PATH: 'platformFiltersByRelativePath';
+ATTRIBUTES_BY_RELATIVE_PATH: 'attributesByRelativePath';
+BUILD_PHASE: 'buildPhase';
 CHILDREN: 'children';
 PRODUCT_INSTALL_PATH: 'productInstallPath';
 REPOSITORY_URL: 'repositoryURL';
@@ -1447,15 +1490,17 @@ REFERENCE
       HEX? HEX? HEX? HEX?
       HEX? HEX? HEX? HEX?
     | ('FR_'|'G_') (HEX)+
-    // Carthage references contain non-hex characters
-    // This is a problem because if we ever find a name 24 chars long that uses only alpha numeric values with
+    // Carthage and deterministic references can contain non-hex characters
+    // This is a problem because if we ever find a name 16-32 chars long that uses only alpha numeric values with
     // capitalized letters, the lexer will find a REFERENCE when in reality we may just need a NON_QUOTED_STRING
     | ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
-      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
-      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
     | 'OBJ_' NUMBER
     | '"' NON_QUOTED_STRING+ ('::' NON_QUOTED_STRING+)+ '"'
     ;
