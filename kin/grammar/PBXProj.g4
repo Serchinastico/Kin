@@ -170,7 +170,7 @@ xc_remote_swift_package_reference_section
     ;
 
 xc_local_swift_package_reference_section
-    : (xc_local_swift_pacakge_reference)+
+    : (xc_local_swift_package_reference)+
     ;
 
 xc_swift_package_product_dependency_section
@@ -493,7 +493,7 @@ xc_remote_swift_package_reference
       '}' ';'
     ;
 
-xc_local_swift_pacakge_reference
+xc_local_swift_package_reference
     : REFERENCE '=' '{'
         isa_xc_local_swift_package_reference
         relative_path
