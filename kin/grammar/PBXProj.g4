@@ -288,8 +288,7 @@ pbx_file_reference
 pbx_file_system_synchronized_build_file_exception_set
     : REFERENCE '=' '{'
         isa_pbx_file_system_synchronized_build_file_exception_set
-        file_system_synchronized_build_file_exception_set_fields
-        target
+        (file_system_synchronized_build_file_exception_set_fields | target)+
     '}' ';'
     ;
 
