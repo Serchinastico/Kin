@@ -32,35 +32,40 @@ object_version
 
 objects
     : OBJECTS '=' '{'
-        pbx_aggregate_target_section?
-        pbx_build_file_section?
-        pbx_build_rule_section?
-        pbx_build_style_section?
-        pbx_container_item_proxy_section?
-        pbx_copy_files_build_phase_section?
-        pbx_file_reference_section?
-        pbx_file_system_synchronized_build_file_exception_set_section?
-        pbx_file_system_synchronized_root_group_section?
-        pbx_frameworks_build_phase_section?
-        pbx_group_section
-        pbx_headers_build_phase_section?
-        pbx_legacy_target_section?
-        pbx_native_target_section?
-        pbx_project_section
-        pbx_reference_proxy_section?
-        pbx_resources_build_phase_section?
-        pbx_shell_script_build_phase_section?
-        pbx_shell_build_phase_section?
-        pbx_sources_build_phase_section?
-        pbx_target_dependency_section?
-        pbx_variant_group_section?
-        xc_build_configuration_section
-        xc_configuration_list_section
-        xc_local_swift_package_reference_section?
-        xc_remote_swift_package_reference_section?
-        xc_swift_package_product_dependency_section?
-        xc_version_group_section?
+        object*
       '}' ';'
+    ;
+
+object
+    : pbx_aggregate_target
+    | pbx_build_file
+    | pbx_build_rule
+    | pbx_build_style
+    | pbx_container_item_proxy
+    | pbx_copy_files_build_phase
+    | pbx_file_reference
+    | pbx_file_system_synchronized_build_file_exception_set
+    | pbx_file_system_synchronized_group_build_phase_membership_exception_set
+    | pbx_file_system_synchronized_root_group
+    | pbx_frameworks_build_phase
+    | pbx_group
+    | pbx_headers_build_phase
+    | pbx_legacy_target
+    | pbx_native_target
+    | pbx_project
+    | pbx_reference_proxy
+    | pbx_resources_build_phase
+    | pbx_shell_script_build_phase
+    | pbx_shell_build_phase
+    | pbx_sources_build_phase
+    | pbx_target_dependency
+    | pbx_variant_group
+    | xc_build_configuration
+    | xc_configuration_list
+    | xc_local_swift_pacakge_reference
+    | xc_remote_swift_package_reference
+    | xc_swift_package_product_dependency
+    | xc_version_group
     ;
 
 root_object
@@ -99,6 +104,10 @@ pbx_file_reference_section
 
 pbx_file_system_synchronized_build_file_exception_set_section
     : (pbx_file_system_synchronized_build_file_exception_set)+
+    ;
+
+pbx_file_system_synchronized_group_build_phase_membership_exception_set_section
+    : (pbx_file_system_synchronized_group_build_phase_membership_exception_set)+
     ;
 
 pbx_file_system_synchronized_root_group_section
@@ -192,6 +201,7 @@ pbx_aggregate_target
         comments?
         dependencies
         name
+        package_product_dependencies?
         product_name?
       '}' ';'
     ;
@@ -255,6 +265,7 @@ pbx_file_reference
     : REFERENCE '=' '{'
         isa_pbx_file_reference
         comments?
+        expected_signature?
         file_encoding?
         explicit_file_type?
         file_encoding?
@@ -277,20 +288,29 @@ pbx_file_reference
 pbx_file_system_synchronized_build_file_exception_set
     : REFERENCE '=' '{'
         isa_pbx_file_system_synchronized_build_file_exception_set
+        (file_system_synchronized_build_file_exception_set_fields | target)+
+    '}' ';'
+    ;
+
+pbx_file_system_synchronized_group_build_phase_membership_exception_set
+    : REFERENCE '=' '{'
+        isa_pbx_file_system_synchronized_group_build_phase_membership_exception_set
+        attributes_by_relative_path?
+        build_phase
         membership_exceptions
-        target
+        platform_filters_by_relative_path?
     '}' ';'
     ;
 
 pbx_file_system_synchronized_root_group
     : REFERENCE '=' '{'
         isa_pbx_file_system_synchronized_root_group
-        exceptions
-        explicit_file_types
-        explicit_folders
-        path
-        source_tree
+        file_system_synchronized_root_group_fields
     '}' ';'
+    ;
+
+file_system_synchronized_root_group_fields
+    : (exceptions | explicit_file_types | explicit_folders | name | path | source_tree)+
     ;
 
 pbx_frameworks_build_phase
@@ -336,6 +356,7 @@ pbx_native_target
         comments?
         build_settings?
         dependencies
+        file_system_synchronized_groups?
         name
         product_install_path?
         package_product_dependencies?
@@ -372,6 +393,7 @@ pbx_project
         has_scanned_for_encodings
         known_regions?
         main_group
+        minimized_project_reference_proxies?
         package_references?
         preferred_project_object_version?
         product_ref_group?
@@ -554,6 +576,10 @@ isa_pbx_file_system_synchronized_build_file_exception_set
     : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET ';'
     ;
 
+isa_pbx_file_system_synchronized_group_build_phase_membership_exception_set
+    : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET ';'
+    ;
+
 isa_pbx_file_system_synchronized_root_group
     : ISA '=' PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP ';'
     ;
@@ -666,6 +692,10 @@ remote_info
 
 file_encoding
     : FILE_ENCODING '=' NUMBER ';'
+    ;
+
+expected_signature
+    : EXPECTED_SIGNATURE '=' QUOTED_STRING ';'
     ;
 
 comments
@@ -979,6 +1009,10 @@ preferred_project_object_version
     : PREFERRED_PROJECT_OBJECT_VERSION '=' NUMBER ';'
     ;
 
+minimized_project_reference_proxies
+    : MINIMIZED_PROJECT_REFERENCE_PROXIES '=' NUMBER ';'
+    ;
+
 project_dir_path
     : PRODUCT_DIR_PATH '=' any_string ';'
     ;
@@ -1032,6 +1066,10 @@ target
     : TARGET '=' REFERENCE ';'
     ;
 
+file_system_synchronized_groups
+    : FILE_SYSTEM_SYNCHRONIZED_GROUPS '=' reference_list ';'
+    ;
+
 target_proxy
     : TARGET_PROXY '=' REFERENCE ';'
     ;
@@ -1080,8 +1118,27 @@ project_references_list_element
 membership_exceptions
     : MEMBERSHIP_EXCEPTIONS '=' any_string_list ';';
 
+public_headers
+    : PUBLIC_HEADERS '=' any_string_list ';';
+
+file_system_synchronized_build_file_exception_set_fields
+    : (membership_exceptions | platform_filters_by_relative_path | public_headers)+
+    ;
+
 exceptions
     : EXCEPTIONS '=' reference_list ';';
+
+platform_filters_by_relative_path
+    : PLATFORM_FILTERS_BY_RELATIVE_PATH '=' '{' key_value* '}' ';'
+    ;
+
+attributes_by_relative_path
+    : ATTRIBUTES_BY_RELATIVE_PATH '=' '{' key_value* '}' ';'
+    ;
+
+build_phase
+    : BUILD_PHASE '=' REFERENCE ';'
+    ;
 
 key_value
     : str_number_variable '=' str_number_variable ';'
@@ -1151,6 +1208,7 @@ any_token
     | PBX_COPY_FILES_BUILD_PHASE
     | PBX_FILE_REFERENCE
     | PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET
+    | PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET
     | PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP
     | PBX_FRAMEWORKS_BUILD_PHASE
     | PBX_NATIVE_TARGET
@@ -1188,6 +1246,9 @@ any_token
     | WRAPS_LINES
     | PLATFORM_FILTER
     | PLATFORM_FILTERS
+    | PLATFORM_FILTERS_BY_RELATIVE_PATH
+    | ATTRIBUTES_BY_RELATIVE_PATH
+    | BUILD_PHASE
     | CHILDREN
     | PRODUCT_INSTALL_PATH
     | REPOSITORY_URL
@@ -1286,7 +1347,6 @@ CLASSES: 'classes';
 DASH: '-';
 DOT: '.';
 ISA: 'isa';
-NUMBER: [0-9]+;
 OBJECT_VERSION: 'objectVersion';
 OBJECTS: 'objects';
 ROOT_OBJECT: 'rootObject';
@@ -1301,6 +1361,7 @@ PBX_CONTAINER_ITEM_PROXY: 'PBXContainerItemProxy';
 PBX_COPY_FILES_BUILD_PHASE: 'PBXCopyFilesBuildPhase';
 PBX_FILE_REFERENCE: 'PBXFileReference';
 PBX_FILE_SYSTEM_SYNCHRONIZED_BUILD_FILE_EXCEPTION_SET: 'PBXFileSystemSynchronizedBuildFileExceptionSet';
+PBX_FILE_SYSTEM_SYNCHRONIZED_GROUP_BUILD_PHASE_MEMBERSHIP_EXCEPTION_SET: 'PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet';
 PBX_FILE_SYSTEM_SYNCHRONIZED_ROOT_GROUP: 'PBXFileSystemSynchronizedRootGroup';
 PBX_FRAMEWORKS_BUILD_PHASE: 'PBXFrameworksBuildPhase';
 PBX_GROUP: 'PBXGroup';
@@ -1341,6 +1402,9 @@ USES_TABS: 'usesTabs';
 WRAPS_LINES: 'wrapsLines';
 PLATFORM_FILTER: 'platformFilter';
 PLATFORM_FILTERS: 'platformFilters';
+PLATFORM_FILTERS_BY_RELATIVE_PATH: 'platformFiltersByRelativePath';
+ATTRIBUTES_BY_RELATIVE_PATH: 'attributesByRelativePath';
+BUILD_PHASE: 'buildPhase';
 CHILDREN: 'children';
 PRODUCT_INSTALL_PATH: 'productInstallPath';
 REPOSITORY_URL: 'repositoryURL';
@@ -1431,6 +1495,10 @@ VERSION_GROUP_TYPE : 'versionGroupType';
 MEMBERSHIP_EXCEPTIONS : 'membershipExceptions';
 EXCEPTIONS : 'exceptions';
 CLASSPREFIX : 'CLASSPREFIX';
+MINIMIZED_PROJECT_REFERENCE_PROXIES : 'minimizedProjectReferenceProxies';
+FILE_SYSTEM_SYNCHRONIZED_GROUPS : 'fileSystemSynchronizedGroups';
+EXPECTED_SIGNATURE : 'expectedSignature';
+PUBLIC_HEADERS : 'publicHeaders';
 
 
 REFERENCE
@@ -1443,18 +1511,22 @@ REFERENCE
       HEX? HEX? HEX? HEX?
       HEX? HEX? HEX? HEX?
     | ('FR_'|'G_') (HEX)+
-    // Carthage references contain non-hex characters
-    // This is a problem because if we ever find a name 24 chars long that uses only alpha numeric values with
+    // Carthage and deterministic references can contain non-hex characters
+    // This is a problem because if we ever find a name 16-32 chars long that uses only alpha numeric values with
     // capitalized letters, the lexer will find a REFERENCE when in reality we may just need a NON_QUOTED_STRING
     | ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
       ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
-      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
-      ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP ALPHA_NUMERIC_CAP
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
+      ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP? ALPHA_NUMERIC_CAP?
     | 'OBJ_' NUMBER
     | '"' NON_QUOTED_STRING+ ('::' NON_QUOTED_STRING+)+ '"'
     ;
+
+NUMBER: [0-9]+;
 
 QUOTED_STRING
     : '"' (QUOTED_STRING_CHARACTER)* '"'

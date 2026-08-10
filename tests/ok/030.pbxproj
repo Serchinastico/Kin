@@ -1,0 +1,80 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+		000000000000000000000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				include/AppTarget.h,
+				AppBridge.h,
+			);
+			target = 000000000000000000000004 /* AppTarget */;
+		};
+		000000000000000000000002 /* SyncedSources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				000000000000000000000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
+			path = SyncedSources;
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* LocalPackage */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../LocalPackage;
+		};
+		000000000000000000000004 /* AppTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000005;
+			buildPhases = (
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				000000000000000000000002 /* SyncedSources */,
+			);
+			name = AppTarget;
+			packageProductDependencies = (
+			);
+			productName = AppTarget;
+			productType = "com.apple.product-type.application";
+		};
+		000000000000000000000005 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		000000000000000000000006 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000007 = {
+			isa = PBXProject;
+			buildConfigurationList = 000000000000000000000005;
+			compatibilityVersion = "Xcode 15.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000006;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				000000000000000000000003 /* LocalPackage */,
+			);
+			projectDirPath = "";
+			targets = (
+				000000000000000000000004 /* AppTarget */,
+			);
+		};
+	};
+	rootObject = 000000000000000000000007;
+}

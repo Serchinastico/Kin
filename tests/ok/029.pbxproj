@@ -1,0 +1,45 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		A11111111111111111111111 = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				Public.h,
+			);
+			target = A22222222222222222222222;
+		};
+		A33333333333333333333333 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		A44444444444444444444444 = {
+			isa = PBXProject;
+			buildConfigurationList = A55555555555555555555555;
+			hasScannedForEncodings = 0;
+			mainGroup = A33333333333333333333333;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		A66666666666666666666666 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A55555555555555555555555 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66666666666666666666666,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = A44444444444444444444444;
+}

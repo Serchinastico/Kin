@@ -1,0 +1,50 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		A11111111111111111111111 = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A44444444444444444444444;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Aggregate;
+			packageProductDependencies = (
+				A55555555555555555555555,
+			);
+		};
+		A22222222222222222222222 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+		A33333333333333333333333 = {
+			isa = PBXProject;
+			buildConfigurationList = A44444444444444444444444;
+			hasScannedForEncodings = 0;
+			mainGroup = A22222222222222222222222;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		A66666666666666666666666 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A44444444444444444444444 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A66666666666666666666666,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+	};
+	rootObject = A33333333333333333333333;
+}
