@@ -584,12 +584,12 @@ class PBXProjListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PBXProjParser#xc_local_swift_pacakge_reference.
-    def enterXc_local_swift_pacakge_reference(self, ctx:PBXProjParser.Xc_local_swift_pacakge_referenceContext):
+    # Enter a parse tree produced by PBXProjParser#xc_local_swift_package_reference.
+    def enterXc_local_swift_package_reference(self, ctx:PBXProjParser.Xc_local_swift_package_referenceContext):
         pass
 
-    # Exit a parse tree produced by PBXProjParser#xc_local_swift_pacakge_reference.
-    def exitXc_local_swift_pacakge_reference(self, ctx:PBXProjParser.Xc_local_swift_pacakge_referenceContext):
+    # Exit a parse tree produced by PBXProjParser#xc_local_swift_package_reference.
+    def exitXc_local_swift_package_reference(self, ctx:PBXProjParser.Xc_local_swift_package_referenceContext):
         pass
 
 

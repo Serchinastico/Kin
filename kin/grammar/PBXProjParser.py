@@ -1017,7 +1017,7 @@ class PBXProjParser ( Parser ):
     RULE_xc_build_configuration = 61
     RULE_xc_configuration_list = 62
     RULE_xc_remote_swift_package_reference = 63
-    RULE_xc_local_swift_pacakge_reference = 64
+    RULE_xc_local_swift_package_reference = 64
     RULE_xc_swift_package_product_dependency = 65
     RULE_xc_version_group = 66
     RULE_isa_pbx_aggregate_target = 67
@@ -1203,7 +1203,7 @@ class PBXProjParser ( Parser ):
                    "pbx_reference_proxy", "pbx_resources_build_phase", "pbx_shell_script_build_phase", 
                    "pbx_shell_build_phase", "pbx_sources_build_phase", "pbx_target_dependency", 
                    "pbx_variant_group", "xc_build_configuration", "xc_configuration_list", 
-                   "xc_remote_swift_package_reference", "xc_local_swift_pacakge_reference", 
+                   "xc_remote_swift_package_reference", "xc_local_swift_package_reference", 
                    "xc_swift_package_product_dependency", "xc_version_group", 
                    "isa_pbx_aggregate_target", "isa_pbx_build_file", "isa_pbx_build_rule", 
                    "isa_pbx_build_style", "isa_pbx_container_item_proxy", 
@@ -1880,8 +1880,8 @@ class PBXProjParser ( Parser ):
             return self.getTypedRuleContext(PBXProjParser.Xc_configuration_listContext,0)
 
 
-        def xc_local_swift_pacakge_reference(self):
-            return self.getTypedRuleContext(PBXProjParser.Xc_local_swift_pacakge_referenceContext,0)
+        def xc_local_swift_package_reference(self):
+            return self.getTypedRuleContext(PBXProjParser.Xc_local_swift_package_referenceContext,0)
 
 
         def xc_remote_swift_package_reference(self):
@@ -2071,7 +2071,7 @@ class PBXProjParser ( Parser ):
             elif la_ == 26:
                 self.enterOuterAlt(localctx, 26)
                 self.state = 507
-                self.xc_local_swift_pacakge_reference()
+                self.xc_local_swift_package_reference()
                 pass
 
             elif la_ == 27:
@@ -3615,11 +3615,11 @@ class PBXProjParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def xc_local_swift_pacakge_reference(self, i:int=None):
+        def xc_local_swift_package_reference(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(PBXProjParser.Xc_local_swift_pacakge_referenceContext)
+                return self.getTypedRuleContexts(PBXProjParser.Xc_local_swift_package_referenceContext)
             else:
-                return self.getTypedRuleContext(PBXProjParser.Xc_local_swift_pacakge_referenceContext,i)
+                return self.getTypedRuleContext(PBXProjParser.Xc_local_swift_package_referenceContext,i)
 
 
         def getRuleIndex(self):
@@ -3648,7 +3648,7 @@ class PBXProjParser ( Parser ):
             _la = self._input.LA(1)
             while True:
                 self.state = 648
-                self.xc_local_swift_pacakge_reference()
+                self.xc_local_swift_package_reference()
                 self.state = 651 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
@@ -6831,7 +6831,7 @@ class PBXProjParser ( Parser ):
         return localctx
 
 
-    class Xc_local_swift_pacakge_referenceContext(ParserRuleContext):
+    class Xc_local_swift_package_referenceContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -6850,23 +6850,23 @@ class PBXProjParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return PBXProjParser.RULE_xc_local_swift_pacakge_reference
+            return PBXProjParser.RULE_xc_local_swift_package_reference
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterXc_local_swift_pacakge_reference" ):
-                listener.enterXc_local_swift_pacakge_reference(self)
+            if hasattr( listener, "enterXc_local_swift_package_reference" ):
+                listener.enterXc_local_swift_package_reference(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitXc_local_swift_pacakge_reference" ):
-                listener.exitXc_local_swift_pacakge_reference(self)
+            if hasattr( listener, "exitXc_local_swift_package_reference" ):
+                listener.exitXc_local_swift_package_reference(self)
 
 
 
 
-    def xc_local_swift_pacakge_reference(self):
+    def xc_local_swift_package_reference(self):
 
-        localctx = PBXProjParser.Xc_local_swift_pacakge_referenceContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 128, self.RULE_xc_local_swift_pacakge_reference)
+        localctx = PBXProjParser.Xc_local_swift_package_referenceContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 128, self.RULE_xc_local_swift_package_reference)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1183
