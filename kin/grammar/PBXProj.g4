@@ -62,7 +62,7 @@ object
     | pbx_variant_group
     | xc_build_configuration
     | xc_configuration_list
-    | xc_local_swift_pacakge_reference
+    | xc_local_swift_package_reference
     | xc_remote_swift_package_reference
     | xc_swift_package_product_dependency
     | xc_version_group
